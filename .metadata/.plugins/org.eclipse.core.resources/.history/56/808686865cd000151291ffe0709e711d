@@ -1,0 +1,13 @@
+package com.gryffingear.y2016.systems;
+
+import com.gryffingear.y2016.config.Ports;
+import edu.wpi.first.wpilibj.Solenoid;
+
+
+public class LedStrips {
+
+	Solenoid A = null;
+	Solenoid B = null;
+	Solenoid C = null;
+	Solenoid D = null;
+}

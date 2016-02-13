@@ -1,0 +1,9 @@
+package com.gryffingear.y2016.season;
+import com.gryffingear.y2016.config.Ports;
+import edu.wpi.first.wpilibj.PowerDistributionPanel;
+
+
+public class SuperSystem {
+private static Robot instance= null;
+public LedStrips Led=null;
+}
