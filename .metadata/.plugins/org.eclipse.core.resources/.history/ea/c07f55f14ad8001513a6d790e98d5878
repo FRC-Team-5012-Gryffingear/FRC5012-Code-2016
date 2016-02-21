@@ -1,0 +1,35 @@
+package com.gryffingear.y2016.systems;
+
+import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.TalonSRX;
+
+public class Intake {
+
+	private TalonSRX intakeMotor = null;
+	private Solenoid intakeSolenoid = null;
+
+	public Intake(int im, int is) {
+
+		intakeMotor = new TalonSRX(im);
+		intakeSolenoid = new Solenoid(is);
+	}
+
+	public void setIntake(boolean state) {
+
+		intakeSolenoid.set(state);
+	}
+
+	public void runIntake(double intakev) {
+
+		intakeMotor.set(intakev);
+	}
+
+	public void runIntake(double[] input) {
+
+		runIntake(input[0]);
+	}
+	public Intake(int IntSol) {
+
+	    IntakeSolenoid = new Solenoid(Ports.Pneumatics.PCM_CAN_ID,IntSol);
+	  }
+}

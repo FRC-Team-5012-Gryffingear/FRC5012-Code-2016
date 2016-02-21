@@ -22,8 +22,8 @@ public Drivetrain (int la, int lb, int ra, int rb){
 }
 
 public void tankDrive(double leftv, double rightv) {
-  lefta.set(-leftv);
-  leftb.set(-leftv);
+  lefta.set(leftv);
+  leftb.set(leftv);
 
   righta.set(rightv);
   rightb.set(rightv);

@@ -1,0 +1,24 @@
+package com.gryffingear.y2016.systems;
+
+import com.gryffingear.y2016.config.Ports;
+
+import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.TalonSRX;
+
+public class Intake {
+
+	private TalonSRX intakeMotor = null;
+	private Solenoid intakeSolenoid = null;
+	
+	public Intake(int im, int is) {
+
+		intakeMotor = new TalonSRX(im);
+		intakeSolenoid = new Solenoid(is);
+	}
+
+	public void set(double speed,boolean state ) {
+
+		intakeSolenoid.set(state);
+		intakeMotor.set(speed);
+	}
+}

@@ -1,0 +1,33 @@
+package com.gryffingear.y2016.systems;
+
+import edu.wpi.first.wpilibj.TalonSRX;
+
+public class Shooter {
+
+	private TalonSRX shooterMotor = null;
+
+
+public Shooter(int sm){ 
+	
+	shooterMotor = new TalonSRX(sm);
+	
+}
+
+public void runShooter(double shooterv) {
+	
+	shooterMotor.set(shooterv);
+	shooterMotor.set(shooterv);
+
+}
+
+
+public void runShooter(double[] input) {
+
+	runShooter(input[0]);
+}
+
+
+
+
+
+}

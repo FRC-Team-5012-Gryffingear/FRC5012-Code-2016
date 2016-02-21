@@ -1,30 +1,46 @@
 package com.gryffingear.y2016.systems;
+
 import com.gryffingear.y2016.config.Ports;
-
-
-
-
+import edu.wpi.first.wpilibj.Compressor;
 public class SuperSystem {
-private static SuperSystem instance= null;
-public LedStrips led = null;
-public Drivetrain drive = null;
-
-private SuperSystem() {
-	drive = new Drivetrain(Ports.Drivetrain.DRIVE_LEFT_A_PORT, Ports.Drivetrain.DRIVE_LEFT_B_PORT,
-	        Ports.Drivetrain.DRIVE_RIGHT_A_PORT, Ports.Drivetrain.DRIVE_RIGHT_B_PORT);
 	
-	led = new LedStrips(Ports.Leds.LED_STRIP_1_PORT,Ports.Leds.LED_STRIP_2_PORT,Ports.Leds.LED_STRIP_3_PORT,Ports.Leds.LED_STRIP_4_PORT);
+	private static SuperSystem instance = null;
+	public LedStrips led = null;
+	public Drivetrain drive = null;
+	public Intake intake = null;
+    public Shooter shoot = null;
+	public Compressor compressor = null;
+    
+	private SuperSystem() {
+		
+		drive = new Drivetrain(Ports.Drivetrain.DRIVE_LEFT_A_PORT, 
+							   Ports.Drivetrain.DRIVE_LEFT_B_PORT,
+				               Ports.Drivetrain.DRIVE_RIGHT_A_PORT,
+				               Ports.Drivetrain.DRIVE_RIGHT_B_PORT);
 
-}
+		led = new LedStrips(Ports.Leds.LED_STRIP_1_PORT,
+				            Ports.Leds.LED_STRIP_2_PORT, 
+				            Ports.Leds.LED_STRIP_3_PORT,
+				            Ports.Leds.LED_STRIP_4_PORT);
 
-public static SuperSystem getInstance() {
+		intake = new Intake(Ports.Intake.INTAKE_MOTOR, 
+							Ports.Intake.INTAKE_SOLENOID);
+		
+		shoot = new Shooter(Ports.Shooter.SHOOTER_MOTOR_A,
+				            Ports.Shooter.SHOOTER_MOTOR_B);
+		
+		Compressor compressor = new Compressor(Ports.Pneumatics.PCM_CAN_ID);
+		compressor.setClosedLoopControl(true);
+		
 
-  if (instance == null) {
-    instance = new SuperSystem();
-  }
-  return instance;
-}
+	}
 
+	public static SuperSystem getInstance() {
 
+		if (instance == null) {
+			instance = new SuperSystem();
+		}
+		return instance;
+	}
 
 }

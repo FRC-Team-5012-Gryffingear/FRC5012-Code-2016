@@ -1,0 +1,7 @@
+package com.gryffingear.y2016.systems;
+import edu.wpi.first.wpilibj.TalonSRX;
+import edu.wpi.first.wpilibj.Solenoid;
+public class Intake {
+
+		private 
+}
