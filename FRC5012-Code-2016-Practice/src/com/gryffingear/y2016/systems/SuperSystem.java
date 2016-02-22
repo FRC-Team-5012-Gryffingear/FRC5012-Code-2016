@@ -2,6 +2,7 @@ package com.gryffingear.y2016.systems;
 
 import com.gryffingear.y2016.config.Constants;
 import com.gryffingear.y2016.config.Ports;
+import com.gryffingear.y2016.utilities.PulseTriggerBoolean;
 
 import edu.wpi.first.wpilibj.Compressor;
 
@@ -45,6 +46,11 @@ public class SuperSystem {
 		drive.tankDrive(leftIn, rightIn);
 	}
 	
+	boolean shooting = false;
+	
+	
+	boolean intakePos = false;
+	PulseTriggerBoolean intakeToggle = new PulseTriggerBoolean();
 	
 	public void magicshot(boolean toggleIntakePos, boolean wantIntake, boolean wantLowGoal, boolean wantHighGoal) {
 		
@@ -57,16 +63,28 @@ public class SuperSystem {
 			shooterOut = Constants.Shooter.SHOOTING_VOLTAGE;
 			
 			if(shoot.atSpeed()) {
-				intakeOut = Constants.Intake.INTAKE_IN;
+				shooting = true;
 			}
+			
+			intakeOut = shooting ? Constants.Intake.INTAKE_IN : 0.0;
 		} else {
-			intakeOut = wantIntake ? Constants.Intake.INTAKE_IN : 0;
+			intakeOut = wantIntake ? Constants.Intake.INTAKE_IN : 0.0;
 			
 			if(intake.getBallStaged()) {
 				intakeOut = 0.0;
 			}
 			
+			shooting = false;
+			
 		}
+		
+		intakeToggle.set(toggleIntakePos);
+		
+		if(intakeToggle.get()) {
+			intakePos = !intakePos;
+		}
+		
+		intake.setIntake(intakePos);
 		
 		led.setA(intake.getBallStaged());
 		led.setB(shoot.atSpeed());
