@@ -5,6 +5,7 @@ import com.gryffingear.y2016.config.Ports;
 import com.gryffingear.y2016.utilities.PulseTriggerBoolean;
 
 import edu.wpi.first.wpilibj.Compressor;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class SuperSystem {
 
@@ -71,7 +72,7 @@ public class SuperSystem {
 			intakeOut = wantIntake ? Constants.Intake.INTAKE_IN : 0.0;
 			
 			if(intake.getBallStaged()) {
-				intakeOut = 0.0;
+				if(intakeOut > 0.0) intakeOut = 0;
 			}
 			
 			shooting = false;
@@ -88,6 +89,11 @@ public class SuperSystem {
 		
 		led.setA(intake.getBallStaged());
 		led.setB(shoot.atSpeed());
+	}
+	
+	public void updateSmartDashboard() {
+		SmartDashboard.putNumber("ShooterCurrent", shoot.getCurrent());
+		SmartDashboard.putBoolean("AtSpeed", shoot.atSpeed());
 	}
 
 }
