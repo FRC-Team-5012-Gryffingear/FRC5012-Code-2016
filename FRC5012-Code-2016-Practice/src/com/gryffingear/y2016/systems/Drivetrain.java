@@ -1,5 +1,7 @@
 package com.gryffingear.y2016.systems;
 
+import com.gryffingear.y2016.config.Constants;
+
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.TalonSRX;
 
@@ -22,7 +24,7 @@ public class Drivetrain {
 
 		in.clearStickyFaults();
 		in.changeControlMode(CANTalon.TalonControlMode.PercentVbus);
-		in.setVoltageRampRate(48.0);
+		in.setVoltageRampRate(Constants.Drivetrain.RAMP_RATE);
 		in.enableControl();
 		System.out.println("[CANTalon]" + in.getDescription() + " Initialized at device ID: " + in.getDeviceID());
 		return in;
@@ -37,7 +39,6 @@ public class Drivetrain {
 	}
 
 	public void tankDrive(double[] input) {
-
 		tankDrive(input[0], input[1]);
 	}
 }

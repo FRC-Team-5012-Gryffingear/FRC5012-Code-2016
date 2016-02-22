@@ -25,7 +25,7 @@ public class SuperSystem {
 
 		shoot = new Shooter(Ports.Shooter.SHOOTER_MOTOR_A, Ports.Shooter.SHOOTER_MOTOR_B);
 
-		Compressor compressor = new Compressor(Ports.Pneumatics.PCM_CAN_ID);
+		compressor = new Compressor(Ports.Pneumatics.PCM_CAN_ID);
 		compressor.setClosedLoopControl(true);
 		compressor.start();
 
@@ -37,6 +37,14 @@ public class SuperSystem {
 			instance = new SuperSystem();
 		}
 		return instance;
+	}
+	
+	public void drive(double leftIn, double rightIn) {
+		
+	}
+	
+	public void magicshot(boolean wantIntake, boolean wantLowGoal, boolean wantHighGoal) {
+		
 	}
 
 }

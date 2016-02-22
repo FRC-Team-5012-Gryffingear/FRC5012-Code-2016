@@ -1,5 +1,7 @@
 package com.gryffingear.y2016.systems;
 
+import com.gryffingear.y2016.config.Constants;
+
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.TalonSRX;
 
@@ -18,7 +20,7 @@ public class Shooter {
 
 		in.clearStickyFaults();
 		in.changeControlMode(CANTalon.TalonControlMode.PercentVbus);
-		in.setVoltageRampRate(96.0);
+		in.setVoltageRampRate(Constants.Shooter.RAMP_RATE);
 		in.enableControl();
 		System.out.println("[CANTalon]" + in.getDescription() + " Initialized at device ID: " + in.getDeviceID());
 		return in;
@@ -29,11 +31,6 @@ public class Shooter {
 		shooterMotorA.set(shooterv);
 		shooterMotorB.set(-shooterv);
 
-	}
-
-	public void runShooter(double[] input) {
-
-		runShooter(input[0]);
 	}
 
 }

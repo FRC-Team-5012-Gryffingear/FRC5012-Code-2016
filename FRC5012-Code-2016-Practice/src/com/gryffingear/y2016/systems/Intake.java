@@ -1,5 +1,8 @@
 package com.gryffingear.y2016.systems;
 
+import com.gryffingear.y2016.config.Constants;
+import com.gryffingear.y2016.utilities.Debouncer;
+
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Solenoid;
@@ -23,7 +26,7 @@ public class Intake {
 
 		in.clearStickyFaults();
 		in.changeControlMode(CANTalon.TalonControlMode.PercentVbus);
-		in.setVoltageRampRate(96.0);
+		in.setVoltageRampRate(Constants.Intake.RAMP_RATE);
 		in.enableControl();
 		System.out.println("[CANTalon]" + in.getDescription() + " Initialized at device ID: " + in.getDeviceID());
 		return in;
@@ -39,16 +42,22 @@ public class Intake {
 		intakeMotor.set(intakev);
 	}
 
-	public void runIntake(double[] input) {
-
-		runIntake(input[0]);
-	}
-
-	public double getOuter() {
+	private double getOuter() {
 		return outerSensor.getVoltage();
 	}
 
-	public double getInner() {
+	private double getInner() {
 		return innerSensor.getVoltage();
+	}
+
+	private Debouncer enteredFilter = new Debouncer(0.075);
+	private Debouncer stagedFilter = new Debouncer(0.075);
+	
+	public boolean getBallEntered() {
+		return enteredFilter.update(getOuter() < Constants.Intake.BALL_SENSOR_THRESHOLD);
+	}
+
+	public boolean getBallStaged() {
+		return stagedFilter.update(getInner() < Constants.Intake.BALL_SENSOR_THRESHOLD);
 	}
 }

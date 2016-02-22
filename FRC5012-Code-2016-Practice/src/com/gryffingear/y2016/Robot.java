@@ -19,8 +19,8 @@ public class Robot extends IterativeRobot {
 		// Drive controls
 		bot.drive.tankDrive(joy1.getRawAxis(1), joy2.getRawAxis(1));
 		// LED controls
-		bot.led.setA(bot.intake.getInner() < 3.2);
-		bot.led.setB(bot.intake.getOuter() < 3.2);
+		bot.led.setA(bot.intake.getBallStaged());
+		bot.led.setB(bot.intake.getBallEntered());
 		bot.led.setC(operator.getRawButton(3));
 		bot.led.setD(operator.getRawButton(4));
 		// Intake controls
