@@ -8,40 +8,32 @@ public class Shooter {
 	private CANTalon shooterMotorA = null;
 	private CANTalon shooterMotorB = null;
 
+	public Shooter(int sma, int smb) {
 
-public Shooter(int sma, int smb){ 
-	
-	shooterMotorA = configureTalon(new CANTalon(sma));
-	shooterMotorB = configureTalon(new CANTalon(smb));
-}
+		shooterMotorA = configureTalon(new CANTalon(sma));
+		shooterMotorB = configureTalon(new CANTalon(smb));
+	}
 
-private CANTalon configureTalon(CANTalon in) {
+	private CANTalon configureTalon(CANTalon in) {
 
-    in.clearStickyFaults();
-    in.changeControlMode(CANTalon.TalonControlMode.PercentVbus);
-    in.setVoltageRampRate(96.0);
-    in.enableControl();
-    System.out.println("[CANTalon]" + in.getDescription() + " Initialized at device ID: "
-        + in.getDeviceID());
-    return in;
-  }
+		in.clearStickyFaults();
+		in.changeControlMode(CANTalon.TalonControlMode.PercentVbus);
+		in.setVoltageRampRate(96.0);
+		in.enableControl();
+		System.out.println("[CANTalon]" + in.getDescription() + " Initialized at device ID: " + in.getDeviceID());
+		return in;
+	}
 
+	public void runShooter(double shooterv) {
 
-public void runShooter(double shooterv) {
-	
-	shooterMotorA.set(shooterv);
-	shooterMotorB.set(-shooterv);
-	
-}
+		shooterMotorA.set(shooterv);
+		shooterMotorB.set(-shooterv);
 
+	}
 
-public void runShooter(double[] input) {
+	public void runShooter(double[] input) {
 
-	runShooter(input[0]);
-}
-
-
-
-
+		runShooter(input[0]);
+	}
 
 }
