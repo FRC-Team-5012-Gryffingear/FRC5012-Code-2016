@@ -1,29 +1,42 @@
 package com.gryffingear.y2016.systems;
 
+import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.TalonSRX;
 public class Drivetrain {
 
-	private TalonSRX lefta = null;
-	private TalonSRX leftb = null;
-	private TalonSRX righta = null;
-	private TalonSRX rightb = null;
+	private CANTalon lefta = null;
+	private CANTalon leftb = null;
+	private CANTalon righta = null;
+	private CANTalon rightb = null;
 
 
 
 
 public Drivetrain (int la, int lb, int ra, int rb){
-	lefta = new TalonSRX(la);
-	leftb = new TalonSRX(lb);
-	righta = new TalonSRX(ra);
-	rightb = new TalonSRX(rb);
+	lefta = configureTalon(new CANTalon(la));
+	leftb = configureTalon(new CANTalon(lb));
+	righta = configureTalon(new CANTalon(ra));
+	rightb = configureTalon(new CANTalon(rb));
 
 
 
 }
 
+private CANTalon configureTalon(CANTalon in) {
+
+    in.clearStickyFaults();
+    in.changeControlMode(CANTalon.TalonControlMode.PercentVbus);
+    in.setVoltageRampRate(48.0);
+    in.enableControl();
+    System.out.println("[CANTalon]" + in.getDescription() + " Initialized at device ID: "
+        + in.getDeviceID());
+    return in;
+  }
+
+
 public void tankDrive(double leftv, double rightv) {
-  lefta.set(leftv);
-  leftb.set(leftv);
+  lefta.set(-leftv);
+  leftb.set(-leftv);
 
   righta.set(rightv);
   rightb.set(rightv);

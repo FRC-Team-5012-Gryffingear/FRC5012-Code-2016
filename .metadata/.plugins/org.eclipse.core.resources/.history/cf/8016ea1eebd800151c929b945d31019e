@@ -1,0 +1,45 @@
+package com.gryffingear.y2016.systems;
+
+import com.gryffingear.y2016.config.Ports;
+
+import edu.wpi.first.wpilibj.CANTalon;
+import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.TalonSRX;
+
+public class Intake {
+
+	private CANTalon intakeMotor = null;
+	private Solenoid intakeSolenoid = null;
+	
+	public Intake(int im, int is) {
+
+		intakeMotor = configureTalon(new CANTalon(im));
+		intakeSolenoid = new Solenoid(is);
+	}
+	private CANTalon configureTalon(CANTalon in) {
+
+	    in.clearStickyFaults();
+	    in.changeControlMode(CANTalon.TalonControlMode.PercentVbus);
+	    in.setVoltageRampRate(96.0);
+	    in.enableControl();
+	    System.out.println("[CANTalon]" + in.getDescription() + " Initialized at device ID: "
+	        + in.getDeviceID());
+	    return in;
+	  }
+
+	public void setIntake(boolean state) {
+
+		intakeSolenoid.set(state);
+	}
+
+	public void runIntake(double intakev) {
+
+		intakeMotor.set(intakev);
+	}
+
+	public void runIntake(double[] input) {
+
+		runIntake(input[0]);
+	}
+}
+  

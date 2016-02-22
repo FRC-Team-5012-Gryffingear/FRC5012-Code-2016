@@ -10,6 +10,7 @@ public class SuperSystem {
 	public Intake intake = null;
     public Shooter shoot = null;
 	public Compressor compressor = null;
+	
     
 	private SuperSystem() {
 		
@@ -24,14 +25,16 @@ public class SuperSystem {
 				            Ports.Leds.LED_STRIP_4_PORT);
 
 		intake = new Intake(Ports.Intake.INTAKE_MOTOR, 
-							Ports.Intake.INTAKE_SOLENOID);
+							Ports.Intake.INTAKE_SOLENOID,
+							Ports.Intake.OUTER_STAGE_SENSOR,
+							Ports.Intake.INNER_STAGE_SENSOR);
 		
 		shoot = new Shooter(Ports.Shooter.SHOOTER_MOTOR_A,
 				            Ports.Shooter.SHOOTER_MOTOR_B);
 		
 		Compressor compressor = new Compressor(Ports.Pneumatics.PCM_CAN_ID);
 		compressor.setClosedLoopControl(true);
-		
+		compressor.start();
 
 	}
 

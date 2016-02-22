@@ -2322,3 +2322,143 @@ java.lang.ArrayIndexOutOfBoundsException: -1
 
 !ENTRY WPILib_Java_Robot_Development 1 0 2016-02-20 22:59:08.076
 !MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 13:13:34.371
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016-Practice\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 13:13:34.372
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 13:14:09.187
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016-Practice\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 13:14:09.188
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 13:18:20.094
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016-Practice\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 13:18:20.095
+!MESSAGE Targets: deploy, Mode: run
+!SESSION 2016-02-21 13:31:57.213 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.8.0_74
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2016-02-21 13:32:25.369
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-02-21 13:32:47.076
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\gryffingear'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-21 13:32:48.449
+!MESSAGE Installing tools if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-21 13:32:48.464
+!MESSAGE Installedtools
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-21 13:32:48.511
+!MESSAGE Installing cpp if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-21 13:32:48.511
+!MESSAGE Installedcpp
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-21 13:32:48.511
+!MESSAGE Installing java if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-21 13:32:48.511
+!MESSAGE Installedjava
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 13:35:23.387
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016-Practice\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 13:35:23.387
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY org.eclipse.ant.launching 4 120 2016-02-21 13:36:26.136
+!MESSAGE Error logged from Ant UI: 
+!STACK 0
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+	at sun.nio.cs.StreamDecoder.implRead(Unknown Source)
+	at sun.nio.cs.StreamDecoder.read(Unknown Source)
+	at java.io.InputStreamReader.read(Unknown Source)
+	at java.io.BufferedReader.fill(Unknown Source)
+	at java.io.BufferedReader.readLine(Unknown Source)
+	at java.io.BufferedReader.readLine(Unknown Source)
+	at org.eclipse.ant.internal.launching.launchConfigurations.RemoteAntBuildListener$ServerConnection.run(RemoteAntBuildListener.java:94)
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 13:36:29.568
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016-Practice\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 13:36:29.568
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 13:41:41.832
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016-Practice\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 13:41:41.833
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 13:42:11.693
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016-Practice\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 13:42:11.694
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 13:45:03.226
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016-Practice\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 13:45:03.227
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 15:57:49.625
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016-Practice\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 15:57:49.627
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 16:01:33.132
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016-Practice\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 16:01:33.133
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 16:04:51.401
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016-Practice\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 16:04:51.402
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 16:07:01.369
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016-Practice\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 16:07:01.370
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 16:34:13.407
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016-Practice\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 16:34:13.409
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 16:36:16.506
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016-Practice\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 16:36:16.508
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 16:40:11.407
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016-Practice\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-21 16:40:11.408
+!MESSAGE Targets: deploy, Mode: run

@@ -4,6 +4,7 @@ import com.gryffingear.y2016.config.Ports;
 import com.gryffingear.y2016.systems.SuperSystem;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Robot extends IterativeRobot {
    
@@ -19,15 +20,17 @@ public void teleopPeriodic() {
 	//Drive controls
 	bot.drive.tankDrive(joy1.getRawAxis(1), joy2.getRawAxis(1));
 	//LED controls
-	bot.led.setA(operator.getRawButton(1));
-	bot.led.setB(operator.getRawButton(2));
+	bot.led.setA(bot.intake.getInner() < 3.2);
+	bot.led.setB(bot.intake.getOuter() < 3.2);
 	bot.led.setC(operator.getRawButton(3));
 	bot.led.setD(operator.getRawButton(4));
 	//Intake controls
 	bot.intake.runIntake(operator.getRawAxis(1));
 	bot.intake.setIntake(operator.getRawButton(5));
 	//Shooter controls
-	bot.shoot.runShooter(operator.getRawAxis(2));
-
+	bot.shoot.runShooter(operator.getRawAxis(3));
+	
+	//System.out.println("Outer: " + bot.intake.getOuter());
+	//System.out.println("Inner: " +bot.intake.getInner());
 }
 }
