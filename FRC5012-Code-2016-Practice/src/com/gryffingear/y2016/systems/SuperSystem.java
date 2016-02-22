@@ -1,6 +1,8 @@
 package com.gryffingear.y2016.systems;
 
+import com.gryffingear.y2016.config.Constants;
 import com.gryffingear.y2016.config.Ports;
+
 import edu.wpi.first.wpilibj.Compressor;
 
 public class SuperSystem {
@@ -40,11 +42,34 @@ public class SuperSystem {
 	}
 	
 	public void drive(double leftIn, double rightIn) {
-		
+		drive.tankDrive(leftIn, rightIn);
 	}
 	
-	public void magicshot(boolean wantIntake, boolean wantLowGoal, boolean wantHighGoal) {
+	
+	public void magicshot(boolean toggleIntakePos, boolean wantIntake, boolean wantLowGoal, boolean wantHighGoal) {
 		
+		double intakeOut = 0.0;
+		double shooterOut = 0.0;
+		
+		if(wantLowGoal) {
+			intakeOut = Constants.Intake.INTAKE_OUT;
+		} else if(wantHighGoal) {
+			shooterOut = Constants.Shooter.SHOOTING_VOLTAGE;
+			
+			if(shoot.atSpeed()) {
+				intakeOut = Constants.Intake.INTAKE_IN;
+			}
+		} else {
+			intakeOut = wantIntake ? Constants.Intake.INTAKE_IN : 0;
+			
+			if(intake.getBallStaged()) {
+				intakeOut = 0.0;
+			}
+			
+		}
+		
+		led.setA(intake.getBallStaged());
+		led.setB(shoot.atSpeed());
 	}
 
 }

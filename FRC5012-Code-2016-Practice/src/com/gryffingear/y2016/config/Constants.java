@@ -13,6 +13,9 @@ public class Constants {
 	public static class Intake {
 		public static final double RAMP_RATE = 96.0;
 		public static final double BALL_SENSOR_THRESHOLD = 3.5;
+		
+		public static final double INTAKE_IN = 1.0;
+		public static final double INTAKE_OUT = -1.0;
 
 	}
 

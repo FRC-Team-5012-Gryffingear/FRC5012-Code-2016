@@ -1,9 +1,9 @@
 package com.gryffingear.y2016.systems;
 
 import com.gryffingear.y2016.config.Constants;
+import com.gryffingear.y2016.utilities.Debouncer;
 
 import edu.wpi.first.wpilibj.CANTalon;
-import edu.wpi.first.wpilibj.TalonSRX;
 
 public class Shooter {
 
@@ -27,9 +27,22 @@ public class Shooter {
 	}
 
 	public void runShooter(double shooterv) {
-
 		shooterMotorA.set(shooterv);
 		shooterMotorB.set(-shooterv);
+	}
+
+	public double getCurrent() {
+		double answer = shooterMotorA.getOutputCurrent() + shooterMotorA.getOutputCurrent();
+		answer /= 2.0;
+
+		return answer;
+	}
+
+	Debouncer currentFilter = new Debouncer(.500);
+
+	public boolean atSpeed() {
+		return (Math.abs(shooterMotorA.get()) > 0.1)
+				&& currentFilter.update(getCurrent() < Constants.Shooter.AT_SPEED_CURRENT_THRESHOLD);
 
 	}
 
