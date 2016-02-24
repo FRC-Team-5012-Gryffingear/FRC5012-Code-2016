@@ -27,18 +27,18 @@ public class Shooter {
 	}
 
 	public void runShooter(double shooterv) {
-		shooterMotorA.set(shooterv);
-		shooterMotorB.set(-shooterv);
+		shooterMotorA.set(-shooterv);
+		shooterMotorB.set(shooterv);
 	}
 
 	public double getCurrent() {
-		double answer = shooterMotorA.getOutputCurrent() + shooterMotorA.getOutputCurrent();
+		double answer = shooterMotorA.getOutputCurrent() + shooterMotorB.getOutputCurrent();
 		answer /= 2.0;
 
 		return answer;
 	}
 
-	Debouncer currentFilter = new Debouncer(.500);
+	Debouncer currentFilter = new Debouncer(01.00);
 
 	public boolean atSpeed() {
 		return (Math.abs(shooterMotorA.get()) > 0.1)

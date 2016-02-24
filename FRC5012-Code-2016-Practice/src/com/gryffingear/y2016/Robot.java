@@ -20,6 +20,8 @@ public class Robot extends IterativeRobot {
 
 		bot.magicshot(operator.getRawButton(6), operator.getRawButton(2), operator.getRawButton(7),
 				operator.getRawButton(8));
+		
+		bot.updateSmartDashboard();
 
 	}
 }

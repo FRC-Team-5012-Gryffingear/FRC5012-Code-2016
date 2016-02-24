@@ -48,7 +48,8 @@ public class SuperSystem {
 	}
 	
 	boolean shooting = false;
-	
+
+	boolean atSpeed = false;
 	
 	boolean intakePos = false;
 	PulseTriggerBoolean intakeToggle = new PulseTriggerBoolean();
@@ -58,12 +59,15 @@ public class SuperSystem {
 		double intakeOut = 0.0;
 		double shooterOut = 0.0;
 		
+		
 		if(wantLowGoal) {
 			intakeOut = Constants.Intake.INTAKE_OUT;
+			shooting = false;
 		} else if(wantHighGoal) {
 			shooterOut = Constants.Shooter.SHOOTING_VOLTAGE;
-			
-			if(shoot.atSpeed()) {
+
+			atSpeed = shoot.atSpeed();	
+			if(atSpeed) {
 				shooting = true;
 			}
 			
@@ -76,24 +80,27 @@ public class SuperSystem {
 			}
 			
 			shooting = false;
-			
 		}
+		shooting = false;
 		
 		intakeToggle.set(toggleIntakePos);
 		
+	
 		if(intakeToggle.get()) {
 			intakePos = !intakePos;
 		}
 		
 		intake.setIntake(intakePos);
-		
+		shoot.runShooter(shooterOut);
+		intake.runIntake(intakeOut);
 		led.setA(intake.getBallStaged());
-		led.setB(shoot.atSpeed());
+		led.setB(atSpeed);
 	}
 	
 	public void updateSmartDashboard() {
 		SmartDashboard.putNumber("ShooterCurrent", shoot.getCurrent());
-		SmartDashboard.putBoolean("AtSpeed", shoot.atSpeed());
+		SmartDashboard.putBoolean("AtSpeed", atSpeed);
+		SmartDashboard.putBoolean("Shooting", shooting);
 	}
 
 }
