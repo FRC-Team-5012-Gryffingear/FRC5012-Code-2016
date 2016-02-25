@@ -41,4 +41,22 @@ public class Drivetrain {
 	public void tankDrive(double[] input) {
 		tankDrive(input[0], input[1]);
 	}
+
+	public double getTotalCurrent() {
+		double answer = this.getLeftCurrent() + this.getRightCurrent();
+
+		return answer;
+	}
+
+	public double getLeftCurrent() {
+		double answer = lefta.getOutputCurrent() + leftb.getOutputCurrent();
+
+		return answer;
+	}
+
+	public double getRightCurrent() {
+		double answer = righta.getOutputCurrent() + rightb.getOutputCurrent();
+
+		return answer;
+	}
 }

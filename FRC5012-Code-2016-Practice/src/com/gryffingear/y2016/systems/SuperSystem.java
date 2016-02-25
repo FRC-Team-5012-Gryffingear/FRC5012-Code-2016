@@ -27,6 +27,7 @@ public class SuperSystem {
 		intake = new Intake(Ports.Intake.INTAKE_MOTOR, Ports.Intake.INTAKE_SOLENOID, Ports.Intake.OUTER_STAGE_SENSOR,
 				Ports.Intake.INNER_STAGE_SENSOR);
 
+		// Shoot? Yes, shoot.
 		shoot = new Shooter(Ports.Shooter.SHOOTER_MOTOR_A, Ports.Shooter.SHOOTER_MOTOR_B);
 
 		compressor = new Compressor(Ports.Pneumatics.PCM_CAN_ID);
@@ -101,6 +102,11 @@ public class SuperSystem {
 		SmartDashboard.putNumber("ShooterCurrent", shoot.getCurrent());
 		SmartDashboard.putBoolean("AtSpeed", atSpeed);
 		SmartDashboard.putBoolean("Shooting", shooting);
+//		
+//		SmartDashboard.putBoolean("extBall", intake.getBallEntered());
+//		SmartDashboard.putBoolean("intBall", intake.getBallStaged());
+		
+		SmartDashboard.putNumber("DriveTotalCurrent", drive.getTotalCurrent());
 	}
 
 }
