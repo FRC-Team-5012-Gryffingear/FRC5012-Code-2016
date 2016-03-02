@@ -38,12 +38,17 @@ public class Shooter {
 		return answer;
 	}
 
-	Debouncer currentFilter = new Debouncer(01.00);
+	Debouncer currentFilter = new Debouncer(1.00);
 
+	private boolean m_atSpeed = false;
 	public boolean atSpeed() {
-		return (Math.abs(shooterMotorA.get()) > 0.1)
-				&& currentFilter.update(getCurrent() < Constants.Shooter.AT_SPEED_CURRENT_THRESHOLD);
+		return m_atSpeed;
 
+	}
+	
+	public void update() {
+		m_atSpeed = (Math.abs(shooterMotorA.get()) > 0.1)
+				&& currentFilter.update(getCurrent() < Constants.Shooter.AT_SPEED_CURRENT_THRESHOLD);
 	}
 
 }

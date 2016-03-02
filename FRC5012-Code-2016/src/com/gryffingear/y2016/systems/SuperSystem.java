@@ -57,6 +57,8 @@ public class SuperSystem {
 	
 	public void magicshot(boolean toggleIntakePos, boolean wantIntake, boolean wantLowGoal, boolean wantHighGoal) {
 		
+		
+		
 		double intakeOut = 0.0;
 		double shooterOut = 0.0;
 		
@@ -72,7 +74,7 @@ public class SuperSystem {
 				shooting = true;
 			}
 			
-			intakeOut = shooting ? Constants.Intake.INTAKE_IN : 0.0;
+			intakeOut = shooting || wantIntake ? Constants.Intake.INTAKE_IN : 0.0;
 		} else {
 			intakeOut = wantIntake ? Constants.Intake.INTAKE_IN : 0.0;
 			
@@ -107,6 +109,11 @@ public class SuperSystem {
 //		SmartDashboard.putBoolean("intBall", intake.getBallStaged());
 		
 		SmartDashboard.putNumber("DriveTotalCurrent", drive.getTotalCurrent());
+	}
+	
+	public void poke() {
+		intake.update();
+		shoot.update();
 	}
 
 }

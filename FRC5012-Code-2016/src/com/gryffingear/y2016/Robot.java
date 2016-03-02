@@ -15,6 +15,8 @@ public class Robot extends IterativeRobot {
 	SuperSystem bot = SuperSystem.getInstance();
 
 	public void teleopPeriodic() {
+		
+		bot.poke();
 
 		bot.drive(driverL.getRawAxis(1), driverR.getRawAxis(1));
 

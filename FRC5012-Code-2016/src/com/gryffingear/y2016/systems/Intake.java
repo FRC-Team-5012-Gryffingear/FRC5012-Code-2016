@@ -53,11 +53,19 @@ public class Intake {
 	private Debouncer enteredFilter = new Debouncer(0.075);
 	private Debouncer stagedFilter = new Debouncer(0.075);
 	
+	private boolean m_ballEntered = false;
+	private boolean m_ballStaged = false;
+	
 	public boolean getBallEntered() {
-		return enteredFilter.update(getOuter() < Constants.Intake.BALL_SENSOR_THRESHOLD);
+		return m_ballEntered;
 	}
 
 	public boolean getBallStaged() {
-		return stagedFilter.update(getInner() < Constants.Intake.BALL_SENSOR_THRESHOLD);
+		return m_ballStaged;
+	}
+	
+	public void update() {
+		m_ballEntered = enteredFilter.update(getOuter() < Constants.Intake.BALL_SENSOR_THRESHOLD);
+		m_ballStaged = stagedFilter.update(getInner() < Constants.Intake.BALL_SENSOR_THRESHOLD);
 	}
 }
