@@ -8,20 +8,18 @@ public class IntakeShooterCommand extends Command {
 private double speedI = 0.0 , speedS;
 boolean state = false;
 
+boolean toggleIntakePos = false, wantIntake = false, wantLowGoal = false, wantHighGoal = false;
 
-public IntakeShooterCommand (double speedI, double speedS, boolean state){
 
-this.state = state;
-this.speedI = speedI;
-this.speedS = speedS;
-
+public IntakeShooterCommand (boolean toggleIntakePos, boolean wantIntake, boolean wantLowGoal, boolean wantHighGoal){
+	this.toggleIntakePos = toggleIntakePos;
+	this.wantIntake = wantIntake;
+	this.wantLowGoal = wantLowGoal;
+	this.wantHighGoal = wantHighGoal;
 }
 
 protected void initialize() {
-
-    SuperSystem.getInstance().intake.runIntake(speedI);
-    SuperSystem.getInstance().intake.setIntake(state);
-    SuperSystem.getInstance().shoot.runShooter(speedS);
+	SuperSystem.getInstance().magicshot(toggleIntakePos, wantIntake, wantLowGoal, wantHighGoal);
   }
 protected boolean isFinished() {
 

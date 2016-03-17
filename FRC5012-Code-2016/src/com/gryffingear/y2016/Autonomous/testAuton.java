@@ -1,5 +1,9 @@
 package com.gryffingear.y2016.Autonomous;
 
-public class testAuton {
+import edu.wpi.first.wpilibj.command.CommandGroup;
+
+public class testAuton  extends CommandGroup{
+	
+	public testAuton() {}
 
 }

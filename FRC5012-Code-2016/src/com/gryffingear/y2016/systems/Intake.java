@@ -39,14 +39,14 @@ public class Intake {
 
 	public void runIntake(double intakev) {
 
-		intakeMotor.set(intakev);
+		intakeMotor.set(-intakev);
 	}
 
-	private double getOuter() {
+	public double getOuter() {
 		return outerSensor.getVoltage();
 	}
 
-	private double getInner() {
+	public double getInner() {
 		return innerSensor.getVoltage();
 	}
 
@@ -65,7 +65,7 @@ public class Intake {
 	}
 	
 	public void update() {
-		m_ballEntered = enteredFilter.update(getOuter() < Constants.Intake.BALL_SENSOR_THRESHOLD);
-		m_ballStaged = stagedFilter.update(getInner() < Constants.Intake.BALL_SENSOR_THRESHOLD);
+		m_ballEntered = (getOuter() < Constants.Intake.BALL_SENSOR_THRESHOLD);
+		m_ballStaged = (getInner() < Constants.Intake.BALL_SENSOR_THRESHOLD);
 	}
 }

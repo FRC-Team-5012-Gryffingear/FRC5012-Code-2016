@@ -1,15 +1,18 @@
 package com.gryffingear.y2016;
 
+import com.gryffingear.y2016.Autonomous.DefaultAuton;
+import com.gryffingear.y2016.Autonomous.DriveIntake;
+import com.gryffingear.y2016.Autonomous.DriveStraight;
+import com.gryffingear.y2016.Autonomous.testAuton;
 import com.gryffingear.y2016.config.Ports;
 import com.gryffingear.y2016.systems.SuperSystem;
-import com.gryffingear.y2016.Autonomous.DefaultAuton;
-import com.gryffingear.y2016.Autonomous.testAuton;
+
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Robot extends IterativeRobot {
 
@@ -20,28 +23,50 @@ public class Robot extends IterativeRobot {
 	SuperSystem bot = SuperSystem.getInstance();
 	
 	SendableChooser autonChooser = new SendableChooser();
-	Command autonomousCommand;
+	private CommandGroup currAuton = null;
 
 	public void robotInit() {
-	autonChooser = new SendableChooser();
-	autonChooser.addDefault("Default Auton", new DefaultAuton());
-	autonChooser.addObject("Test Auton", new testAuton());
-	SmartDashboard.putData("Autonomous mode chooser", autonChooser);
+		autonChooser = new SendableChooser();
+      //autonChooser.addDefault("Default Auton", new DefaultAuton());
+		autonChooser.addDefault("Do Nothing", new testAuton());
+		autonChooser.addObject("Drive Straight", new DriveStraight());
+		autonChooser.addObject("Drive + Intake", new DriveIntake());
+		SmartDashboard.putData("Autonomous mode chooser", autonChooser);
+		
 	}
 	
 	
 	
 	public void autonomousInit(){
-		autonomousCommand = (Command) autonChooser.getSelected();
-		autonomousCommand.start();
+		
+		if(currAuton != null){
+			System.out.println("[STATUS] Auton was running at this time. Cancelling...");
+			currAuton.cancel();
+			currAuton = null;
+		}
+		
+		
+		currAuton = (CommandGroup) autonChooser.getSelected();
+		Scheduler.getInstance().add(currAuton);
+		Scheduler.getInstance().enable();
 	}
 	
 	public void autonomousPeriodic(){
 		Scheduler.getInstance().run();
 	}
 	
-	public void teleopPeriodic() {
+	public void teleopInit(){
+	
+		if(currAuton != null){
+			System.out.println("[STATUS] Auton was running at this time. Cancelling...");
+			currAuton.cancel();
+			currAuton = null;
+		}
 		
+		Scheduler.getInstance().disable();
+	}
+	
+	public void teleopPeriodic() {		
 		bot.poke();
 
 		bot.drive(driverL.getRawAxis(1), driverR.getRawAxis(1));
@@ -52,4 +77,6 @@ public class Robot extends IterativeRobot {
 		bot.updateSmartDashboard();
 
 	}
+	
+	
 }

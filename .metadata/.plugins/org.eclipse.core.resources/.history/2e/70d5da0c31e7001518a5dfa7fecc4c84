@@ -1,0 +1,10 @@
+package com.gryffingear.y2016.Autonomous;
+
+import com.gryffingear.y2016.Auton.Commands.ArcadeDriveCommand;
+import edu.wpi.first.wpilibj.command.CommandGroup;
+
+public class DriveStraight extends CommandGroup {
+	public DriveStraight(){
+	this.addSequential(new ArcadeDriveCommand(1.0, 0.0, 4.0));
+}
+}
