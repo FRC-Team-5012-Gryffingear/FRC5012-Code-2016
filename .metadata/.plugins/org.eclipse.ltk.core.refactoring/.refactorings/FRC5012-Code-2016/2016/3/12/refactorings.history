@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.gryffingear.y2016.Autonomous.ShootLowBarLow&apos; to &apos;LowBarLowGoal&apos;&#x0D;&#x0A;- Original project: &apos;FRC5012-Code-2016&apos;&#x0D;&#x0A;- Original element: &apos;com.gryffingear.y2016.Autonomous.ShootLowBarLow&apos;&#x0D;&#x0A;- Renamed element: &apos;com.gryffingear.y2016.Autonomous.LowBarLowGoal&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ShootLowBarLow&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.gryffingear.y2016.Autonomous{ShootLowBarLow.java[ShootLowBarLow" matchStrategy="1" name="LowBarLowGoal" qualified="false" references="true" similarDeclarations="false" stamp="1458342460626" textual="false" version="1.0"/>
+</session>

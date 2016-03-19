@@ -1,10 +1,8 @@
 package com.gryffingear.y2016;
 
+import com.gryffingear.y2016.Autonomous.DefaultAuton;
 import com.gryffingear.y2016.Autonomous.DriveIntake;
 import com.gryffingear.y2016.Autonomous.DriveStraight;
-import com.gryffingear.y2016.Autonomous.LowBarBack;
-import com.gryffingear.y2016.Autonomous.LowBarLowGoal;
-import com.gryffingear.y2016.Autonomous.ShovelOfFries;
 import com.gryffingear.y2016.Autonomous.testAuton;
 import com.gryffingear.y2016.config.Ports;
 import com.gryffingear.y2016.systems.SuperSystem;
@@ -33,10 +31,6 @@ public class Robot extends IterativeRobot {
 		autonChooser.addDefault("Do Nothing", new testAuton());
 		autonChooser.addObject("Drive Straight", new DriveStraight());
 		autonChooser.addObject("Drive + Intake", new DriveIntake());
-		autonChooser.addObject("Shovel of Fries", new ShovelOfFries());
-		autonChooser.addObject("Through the low bar and back", new LowBarBack());
-		autonChooser.addObject("Through the low bar into low goal", new LowBarLowGoal());
-		
 		SmartDashboard.putData("Autonomous mode chooser", autonChooser);
 		
 	}
