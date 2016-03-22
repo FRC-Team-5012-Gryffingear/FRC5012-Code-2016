@@ -24,8 +24,7 @@ public class SuperSystem {
 		led = new LedStrips(Ports.Leds.LED_STRIP_1_PORT, Ports.Leds.LED_STRIP_2_PORT, Ports.Leds.LED_STRIP_3_PORT,
 				Ports.Leds.LED_STRIP_4_PORT);
 
-		intake = new Intake(Ports.Intake.INTAKE_MOTOR, Ports.Intake.INTAKE_SOLENOID, Ports.Intake.OUTER_STAGE_SENSOR,
-				Ports.Intake.INNER_STAGE_SENSOR);
+		intake = new Intake(Ports.Intake.INTAKE_MOTOR, Ports.Intake.INTAKE_SOLENOID, Ports.Intake.STAGE_SENSOR);
 
 		// Shoot? Yes, shoot.
 		shoot = new Shooter(Ports.Shooter.SHOOTER_MOTOR_A, Ports.Shooter.SHOOTER_MOTOR_B);
@@ -79,7 +78,7 @@ public class SuperSystem {
 			intakeOut = wantIntake ? Constants.Intake.INTAKE_IN : 0.0;
 			
 			if(intake.getBallStaged()) {
-				//if(intakeOut > 0.0) intakeOut = 0;
+				if(intakeOut > 0.0) intakeOut = 0;
 			}
 			
 			shooting = false;
@@ -107,7 +106,6 @@ public class SuperSystem {
 //		
 	//	SmartDashboard.putBoolean("extBall", intake.getBallEntered());
 //		SmartDashboard.putBoolean("intBall", intake.getBallStaged());
-		System.out.println(intake.getInner());
 		SmartDashboard.putNumber("DriveTotalCurrent", drive.getTotalCurrent());
 	}
 	

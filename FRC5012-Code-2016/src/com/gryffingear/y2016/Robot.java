@@ -9,6 +9,7 @@ import com.gryffingear.y2016.Autonomous.testAuton;
 import com.gryffingear.y2016.config.Ports;
 import com.gryffingear.y2016.systems.SuperSystem;
 
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.CommandGroup;
@@ -38,6 +39,9 @@ public class Robot extends IterativeRobot {
 		autonChooser.addObject("Through the low bar into low goal", new LowBarLowGoal());
 		
 		SmartDashboard.putData("Autonomous mode chooser", autonChooser);
+		
+		CameraServer.getInstance().setQuality(50);
+		CameraServer.getInstance().startAutomaticCapture("cam0");
 		
 	}
 	

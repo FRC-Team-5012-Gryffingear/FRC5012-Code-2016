@@ -21,8 +21,8 @@ public class Ports {
 
 		public static int INTAKE_MOTOR = 6;
 		public static int INTAKE_SOLENOID = 5;
-		public static int OUTER_STAGE_SENSOR = 1;
-		public static int INNER_STAGE_SENSOR = 0;
+		public static int STAGE_SENSOR = 0;
+		
 	}
 
 	public static class Shooter {
