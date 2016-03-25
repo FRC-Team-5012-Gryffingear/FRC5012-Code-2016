@@ -92,9 +92,13 @@ public class SuperSystem {
 			intakePos = !intakePos;
 		}
 		
-		intake.setIntake(intakePos);
-		shoot.runShooter(shooterOut);
-		intake.runIntake(intakeOut);
+		magicshotRaw(intakePos, shooterOut, intakeOut);
+	}
+	
+	public void magicshotRaw(boolean intakeState, double shooterSpeed, double intakeSpeed) {
+		intake.setIntake(intakeState);
+		shoot.runShooter(shooterSpeed);
+		intake.runIntake(intakeSpeed);
 		led.setB(intake.getBallStaged());
 		led.setA(atSpeed);
 	}

@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class DriveIntake extends CommandGroup {
 	public DriveIntake(){
 	
-		this.addSequential(new IntakeShooterCommand(true, false, false, false));
+		this.addSequential(new IntakeShooterCommand(true, 0.0, 0.0));
 		this.addSequential(new ArcadeDriveCommand(0.0, 0.0, 2.0));
 		this.addSequential(new ArcadeDriveCommand(0.5, 0.0, 5.0));
 		

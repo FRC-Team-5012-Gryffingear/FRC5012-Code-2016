@@ -1,54 +1,41 @@
 package com.gryffingear.y2016.Auton.Commands;
 
 import com.gryffingear.y2016.systems.SuperSystem;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 public class IntakeShooterCommand extends Command {
+	
+	boolean state = false;
+	double intakeSpeed = 0.0;
+	double shooterSpeed = 0.0;
+	
+	public IntakeShooterCommand(boolean state, double intakeSpeed, double shooterSpeed) {
+		this.state = state;
+		this.intakeSpeed = intakeSpeed;
+		this.shooterSpeed = shooterSpeed;
+	}
+	
+	protected void initialize() {
+		SuperSystem.getInstance().magicshotRaw(state, shooterSpeed, intakeSpeed);
+	}
 
-private double speedI = 0.0 , speedS;
-boolean state = false;
+	protected boolean isFinished() {
 
-boolean toggleIntakePos = false, wantIntake = false, wantLowGoal = false, wantHighGoal = false;
+		return true;
+	}
 
+	protected void execute() {
 
-public IntakeShooterCommand (boolean toggleIntakePos, boolean wantIntake, boolean wantLowGoal, boolean wantHighGoal){
-	this.toggleIntakePos = toggleIntakePos;
-	this.wantIntake = wantIntake;
-	this.wantLowGoal = wantLowGoal;
-	this.wantHighGoal = wantHighGoal;
-}
+	}
 
-protected void initialize() {
-	SuperSystem.getInstance().magicshot(toggleIntakePos, wantIntake, wantLowGoal, wantHighGoal);
-  }
-protected boolean isFinished() {
+	protected void end() {
 
-    return true;
-  }
+	}
 
-  protected void execute() {
+	protected void interrupted() {
 
-  }
-
-  protected void end() {
-
-  }
-
-  protected void interrupted() {
-
-  }
-
-
-
-
-
-
-
-
-
-
-
-
+	}
 
 
 }
