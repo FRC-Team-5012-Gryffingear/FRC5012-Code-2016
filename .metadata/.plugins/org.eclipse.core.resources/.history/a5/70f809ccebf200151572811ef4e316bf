@@ -15,29 +15,20 @@ public class SuperSystem {
 	public Intake intake = null;
 	public Shooter shoot = null;
 	public Compressor compressor = null;
-	public Hood hood = null;
 
 	private SuperSystem() {
 
-		drive = new Drivetrain(Ports.Drivetrain.DRIVE_LEFT_A_PORT, 
-							   Ports.Drivetrain.DRIVE_LEFT_B_PORT,
-							   Ports.Drivetrain.DRIVE_RIGHT_A_PORT, 
-							   Ports.Drivetrain.DRIVE_RIGHT_B_PORT);
+		drive = new Drivetrain(Ports.Drivetrain.DRIVE_LEFT_A_PORT, Ports.Drivetrain.DRIVE_LEFT_B_PORT,
+				Ports.Drivetrain.DRIVE_RIGHT_A_PORT, Ports.Drivetrain.DRIVE_RIGHT_B_PORT);
 
-		led = new LedStrips(Ports.Leds.LED_STRIP_1_PORT, 
-						    Ports.Leds.LED_STRIP_2_PORT, 
-						    Ports.Leds.LED_STRIP_3_PORT,
-						    Ports.Leds.LED_STRIP_4_PORT);
+		led = new LedStrips(Ports.Leds.LED_STRIP_1_PORT, Ports.Leds.LED_STRIP_2_PORT, Ports.Leds.LED_STRIP_3_PORT,
+				Ports.Leds.LED_STRIP_4_PORT);
 
-		intake = new Intake(Ports.Intake.INTAKE_MOTOR, 
-						    Ports.Intake.INTAKE_SOLENOID, 
-						    Ports.Intake.STAGE_SENSOR);
+		intake = new Intake(Ports.Intake.INTAKE_MOTOR, Ports.Intake.INTAKE_SOLENOID, Ports.Intake.STAGE_SENSOR);
 
 		// Shoot? Yes, shoot.
-		shoot = new Shooter(Ports.Shooter.SHOOTER_MOTOR_A, 
-						    Ports.Shooter.SHOOTER_MOTOR_B);
+		shoot = new Shooter(Ports.Shooter.SHOOTER_MOTOR_A, Ports.Shooter.SHOOTER_MOTOR_B);
 
-		hood = new Hood(Ports.Hood.SHOOTER_HOOD_SOLENOID);
 		compressor = new Compressor(Ports.Pneumatics.PCM_CAN_ID);
 		compressor.setClosedLoopControl(true);
 		compressor.start();
@@ -61,12 +52,9 @@ public class SuperSystem {
 	boolean atSpeed = false;
 	
 	boolean intakePos = false;
-	
-	boolean hoodPos = false;
-	
 	PulseTriggerBoolean intakeToggle = new PulseTriggerBoolean();
 	
-	public void magicshot(boolean toggleIntakePos, boolean wantIntake, boolean wantLowGoal, boolean wantHighGoal,boolean toggleHoodPos) {
+	public void magicshot(boolean toggleIntakePos, boolean wantIntake, boolean wantLowGoal, boolean wantHighGoal) {
 		
 		
 		
@@ -104,18 +92,15 @@ public class SuperSystem {
 			intakePos = !intakePos;
 		}
 		
-		magicshotRaw(intakePos, shooterOut, intakeOut, hoodPos);
-		
-		hoodPos = wantHighGoal;
+		magicshotRaw(intakePos, shooterOut, intakeOut);
 	}
 	
-	public void magicshotRaw(boolean intakeState, double shooterSpeed, double intakeSpeed, boolean hoodState ) {
+	public void magicshotRaw(boolean intakeState, double shooterSpeed, double intakeSpeed) {
 		intake.setIntake(intakeState);
 		shoot.runShooter(shooterSpeed);
 		intake.runIntake(intakeSpeed);
 		led.setB(intake.getBallStaged());
 		led.setA(atSpeed);
-		hood.setHood(hoodState);
 	}
 	
 	public void updateSmartDashboard() {
