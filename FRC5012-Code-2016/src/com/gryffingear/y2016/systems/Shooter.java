@@ -52,8 +52,7 @@ public class Shooter {
 	}
 
 	public void update() {
-		m_atSpeed = (Math.abs(shooterMotorA.get()) > 0.1)
-				&& currentFilter.update(getCurrent() < Constants.Shooter.AT_SPEED_CURRENT_THRESHOLD);
+		m_atSpeed = (getCurrent() < Constants.Shooter.AT_SPEED_CURRENT_THRESHOLD);
 	}
 
 	public void setHood(boolean state) {

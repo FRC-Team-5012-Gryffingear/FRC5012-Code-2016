@@ -13,7 +13,7 @@ public class DefaultAuton extends CommandGroup {
 		this.addSequential(new ArcadeDriveCommand(0.50, 0.0, 0.4));
 
 	}
-	
+
 	public String toString() {
 		return "DefaultAuton";
 	}

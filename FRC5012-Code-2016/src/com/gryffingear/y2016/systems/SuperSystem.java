@@ -79,7 +79,7 @@ public class SuperSystem {
 				shooting = true;
 			}
 
-			intakeOut = wantIntake ? Constants.Intake.INTAKE_IN : 0.0;
+			intakeOut = shoot.atSpeed() ? Constants.Intake.INTAKE_IN : 0.0;
 		} else {
 			intakeOut = wantIntake ? Constants.Intake.INTAKE_IN : 0.0;
 
