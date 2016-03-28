@@ -15,29 +15,20 @@ public class SuperSystem {
 	public Intake intake = null;
 	public Shooter shoot = null;
 	public Compressor compressor = null;
-	public Hood hood = null;
 
 	private SuperSystem() {
 
-		drive = new Drivetrain(Ports.Drivetrain.DRIVE_LEFT_A_PORT, 
-							   Ports.Drivetrain.DRIVE_LEFT_B_PORT,
-							   Ports.Drivetrain.DRIVE_RIGHT_A_PORT, 
-							   Ports.Drivetrain.DRIVE_RIGHT_B_PORT);
+		drive = new Drivetrain(Ports.Drivetrain.DRIVE_LEFT_A_PORT, Ports.Drivetrain.DRIVE_LEFT_B_PORT,
+				Ports.Drivetrain.DRIVE_RIGHT_A_PORT, Ports.Drivetrain.DRIVE_RIGHT_B_PORT);
 
-		led = new LedStrips(Ports.Leds.LED_STRIP_1_PORT, 
-						    Ports.Leds.LED_STRIP_2_PORT, 
-						    Ports.Leds.LED_STRIP_3_PORT,
-						    Ports.Leds.LED_STRIP_4_PORT);
+		led = new LedStrips(Ports.Leds.LED_STRIP_1_PORT, Ports.Leds.LED_STRIP_2_PORT, Ports.Leds.LED_STRIP_3_PORT,
+				Ports.Leds.LED_STRIP_4_PORT);
 
-		intake = new Intake(Ports.Intake.INTAKE_MOTOR, 
-						    Ports.Intake.INTAKE_SOLENOID, 
-						    Ports.Intake.STAGE_SENSOR);
+		intake = new Intake(Ports.Intake.INTAKE_MOTOR, Ports.Intake.INTAKE_SOLENOID, Ports.Intake.STAGE_SENSOR);
 
 		// Shoot? Yes, shoot.
-		shoot = new Shooter(Ports.Shooter.SHOOTER_MOTOR_A, 
-						    Ports.Shooter.SHOOTER_MOTOR_B);
+		shoot = new Shooter(Ports.Shooter.SHOOTER_MOTOR_A, Ports.Shooter.SHOOTER_MOTOR_B, Ports.Shooter.HOOD_SOLENOID);
 
-		hood = new Hood(Ports.Hood.SHOOTER_HOOD_SOLENOID);
 		compressor = new Compressor(Ports.Pneumatics.PCM_CAN_ID);
 		compressor.setClosedLoopControl(true);
 		compressor.start();
@@ -51,83 +42,87 @@ public class SuperSystem {
 		}
 		return instance;
 	}
-	
+
 	public void drive(double leftIn, double rightIn) {
+
+		double throttle = (leftIn + rightIn) / 2.0;
+		double turning = (leftIn - rightIn) / 2.0;
+
+		turning = ((turning * Math.abs(turning)) + turning) / 2.0;
+
 		drive.tankDrive(leftIn, rightIn);
 	}
-	
+
 	boolean shooting = false;
 
 	boolean atSpeed = false;
-	
+
 	boolean intakePos = false;
-	
+
 	boolean hoodPos = false;
-	
+
 	PulseTriggerBoolean intakeToggle = new PulseTriggerBoolean();
-	
-	public void magicshot(boolean toggleIntakePos, boolean wantIntake, boolean wantLowGoal, boolean wantHighGoal,boolean toggleHoodPos) {
-		
-		
-		
+
+	public void magicshot(boolean toggleIntakePos, boolean wantIntake, boolean wantLowGoal, boolean wantHighGoal) {
+
 		double intakeOut = 0.0;
 		double shooterOut = 0.0;
-		
-		
-		if(wantLowGoal) {
+
+		if (wantLowGoal) {
 			intakeOut = Constants.Intake.INTAKE_OUT;
 			shooting = false;
-		} else if(wantHighGoal) {
+		} else if (wantHighGoal) {
 			shooterOut = Constants.Shooter.SHOOTING_VOLTAGE;
 
-			atSpeed = shoot.atSpeed();	
-			if(atSpeed) {
+			atSpeed = shoot.atSpeed();
+			if (atSpeed) {
 				shooting = true;
 			}
-			
+
 			intakeOut = wantIntake ? Constants.Intake.INTAKE_IN : 0.0;
 		} else {
 			intakeOut = wantIntake ? Constants.Intake.INTAKE_IN : 0.0;
-			
-			if(intake.getBallStaged()) {
-				if(intakeOut > 0.0) intakeOut = 0;
+
+			if (intake.getBallStaged()) {
+				if (intakeOut > 0.0)
+					intakeOut = 0;
 			}
-			
+
 			shooting = false;
 		}
 		shooting = false;
-		
+
 		intakeToggle.set(toggleIntakePos);
-		
-	
-		if(intakeToggle.get()) {
+
+		if (intakeToggle.get()) {
 			intakePos = !intakePos;
 		}
-		
-		magicshotRaw(intakePos, shooterOut, intakeOut, hoodPos);
-		
+
 		hoodPos = wantHighGoal;
+
+		magicshotRaw(intakePos, shooterOut, intakeOut, hoodPos);
+
 	}
-	
-	public void magicshotRaw(boolean intakeState, double shooterSpeed, double intakeSpeed, boolean hoodState ) {
+
+	public void magicshotRaw(boolean intakeState, double shooterSpeed, double intakeSpeed, boolean hoodState) {
 		intake.setIntake(intakeState);
 		shoot.runShooter(shooterSpeed);
 		intake.runIntake(intakeSpeed);
 		led.setB(intake.getBallStaged());
 		led.setA(atSpeed);
-		hood.setHood(hoodState);
+		shoot.setHood(hoodState);
 	}
-	
+
 	public void updateSmartDashboard() {
 		SmartDashboard.putNumber("ShooterCurrent", shoot.getCurrent());
 		SmartDashboard.putBoolean("AtSpeed", atSpeed);
 		SmartDashboard.putBoolean("Shooting", shooting);
-//		
-	//	SmartDashboard.putBoolean("extBall", intake.getBallEntered());
-//		SmartDashboard.putBoolean("intBall", intake.getBallStaged());
+		//
+		// SmartDashboard.putBoolean("extBall", intake.getBallEntered());
+		// SmartDashboard.putBoolean("intBall", intake.getBallStaged());
 		SmartDashboard.putNumber("DriveTotalCurrent", drive.getTotalCurrent());
 	}
-	
+
 	public void poke() {
 		intake.update();
 		shoot.update();

@@ -24,69 +24,74 @@ public class Robot extends IterativeRobot {
 	Joystick operator = new Joystick(Ports.Controls.OPERATOR_PORT);
 
 	SuperSystem bot = SuperSystem.getInstance();
-	
+
 	SendableChooser autonChooser = new SendableChooser();
 	private CommandGroup currAuton = null;
 
 	public void robotInit() {
 		autonChooser = new SendableChooser();
-      //autonChooser.addDefault("Default Auton", new DefaultAuton());
+		// autonChooser.addDefault("Default Auton", new DefaultAuton());
 		autonChooser.addDefault("Do Nothing", new testAuton());
 		autonChooser.addObject("Drive Straight", new DriveStraight());
 		autonChooser.addObject("Drive + Intake", new DriveIntake());
 		autonChooser.addObject("Shovel of Fries", new ShovelOfFries());
 		autonChooser.addObject("Through the low bar and back", new LowBarBack());
 		autonChooser.addObject("Through the low bar into low goal", new LowBarLowGoal());
-		
+
 		SmartDashboard.putData("Autonomous mode chooser", autonChooser);
-		
+
 		CameraServer.getInstance().setQuality(50);
 		CameraServer.getInstance().startAutomaticCapture("cam0");
-		
+
 	}
-	
-	
-	
-	public void autonomousInit(){
-		
-		if(currAuton != null){
+
+	public void disabledInit() {
+
+	}
+
+	public void disabledPeriodic() {
+
+		currAuton = (CommandGroup) autonChooser.getSelected();
+		SmartDashboard.putString("Currently Selected Auton", currAuton.toString());
+	}
+
+	public void autonomousInit() {
+
+		if (currAuton != null) {
 			System.out.println("[STATUS] Auton was running at this time. Cancelling...");
 			currAuton.cancel();
 			currAuton = null;
 		}
-		
-		
-		currAuton = (CommandGroup) autonChooser.getSelected();
+
 		Scheduler.getInstance().add(currAuton);
 		Scheduler.getInstance().enable();
 	}
-	
-	public void autonomousPeriodic(){
+
+	public void autonomousPeriodic() {
 		Scheduler.getInstance().run();
 	}
-	
-	public void teleopInit(){
-	
-		if(currAuton != null){
+
+	public void teleopInit() {
+
+		if (currAuton != null) {
 			System.out.println("[STATUS] Auton was running at this time. Cancelling...");
 			currAuton.cancel();
 			currAuton = null;
 		}
-		
+
 		Scheduler.getInstance().disable();
 	}
-	
-	public void teleopPeriodic() {		
+
+	public void teleopPeriodic() {
 		bot.poke();
 
 		bot.drive(driverL.getRawAxis(1), driverR.getRawAxis(1));
 
 		bot.magicshot(operator.getRawButton(6), operator.getRawButton(2), operator.getRawButton(7),
 				operator.getRawButton(8));
-		
+
 		bot.updateSmartDashboard();
 
 	}
-	
-	
+
 }

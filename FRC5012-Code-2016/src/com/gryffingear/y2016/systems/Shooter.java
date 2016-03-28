@@ -4,16 +4,20 @@ import com.gryffingear.y2016.config.Constants;
 import com.gryffingear.y2016.utilities.Debouncer;
 
 import edu.wpi.first.wpilibj.CANTalon;
+import edu.wpi.first.wpilibj.Solenoid;
 
 public class Shooter {
 
 	private CANTalon shooterMotorA = null;
 	private CANTalon shooterMotorB = null;
 
-	public Shooter(int sma, int smb) {
+	private Solenoid hood = null;
+
+	public Shooter(int sma, int smb, int hoodSol) {
 
 		shooterMotorA = configureTalon(new CANTalon(sma));
 		shooterMotorB = configureTalon(new CANTalon(smb));
+		hood = new Solenoid(hoodSol);
 	}
 
 	private CANTalon configureTalon(CANTalon in) {
@@ -41,14 +45,19 @@ public class Shooter {
 	Debouncer currentFilter = new Debouncer(1.00);
 
 	private boolean m_atSpeed = false;
+
 	public boolean atSpeed() {
 		return m_atSpeed;
 
 	}
-	
+
 	public void update() {
 		m_atSpeed = (Math.abs(shooterMotorA.get()) > 0.1)
 				&& currentFilter.update(getCurrent() < Constants.Shooter.AT_SPEED_CURRENT_THRESHOLD);
+	}
+
+	public void setHood(boolean state) {
+		hood.set(state);
 	}
 
 }

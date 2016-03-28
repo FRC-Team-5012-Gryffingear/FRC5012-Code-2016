@@ -13,7 +13,7 @@ public class Constants {
 	public static class Intake {
 		public static final double RAMP_RATE = 96.0;
 		public static final double BALL_SENSOR_THRESHOLD = 2.5;
-		
+
 		public static final double INTAKE_IN = 1.0;
 		public static final double INTAKE_OUT = -1.0;
 
@@ -22,13 +22,12 @@ public class Constants {
 	public static class Shooter {
 		public static final double RAMP_RATE = 96.0;
 		public static final double SHOOTING_VOLTAGE = 1.0;
-		public static final double IDLE_VOLTAGE = 0.4; 
+		public static final double IDLE_VOLTAGE = 0.4;
 		public static final double AT_SPEED_CURRENT_THRESHOLD = 10.0;
-		
+
 	}
 
 	public static class Leds {
-
 
 	}
 

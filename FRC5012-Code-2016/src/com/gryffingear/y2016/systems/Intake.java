@@ -13,14 +13,13 @@ public class Intake {
 	private CANTalon intakeMotor = null;
 	private Solenoid intakeSolenoid = null;
 	private AnalogInput StageSensor = null;
-	
 
 	public Intake(int im, int is, int ss) {
 
 		intakeMotor = configureTalon(new CANTalon(im));
 		intakeSolenoid = new Solenoid(is);
 		StageSensor = new AnalogInput(ss);
-		
+
 	}
 
 	private CANTalon configureTalon(CANTalon in) {
@@ -47,22 +46,16 @@ public class Intake {
 		return StageSensor.getVoltage();
 	}
 
-	
-
-	
 	private Debouncer stagedFilter = new Debouncer(0.075);
-	
-	
+
 	private boolean m_ballStaged = false;
-	
-	
 
 	public boolean getBallStaged() {
 		return m_ballStaged;
 	}
-	
+
 	public void update() {
 		m_ballStaged = (getBump() < Constants.Intake.BALL_SENSOR_THRESHOLD);
-		
+
 	}
 }

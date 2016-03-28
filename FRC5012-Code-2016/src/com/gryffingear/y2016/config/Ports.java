@@ -22,13 +22,14 @@ public class Ports {
 		public static int INTAKE_MOTOR = 6;
 		public static int INTAKE_SOLENOID = 5;
 		public static int STAGE_SENSOR = 0;
-		
+
 	}
 
 	public static class Shooter {
 
 		public static int SHOOTER_MOTOR_A = 7;
 		public static int SHOOTER_MOTOR_B = 8;
+		public static int HOOD_SOLENOID = 6;
 	}
 
 	public static class Leds {

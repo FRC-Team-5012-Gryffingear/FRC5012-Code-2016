@@ -5,19 +5,19 @@ import com.gryffingear.y2016.systems.SuperSystem;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class IntakeShooterCommand extends Command {
-	
+
 	boolean state = false;
 	double intakeSpeed = 0.0;
 	double shooterSpeed = 0.0;
-	
+
 	public IntakeShooterCommand(boolean state, double intakeSpeed, double shooterSpeed) {
 		this.state = state;
 		this.intakeSpeed = intakeSpeed;
 		this.shooterSpeed = shooterSpeed;
 	}
-	
+
 	protected void initialize() {
-		SuperSystem.getInstance().magicshotRaw(state, shooterSpeed, intakeSpeed);
+		SuperSystem.getInstance().magicshotRaw(state, shooterSpeed, intakeSpeed, Math.abs(shooterSpeed) > 0.1);
 	}
 
 	protected boolean isFinished() {
@@ -36,6 +36,5 @@ public class IntakeShooterCommand extends Command {
 	protected void interrupted() {
 
 	}
-
 
 }
