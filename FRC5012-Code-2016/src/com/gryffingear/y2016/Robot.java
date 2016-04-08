@@ -31,8 +31,8 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		autonChooser = new SendableChooser();
 		// autonChooser.addDefault("Default Auton", new DefaultAuton());
-		autonChooser.addDefault("Do Nothing", new testAuton());
-		autonChooser.addObject("Drive Straight", new DriveStraight());
+		autonChooser.addDefault("Drive Straight", new DriveStraight());
+		autonChooser.addObject("Do Nothing", new testAuton());
 		autonChooser.addObject("Drive + Intake", new DriveIntake());
 		autonChooser.addObject("Shovel of Fries", new ShovelOfFries());
 		autonChooser.addObject("Through the low bar and back", new LowBarBack());
@@ -46,7 +46,11 @@ public class Robot extends IterativeRobot {
 	}
 
 	public void disabledInit() {
-
+		if (currAuton != null) {
+			System.out.println("[STATUS] Auton was running at this time. Cancelling...");
+			currAuton.cancel();
+			currAuton = null;
+		}
 	}
 
 	public void disabledPeriodic() {
@@ -57,11 +61,7 @@ public class Robot extends IterativeRobot {
 
 	public void autonomousInit() {
 
-		if (currAuton != null) {
-			System.out.println("[STATUS] Auton was running at this time. Cancelling...");
-			currAuton.cancel();
-			currAuton = null;
-		}
+
 
 		Scheduler.getInstance().add(currAuton);
 		Scheduler.getInstance().enable();
@@ -89,7 +89,7 @@ public class Robot extends IterativeRobot {
 
 		bot.magicshot(operator.getRawButton(6), operator.getRawButton(2), operator.getRawButton(7),
 				operator.getRawButton(8));
-
+		
 		bot.updateSmartDashboard();
 
 	}

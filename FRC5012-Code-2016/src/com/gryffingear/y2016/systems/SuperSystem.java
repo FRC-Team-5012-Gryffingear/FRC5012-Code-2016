@@ -14,7 +14,7 @@ public class SuperSystem {
 	public Drivetrain drive = null;
 	public Intake intake = null;
 	public Shooter shoot = null;
-	public Compressor compressor = null;
+	public Compressor compressor = null; 
 
 	private SuperSystem() {
 
@@ -25,7 +25,7 @@ public class SuperSystem {
 				Ports.Leds.LED_STRIP_4_PORT);
 
 		intake = new Intake(Ports.Intake.INTAKE_MOTOR, Ports.Intake.INTAKE_SOLENOID, Ports.Intake.STAGE_SENSOR);
-
+		
 		// Shoot? Yes, shoot.
 		shoot = new Shooter(Ports.Shooter.SHOOTER_MOTOR_A, Ports.Shooter.SHOOTER_MOTOR_B, Ports.Shooter.HOOD_SOLENOID);
 
@@ -50,7 +50,7 @@ public class SuperSystem {
 
 		turning = ((turning * Math.abs(turning)) + turning) / 2.0;
 
-		drive.tankDrive(leftIn, rightIn);
+		drive.tankDrive(throttle + turning, throttle - turning);
 	}
 
 	boolean shooting = false;
@@ -79,7 +79,7 @@ public class SuperSystem {
 				shooting = true;
 			}
 
-			intakeOut = shoot.atSpeed() ? Constants.Intake.INTAKE_IN : 0.0;
+			intakeOut = wantIntake ? Constants.Intake.INTAKE_IN : 0.0;
 		} else {
 			intakeOut = wantIntake ? Constants.Intake.INTAKE_IN : 0.0;
 
@@ -103,6 +103,10 @@ public class SuperSystem {
 		magicshotRaw(intakePos, shooterOut, intakeOut, hoodPos);
 
 	}
+	
+	//public void block(double blockerSpeed){
+	//	blocker.runBlocker(blockerSpeed);
+	//}
 
 	public void magicshotRaw(boolean intakeState, double shooterSpeed, double intakeSpeed, boolean hoodState) {
 		intake.setIntake(intakeState);
