@@ -22,7 +22,7 @@ public class Climber {
 
 	public Climber(int cs, int cm){
 		climberSolenoid = new Solenoid(cs);
-		climberMotor = new CANTalon(cm);
+		climberMotor = configureTalon(new CANTalon(cm)); //Remember to use configureTalon
 	}
 	
 	public void setClimber(boolean state) {
