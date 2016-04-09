@@ -31,13 +31,18 @@ public class Ports {
 		public static int SHOOTER_MOTOR_B = 8;
 		public static int HOOD_SOLENOID = 6;
 	}
+	
+	public static class Climber{
+		
+		public static int CLIMBER_SOLENOID = 4; 
+		public static int CLIMBER_MOTOR = 5;
+	}
 
 	public static class Leds {
 
 		public static int LED_STRIP_1_PORT = 0;
 		public static int LED_STRIP_2_PORT = 1;
 		public static int LED_STRIP_3_PORT = 3;
-		public static int LED_STRIP_4_PORT = 4;
 
 	}
 	

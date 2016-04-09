@@ -3,4 +3,5 @@
 <fullyQualifiedTypeName name="com.gryffingear.y2016.config.Ports"/>
 <fullyQualifiedTypeName name="com.gryffingear.y2016.config.Ports.Pneumatics"/>
 <fullyQualifiedTypeName name="com.gryffingear.y2016.config.Ports.Blocker"/>
+<fullyQualifiedTypeName name="com.gryffingear.y2016.config.Ports.Climber"/>
 </qualifiedTypeNameHistroy>

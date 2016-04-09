@@ -90,6 +90,10 @@ public class Robot extends IterativeRobot {
 		bot.magicshot(operator.getRawButton(6), operator.getRawButton(2), operator.getRawButton(7),
 				operator.getRawButton(8));
 		
+		bot.climb.setClimber(operator.getRawButton(10));
+		
+		bot.climb.runClimber(operator.getRawAxis(3));
+		
 		bot.updateSmartDashboard();
 
 	}

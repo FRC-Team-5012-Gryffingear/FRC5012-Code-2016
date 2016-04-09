@@ -11,12 +11,11 @@ public class LedStrips {
 	Solenoid C = null;
 	Solenoid D = null;
 
-	public LedStrips(int AChannel, int BChannel, int CChannel, int DChannel) {
+	public LedStrips(int AChannel, int BChannel, int CChannel) {
 
 		A = new Solenoid(Ports.Pneumatics.PCM_CAN_ID, AChannel);
 		B = new Solenoid(Ports.Pneumatics.PCM_CAN_ID, BChannel);
 		C = new Solenoid(Ports.Pneumatics.PCM_CAN_ID, CChannel);
-		D = new Solenoid(Ports.Pneumatics.PCM_CAN_ID, DChannel);
 
 	}
 

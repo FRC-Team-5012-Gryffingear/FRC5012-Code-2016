@@ -14,21 +14,24 @@ public class SuperSystem {
 	public Drivetrain drive = null;
 	public Intake intake = null;
 	public Shooter shoot = null;
-	public Compressor compressor = null; 
+	public Compressor compressor = null;
+	public Climber climb = null;
 
 	private SuperSystem() {
 
 		drive = new Drivetrain(Ports.Drivetrain.DRIVE_LEFT_A_PORT, Ports.Drivetrain.DRIVE_LEFT_B_PORT,
 				Ports.Drivetrain.DRIVE_RIGHT_A_PORT, Ports.Drivetrain.DRIVE_RIGHT_B_PORT);
 
-		led = new LedStrips(Ports.Leds.LED_STRIP_1_PORT, Ports.Leds.LED_STRIP_2_PORT, Ports.Leds.LED_STRIP_3_PORT,
-				Ports.Leds.LED_STRIP_4_PORT);
+		led = new LedStrips(Ports.Leds.LED_STRIP_1_PORT, Ports.Leds.LED_STRIP_2_PORT, Ports.Leds.LED_STRIP_3_PORT);
 
 		intake = new Intake(Ports.Intake.INTAKE_MOTOR, Ports.Intake.INTAKE_SOLENOID, Ports.Intake.STAGE_SENSOR);
 		
 		// Shoot? Yes, shoot.
 		shoot = new Shooter(Ports.Shooter.SHOOTER_MOTOR_A, Ports.Shooter.SHOOTER_MOTOR_B, Ports.Shooter.HOOD_SOLENOID);
 
+		climb = new Climber(Ports.Climber.CLIMBER_SOLENOID, Ports.Climber.CLIMBER_MOTOR);
+		
+		
 		compressor = new Compressor(Ports.Pneumatics.PCM_CAN_ID);
 		compressor.setClosedLoopControl(true);
 		compressor.start();
@@ -52,7 +55,7 @@ public class SuperSystem {
 
 		drive.tankDrive(throttle + turning, throttle - turning);
 	}
-
+	
 	boolean shooting = false;
 
 	boolean atSpeed = false;
@@ -116,6 +119,8 @@ public class SuperSystem {
 		led.setA(atSpeed);
 		shoot.setHood(hoodState);
 	}
+	
+	
 
 	public void updateSmartDashboard() {
 		SmartDashboard.putNumber("ShooterCurrent", shoot.getCurrent());
