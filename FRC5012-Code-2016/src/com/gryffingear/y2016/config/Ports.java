@@ -28,14 +28,14 @@ public class Ports {
 	public static class Shooter {
 
 		public static int SHOOTER_MOTOR_A = 7;
-		public static int SHOOTER_MOTOR_B = 8;
+		public static int SHOOTER_MOTOR_B = 5;
 		public static int HOOD_SOLENOID = 6;
 	}
 	
 	public static class Climber{
 		
 		public static int CLIMBER_SOLENOID = 4; 
-		public static int CLIMBER_MOTOR = 5;
+		public static int CLIMBER_MOTOR = 8;
 	}
 
 	public static class Leds {

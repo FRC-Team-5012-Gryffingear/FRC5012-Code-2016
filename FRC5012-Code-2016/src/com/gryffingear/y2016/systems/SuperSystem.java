@@ -113,9 +113,9 @@ public class SuperSystem {
 
 	public void magicshotRaw(boolean intakeState, double shooterSpeed, double intakeSpeed, boolean hoodState) {
 		intake.setIntake(intakeState);
-		shoot.runShooter(shooterSpeed);
+		//shoot.runShooter(shooterSpeed);
 		intake.runIntake(intakeSpeed);
-		led.setB(intake.getBallStaged());
+		//led.setB(intake.getBallStaged());
 		led.setA(atSpeed);
 		shoot.setHood(hoodState);
 	}
