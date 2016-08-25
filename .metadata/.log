@@ -1,4 +1,4 @@
-!SESSION 2016-04-06 15:13:40.700 -----------------------------------------------
+!SESSION 2016-08-04 17:45:16.800 -----------------------------------------------
 eclipse.buildId=4.5.1.M20150904-0015
 java.version=1.8.0_74
 java.vendor=Oracle Corporation
@@ -7,9 +7,9 @@ Framework arguments:  -product org.eclipse.epp.package.java.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
 
 This is a continuation of log file C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\.metadata\.bak_0.log
-Created Time: 2016-04-08 17:05:58.829
+Created Time: 2016-08-18 16:51:08.728
 
-!ENTRY org.eclipse.ui.navigator 4 2 2016-04-08 17:05:58.829
+!ENTRY org.eclipse.ui.navigator 4 2 2016-08-18 16:51:08.728
 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.navigator".
 !STACK 1
 org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
@@ -77,12 +77,12 @@ org.eclipse.core.runtime.CoreException: No property tester contributes a propert
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
-!SUBENTRY 1 org.eclipse.core.expressions 4 201 2016-04-08 17:05:58.829
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2016-08-18 16:51:08.728
 !MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
-!SUBENTRY 1 org.eclipse.core.expressions 4 201 2016-04-08 17:05:58.829
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2016-08-18 16:51:08.728
 !MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
 
-!ENTRY org.eclipse.ui.navigator 4 2 2016-04-08 17:05:58.829
+!ENTRY org.eclipse.ui.navigator 4 2 2016-08-18 16:51:08.728
 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.navigator".
 !STACK 1
 org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
@@ -150,219 +150,158 @@ org.eclipse.core.runtime.CoreException: No property tester contributes a propert
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
-!SUBENTRY 1 org.eclipse.core.expressions 4 201 2016-04-08 17:05:58.829
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2016-08-18 16:51:08.744
 !MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
-!SUBENTRY 1 org.eclipse.core.expressions 4 201 2016-04-08 17:05:58.829
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2016-08-18 16:51:08.744
 !MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
 
-!ENTRY org.eclipse.ui.navigator 4 2 2016-04-08 17:05:58.829
-!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.navigator".
-!STACK 1
-org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
-	at org.eclipse.core.internal.expressions.TypeExtensionManager.getProperty(TypeExtensionManager.java:127)
-	at org.eclipse.core.internal.expressions.TestExpression.evaluate(TestExpression.java:97)
-	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
-	at org.eclipse.core.internal.expressions.AndExpression.evaluate(AndExpression.java:31)
-	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
-	at org.eclipse.core.internal.expressions.IterateExpression.evaluate(IterateExpression.java:199)
-	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
-	at org.eclipse.core.internal.expressions.WithExpression.evaluate(WithExpression.java:75)
-	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
-	at org.eclipse.core.internal.expressions.EnablementExpression.evaluate(EnablementExpression.java:55)
-	at org.eclipse.ui.internal.navigator.NavigatorPlugin$Evaluator.run(NavigatorPlugin.java:247)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.ui.internal.navigator.NavigatorPlugin.safeEvaluate(NavigatorPlugin.java:262)
-	at org.eclipse.ui.internal.navigator.wizards.CommonWizardDescriptor.isEnabledFor(CommonWizardDescriptor.java:138)
-	at org.eclipse.ui.internal.navigator.wizards.CommonWizardDescriptorManager.getEnabledCommonWizardDescriptors(CommonWizardDescriptorManager.java:152)
-	at org.eclipse.ui.navigator.WizardActionGroup.setContext(WizardActionGroup.java:194)
-	at org.eclipse.ui.internal.navigator.resources.actions.NewActionProvider.fillContextMenu(NewActionProvider.java:109)
-	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:225)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:219)
-	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:174)
-	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:267)
-	at org.eclipse.ui.navigator.CommonNavigatorManager$3.menuAboutToShow(CommonNavigatorManager.java:283)
-	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:333)
-	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:466)
-	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:461)
-	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:493)
-	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:255)
-	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
-	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4362)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1113)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1137)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1118)
-	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:5037)
-	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4705)
-	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
-	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1633)
-	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2117)
-	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5050)
-	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
-	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:262)
-	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4221)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3763)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:654)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:598)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
-!SUBENTRY 1 org.eclipse.core.expressions 4 201 2016-04-08 17:05:58.829
-!MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
-!SUBENTRY 1 org.eclipse.core.expressions 4 201 2016-04-08 17:05:58.829
-!MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
-!SESSION 2016-04-08 17:11:59.951 -----------------------------------------------
-eclipse.buildId=4.5.1.M20150904-0015
-java.version=1.8.0_74
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 17:39:46.706
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC2339-Code-2016\build.xml
 
-!ENTRY org.eclipse.egit.ui 2 0 2016-04-08 17:12:09.157
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\gryffingear'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:12:14.305
-!MESSAGE Installing tools if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:12:14.305
-!MESSAGE Installedtools
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:12:14.305
-!MESSAGE Installing cpp if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:12:14.320
-!MESSAGE Installedcpp
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:12:14.320
-!MESSAGE Installing java if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:12:14.320
-!MESSAGE Installedjava
-!SESSION 2016-04-08 17:30:25.172 -----------------------------------------------
-eclipse.buildId=4.5.1.M20150904-0015
-java.version=1.8.0_74
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
-
-!ENTRY org.eclipse.egit.ui 2 0 2016-04-08 17:30:34.513
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\gryffingear'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:30:35.514
-!MESSAGE Installing tools if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:30:35.516
-!MESSAGE Installedtools
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:30:35.541
-!MESSAGE Installing cpp if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:30:35.640
-!MESSAGE Installedcpp
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:30:35.654
-!MESSAGE Installing java if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:30:35.655
-!MESSAGE Installedjava
-!SESSION 2016-04-08 17:32:29.218 -----------------------------------------------
-eclipse.buildId=4.5.1.M20150904-0015
-java.version=1.8.0_74
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
-
-!ENTRY org.eclipse.egit.ui 2 0 2016-04-08 17:32:38.557
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\gryffingear'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:32:39.376
-!MESSAGE Installing tools if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:32:39.378
-!MESSAGE Installedtools
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:32:39.391
-!MESSAGE Installing cpp if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:32:39.446
-!MESSAGE Installedcpp
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:32:39.451
-!MESSAGE Installing java if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:32:39.451
-!MESSAGE Installedjava
-!SESSION 2016-04-08 17:43:08.579 -----------------------------------------------
-eclipse.buildId=4.5.1.M20150904-0015
-java.version=1.8.0_74
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
-
-!ENTRY org.eclipse.egit.ui 2 0 2016-04-08 17:43:17.694
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\gryffingear'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:43:18.434
-!MESSAGE Installing tools if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:43:18.436
-!MESSAGE Installedtools
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:43:18.439
-!MESSAGE Installing cpp if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:43:18.513
-!MESSAGE Installedcpp
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:43:18.522
-!MESSAGE Installing java if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-08 17:43:18.523
-!MESSAGE Installedjava
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-09 16:14:04.324
-!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-09 16:14:04.324
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 17:39:46.708
 !MESSAGE Targets: deploy, Mode: run
 
-!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-04-09 16:14:05.284
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 17:48:09.231
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC2339-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 17:48:09.232
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 17:54:22.825
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC2339-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 17:54:22.827
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 17:55:04.562
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC2339-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 17:55:04.564
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 17:59:30.823
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC2339-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 17:59:30.828
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 18:01:45.666
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC2339-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 18:01:45.671
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 18:09:05.874
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC2339-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 18:09:05.875
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 18:09:55.812
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC2339-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 18:09:55.813
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 18:24:00.820
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC2339-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 18:24:00.822
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 18:43:41.886
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 18:43:41.889
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 18:44:22.882
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 18:44:22.885
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 18:55:27.656
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 18:55:27.660
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 19:00:42.920
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 19:00:42.924
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 19:04:53.328
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 19:04:53.331
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 19:05:44.438
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 19:05:44.440
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 19:06:20.093
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 19:06:20.095
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 19:24:21.312
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 19:24:21.314
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 19:26:14.733
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-18 19:26:14.735
+!MESSAGE Targets: deploy, Mode: run
+!SESSION 2016-08-24 18:17:41.596 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.8.0_74
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-08-24 18:17:58.292
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\gryffingear'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-08-24 18:18:00.507
+!MESSAGE Installing tools if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-08-24 18:18:00.507
+!MESSAGE Installedtools
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-08-24 18:18:00.507
+!MESSAGE Installing cpp if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-08-24 18:18:00.507
+!MESSAGE Installedcpp
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-08-24 18:18:00.632
+!MESSAGE Installing java if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-08-24 18:18:00.632
+!MESSAGE Installedjava
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-25 13:53:40.622
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-25 13:53:40.622
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-08-25 13:53:46.132
 !MESSAGE Cannot download published Gradle versions.
 !STACK 0
 java.net.UnknownHostException: services.gradle.org
@@ -468,724 +407,8 @@ java.net.UnknownHostException: services.gradle.org
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
 
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-09 16:28:06.087
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-25 14:11:17.359
 !MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
 
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-09 16:28:06.088
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-08-25 14:11:17.381
 !MESSAGE Targets: deploy, Mode: run
-!SESSION 2016-04-15 16:40:32.594 -----------------------------------------------
-eclipse.buildId=4.5.1.M20150904-0015
-java.version=1.8.0_74
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
-
-!ENTRY org.eclipse.egit.ui 2 0 2016-04-15 16:40:43.719
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\gryffingear'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-15 16:40:53.484
-!MESSAGE Installing tools if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-15 16:40:53.484
-!MESSAGE Installedtools
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-15 16:40:53.500
-!MESSAGE Installing cpp if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-15 16:40:53.515
-!MESSAGE Installedcpp
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-15 16:40:53.515
-!MESSAGE Installing java if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-15 16:40:53.547
-!MESSAGE Installedjava
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-15 16:41:28.600
-!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-15 16:41:28.600
-!MESSAGE Targets: deploy, Mode: run
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-15 16:47:45.861
-!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-15 16:47:45.861
-!MESSAGE Targets: deploy, Mode: run
-!SESSION 2016-04-27 14:18:36.132 -----------------------------------------------
-eclipse.buildId=4.5.1.M20150904-0015
-java.version=1.8.0_74
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
-
-!ENTRY org.eclipse.core.resources 2 10035 2016-04-27 14:18:40.718
-!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
-
-!ENTRY org.eclipse.egit.ui 2 0 2016-04-27 14:20:27.816
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\gryffingear'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-27 14:20:31.295
-!MESSAGE Installing tools if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-27 14:20:31.295
-!MESSAGE Installedtools
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-27 14:20:31.326
-!MESSAGE Installing cpp if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-27 14:20:31.326
-!MESSAGE Installedcpp
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-27 14:20:31.420
-!MESSAGE Installing java if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-27 14:20:31.420
-!MESSAGE Installedjava
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-27 15:56:32.695
-!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-27 15:56:32.696
-!MESSAGE Targets: deploy, Mode: run
-
-!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-04-27 15:56:39.361
-!MESSAGE Cannot download published Gradle versions.
-!STACK 0
-java.net.UnknownHostException: services.gradle.org
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
-	at java.net.PlainSocketImpl.connect(Unknown Source)
-	at java.net.SocksSocketImpl.connect(Unknown Source)
-	at java.net.Socket.connect(Unknown Source)
-	at sun.security.ssl.SSLSocketImpl.connect(Unknown Source)
-	at sun.security.ssl.BaseSSLSocketImpl.connect(Unknown Source)
-	at sun.net.NetworkClient.doConnect(Unknown Source)
-	at sun.net.www.http.HttpClient.openServer(Unknown Source)
-	at sun.net.www.http.HttpClient.openServer(Unknown Source)
-	at sun.net.www.protocol.https.HttpsClient.<init>(Unknown Source)
-	at sun.net.www.protocol.https.HttpsClient.New(Unknown Source)
-	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(Unknown Source)
-	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source)
-	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source)
-	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(Unknown Source)
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
-	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(Unknown Source)
-	at com.gradleware.tooling.toolingutils.distribution.PublishedGradleVersions.downloadVersionInformation(PublishedGradleVersions.java:167)
-	at com.gradleware.tooling.toolingutils.distribution.PublishedGradleVersions.create(PublishedGradleVersions.java:134)
-	at org.eclipse.buildship.core.util.gradle.PublishedGradleVersionsWrapper.create(PublishedGradleVersionsWrapper.java:40)
-	at org.eclipse.buildship.core.util.gradle.PublishedGradleVersionsWrapper.<init>(PublishedGradleVersionsWrapper.java:35)
-	at org.eclipse.buildship.core.CorePlugin.createPublishedGradleVersions(CorePlugin.java:166)
-	at org.eclipse.buildship.core.CorePlugin.registerServices(CorePlugin.java:139)
-	at org.eclipse.buildship.core.CorePlugin.start(CorePlugin.java:102)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:941)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:318)
-	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
-	at org.eclipse.osgi.container.Module.start(Module.java:439)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
-	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
-	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
-	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:398)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
-	at java.lang.ClassLoader.loadClass(Unknown Source)
-	at java.lang.Class.getDeclaredConstructors0(Native Method)
-	at java.lang.Class.privateGetDeclaredConstructors(Unknown Source)
-	at java.lang.Class.getConstructor0(Unknown Source)
-	at java.lang.Class.newInstance(Unknown Source)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:755)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:941)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:318)
-	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
-	at org.eclipse.osgi.container.Module.start(Module.java:439)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
-	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
-	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:402)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
-	at java.lang.ClassLoader.loadClass(Unknown Source)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:573)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.ui.internal.console.ConsolePageParticipantExtension.createDelegate(ConsolePageParticipantExtension.java:72)
-	at org.eclipse.ui.internal.console.ConsoleManager.getPageParticipants(ConsoleManager.java:455)
-	at org.eclipse.ui.internal.console.ConsoleView.doCreatePage(ConsoleView.java:317)
-	at org.eclipse.ui.part.PageBookView.createPage(PageBookView.java:422)
-	at org.eclipse.ui.part.PageBookView.partActivated(PageBookView.java:768)
-	at org.eclipse.ui.internal.console.ConsoleView$4.run(ConsoleView.java:398)
-	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
-	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
-	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4155)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3772)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:654)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:598)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-27 15:56:54.695
-!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-27 15:56:54.695
-!MESSAGE Targets: deploy, Mode: run
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-27 15:57:23.941
-!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-27 15:57:23.942
-!MESSAGE Targets: deploy, Mode: run
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-27 16:20:00.809
-!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-27 16:20:00.810
-!MESSAGE Targets: deploy, Mode: run
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-27 16:26:58.080
-!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-27 16:26:58.082
-!MESSAGE Targets: deploy, Mode: run
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-27 16:28:00.821
-!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-27 16:28:00.822
-!MESSAGE Targets: deploy, Mode: run
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-27 16:31:01.219
-!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-27 16:31:01.220
-!MESSAGE Targets: deploy, Mode: run
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-27 16:31:34.740
-!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-27 16:31:34.740
-!MESSAGE Targets: deploy, Mode: run
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-27 16:34:43.461
-!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-27 16:34:43.462
-!MESSAGE Targets: deploy, Mode: run
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-27 16:37:08.214
-!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-27 16:37:08.217
-!MESSAGE Targets: deploy, Mode: run
-
-!ENTRY org.eclipse.recommenders.rcp 2 15 2016-04-27 17:36:53.675
-!MESSAGE Failed to parse news feed
-!STACK 0
-java.net.UnknownHostException: www.codetrails.com
-	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
-	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
-	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
-	at java.net.InetAddress.getAllByName0(Unknown Source)
-	at java.net.InetAddress.getAllByName(Unknown Source)
-	at java.net.InetAddress.getAllByName(Unknown Source)
-	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
-	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:102)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
-	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
-	at org.eclipse.recommenders.internal.rcp.news.CheckForProjectNewsJob.getRSSFeed(CheckForProjectNewsJob.java:138)
-	at org.eclipse.recommenders.internal.rcp.news.CheckForProjectNewsJob.doRun(CheckForProjectNewsJob.java:89)
-	at org.eclipse.recommenders.internal.rcp.news.CheckForProjectNewsJob.run(CheckForProjectNewsJob.java:62)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-28 07:35:45.109
-!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-28 07:35:45.110
-!MESSAGE Targets: deploy, Mode: run
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-28 07:36:50.843
-!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-28 07:36:50.844
-!MESSAGE Targets: deploy, Mode: run
-!SESSION 2016-04-28 11:13:51.812 -----------------------------------------------
-eclipse.buildId=4.5.1.M20150904-0015
-java.version=1.8.0_74
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
-
-!ENTRY org.eclipse.egit.ui 2 0 2016-04-28 11:14:01.277
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\gryffingear'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-28 11:14:04.216
-!MESSAGE Installing tools if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-28 11:14:04.217
-!MESSAGE Installedtools
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-28 11:14:04.219
-!MESSAGE Installing cpp if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-28 11:14:04.256
-!MESSAGE Installedcpp
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-28 11:14:04.258
-!MESSAGE Installing java if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-28 11:14:04.258
-!MESSAGE Installedjava
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-28 11:15:15.615
-!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-28 11:15:15.616
-!MESSAGE Targets: deploy, Mode: run
-
-!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-04-28 11:15:16.399
-!MESSAGE Cannot download published Gradle versions.
-!STACK 0
-java.net.UnknownHostException: services.gradle.org
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
-	at java.net.PlainSocketImpl.connect(Unknown Source)
-	at java.net.SocksSocketImpl.connect(Unknown Source)
-	at java.net.Socket.connect(Unknown Source)
-	at sun.security.ssl.SSLSocketImpl.connect(Unknown Source)
-	at sun.security.ssl.BaseSSLSocketImpl.connect(Unknown Source)
-	at sun.net.NetworkClient.doConnect(Unknown Source)
-	at sun.net.www.http.HttpClient.openServer(Unknown Source)
-	at sun.net.www.http.HttpClient.openServer(Unknown Source)
-	at sun.net.www.protocol.https.HttpsClient.<init>(Unknown Source)
-	at sun.net.www.protocol.https.HttpsClient.New(Unknown Source)
-	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(Unknown Source)
-	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source)
-	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source)
-	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(Unknown Source)
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
-	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(Unknown Source)
-	at com.gradleware.tooling.toolingutils.distribution.PublishedGradleVersions.downloadVersionInformation(PublishedGradleVersions.java:167)
-	at com.gradleware.tooling.toolingutils.distribution.PublishedGradleVersions.create(PublishedGradleVersions.java:134)
-	at org.eclipse.buildship.core.util.gradle.PublishedGradleVersionsWrapper.create(PublishedGradleVersionsWrapper.java:40)
-	at org.eclipse.buildship.core.util.gradle.PublishedGradleVersionsWrapper.<init>(PublishedGradleVersionsWrapper.java:35)
-	at org.eclipse.buildship.core.CorePlugin.createPublishedGradleVersions(CorePlugin.java:166)
-	at org.eclipse.buildship.core.CorePlugin.registerServices(CorePlugin.java:139)
-	at org.eclipse.buildship.core.CorePlugin.start(CorePlugin.java:102)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:941)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:318)
-	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
-	at org.eclipse.osgi.container.Module.start(Module.java:439)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
-	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
-	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
-	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:398)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
-	at java.lang.ClassLoader.loadClass(Unknown Source)
-	at java.lang.Class.getDeclaredConstructors0(Native Method)
-	at java.lang.Class.privateGetDeclaredConstructors(Unknown Source)
-	at java.lang.Class.getConstructor0(Unknown Source)
-	at java.lang.Class.newInstance(Unknown Source)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:755)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:941)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:318)
-	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
-	at org.eclipse.osgi.container.Module.start(Module.java:439)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
-	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
-	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:402)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
-	at java.lang.ClassLoader.loadClass(Unknown Source)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:573)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.ui.internal.console.ConsolePageParticipantExtension.createDelegate(ConsolePageParticipantExtension.java:72)
-	at org.eclipse.ui.internal.console.ConsoleManager.getPageParticipants(ConsoleManager.java:455)
-	at org.eclipse.ui.internal.console.ConsoleView.doCreatePage(ConsoleView.java:317)
-	at org.eclipse.ui.part.PageBookView.createPage(PageBookView.java:422)
-	at org.eclipse.ui.part.PageBookView.partActivated(PageBookView.java:768)
-	at org.eclipse.ui.internal.console.ConsoleView$4.run(ConsoleView.java:398)
-	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
-	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
-	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4155)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3772)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:654)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:598)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
-!SESSION 2016-04-28 12:54:13.128 -----------------------------------------------
-eclipse.buildId=4.5.1.M20150904-0015
-java.version=1.8.0_74
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
-
-!ENTRY org.eclipse.egit.ui 2 0 2016-04-28 12:54:23.277
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\gryffingear'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-28 12:54:26.200
-!MESSAGE Installing tools if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-28 12:54:26.200
-!MESSAGE Installedtools
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-28 12:54:26.202
-!MESSAGE Installing cpp if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-28 12:54:26.246
-!MESSAGE Installedcpp
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-28 12:54:26.247
-!MESSAGE Installing java if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-28 12:54:26.248
-!MESSAGE Installedjava
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-28 12:57:20.661
-!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-28 12:57:20.662
-!MESSAGE Targets: deploy, Mode: run
-
-!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-04-28 12:57:21.356
-!MESSAGE Cannot download published Gradle versions.
-!STACK 0
-java.net.UnknownHostException: services.gradle.org
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
-	at java.net.PlainSocketImpl.connect(Unknown Source)
-	at java.net.SocksSocketImpl.connect(Unknown Source)
-	at java.net.Socket.connect(Unknown Source)
-	at sun.security.ssl.SSLSocketImpl.connect(Unknown Source)
-	at sun.security.ssl.BaseSSLSocketImpl.connect(Unknown Source)
-	at sun.net.NetworkClient.doConnect(Unknown Source)
-	at sun.net.www.http.HttpClient.openServer(Unknown Source)
-	at sun.net.www.http.HttpClient.openServer(Unknown Source)
-	at sun.net.www.protocol.https.HttpsClient.<init>(Unknown Source)
-	at sun.net.www.protocol.https.HttpsClient.New(Unknown Source)
-	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(Unknown Source)
-	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source)
-	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source)
-	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(Unknown Source)
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
-	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(Unknown Source)
-	at com.gradleware.tooling.toolingutils.distribution.PublishedGradleVersions.downloadVersionInformation(PublishedGradleVersions.java:167)
-	at com.gradleware.tooling.toolingutils.distribution.PublishedGradleVersions.create(PublishedGradleVersions.java:134)
-	at org.eclipse.buildship.core.util.gradle.PublishedGradleVersionsWrapper.create(PublishedGradleVersionsWrapper.java:40)
-	at org.eclipse.buildship.core.util.gradle.PublishedGradleVersionsWrapper.<init>(PublishedGradleVersionsWrapper.java:35)
-	at org.eclipse.buildship.core.CorePlugin.createPublishedGradleVersions(CorePlugin.java:166)
-	at org.eclipse.buildship.core.CorePlugin.registerServices(CorePlugin.java:139)
-	at org.eclipse.buildship.core.CorePlugin.start(CorePlugin.java:102)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:941)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:318)
-	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
-	at org.eclipse.osgi.container.Module.start(Module.java:439)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
-	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
-	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
-	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:398)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
-	at java.lang.ClassLoader.loadClass(Unknown Source)
-	at java.lang.Class.getDeclaredConstructors0(Native Method)
-	at java.lang.Class.privateGetDeclaredConstructors(Unknown Source)
-	at java.lang.Class.getConstructor0(Unknown Source)
-	at java.lang.Class.newInstance(Unknown Source)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:755)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:941)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:318)
-	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
-	at org.eclipse.osgi.container.Module.start(Module.java:439)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
-	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
-	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:402)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
-	at java.lang.ClassLoader.loadClass(Unknown Source)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:573)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.ui.internal.console.ConsolePageParticipantExtension.createDelegate(ConsolePageParticipantExtension.java:72)
-	at org.eclipse.ui.internal.console.ConsoleManager.getPageParticipants(ConsoleManager.java:455)
-	at org.eclipse.ui.internal.console.ConsoleView.doCreatePage(ConsoleView.java:317)
-	at org.eclipse.ui.part.PageBookView.createPage(PageBookView.java:422)
-	at org.eclipse.ui.part.PageBookView.partActivated(PageBookView.java:768)
-	at org.eclipse.ui.internal.console.ConsoleView$4.run(ConsoleView.java:398)
-	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
-	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
-	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4155)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3772)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:654)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:598)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
-!SESSION 2016-04-29 06:06:14.810 -----------------------------------------------
-eclipse.buildId=4.5.1.M20150904-0015
-java.version=1.8.0_74
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
-
-!ENTRY org.eclipse.egit.ui 2 0 2016-04-29 06:06:24.080
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\gryffingear'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-29 06:06:24.911
-!MESSAGE Installing tools if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-29 06:06:24.912
-!MESSAGE Installedtools
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-29 06:06:24.913
-!MESSAGE Installing cpp if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-29 06:06:24.938
-!MESSAGE Installedcpp
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-29 06:06:24.940
-!MESSAGE Installing java if necessary
-
-!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-04-29 06:06:24.946
-!MESSAGE Installedjava
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-29 06:07:09.543
-!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
-
-!ENTRY WPILib_Java_Robot_Development 1 0 2016-04-29 06:07:09.545
-!MESSAGE Targets: deploy, Mode: run
-
-!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-04-29 06:07:10.667
-!MESSAGE Cannot download published Gradle versions.
-!STACK 0
-java.net.UnknownHostException: services.gradle.org
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
-	at java.net.PlainSocketImpl.connect(Unknown Source)
-	at java.net.SocksSocketImpl.connect(Unknown Source)
-	at java.net.Socket.connect(Unknown Source)
-	at sun.security.ssl.SSLSocketImpl.connect(Unknown Source)
-	at sun.security.ssl.BaseSSLSocketImpl.connect(Unknown Source)
-	at sun.net.NetworkClient.doConnect(Unknown Source)
-	at sun.net.www.http.HttpClient.openServer(Unknown Source)
-	at sun.net.www.http.HttpClient.openServer(Unknown Source)
-	at sun.net.www.protocol.https.HttpsClient.<init>(Unknown Source)
-	at sun.net.www.protocol.https.HttpsClient.New(Unknown Source)
-	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(Unknown Source)
-	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source)
-	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source)
-	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(Unknown Source)
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
-	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(Unknown Source)
-	at com.gradleware.tooling.toolingutils.distribution.PublishedGradleVersions.downloadVersionInformation(PublishedGradleVersions.java:167)
-	at com.gradleware.tooling.toolingutils.distribution.PublishedGradleVersions.create(PublishedGradleVersions.java:134)
-	at org.eclipse.buildship.core.util.gradle.PublishedGradleVersionsWrapper.create(PublishedGradleVersionsWrapper.java:40)
-	at org.eclipse.buildship.core.util.gradle.PublishedGradleVersionsWrapper.<init>(PublishedGradleVersionsWrapper.java:35)
-	at org.eclipse.buildship.core.CorePlugin.createPublishedGradleVersions(CorePlugin.java:166)
-	at org.eclipse.buildship.core.CorePlugin.registerServices(CorePlugin.java:139)
-	at org.eclipse.buildship.core.CorePlugin.start(CorePlugin.java:102)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:941)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:318)
-	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
-	at org.eclipse.osgi.container.Module.start(Module.java:439)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
-	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
-	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
-	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:398)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
-	at java.lang.ClassLoader.loadClass(Unknown Source)
-	at java.lang.Class.getDeclaredConstructors0(Native Method)
-	at java.lang.Class.privateGetDeclaredConstructors(Unknown Source)
-	at java.lang.Class.getConstructor0(Unknown Source)
-	at java.lang.Class.newInstance(Unknown Source)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:755)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:941)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:318)
-	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
-	at org.eclipse.osgi.container.Module.start(Module.java:439)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
-	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
-	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:402)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
-	at java.lang.ClassLoader.loadClass(Unknown Source)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:573)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.ui.internal.console.ConsolePageParticipantExtension.createDelegate(ConsolePageParticipantExtension.java:72)
-	at org.eclipse.ui.internal.console.ConsoleManager.getPageParticipants(ConsoleManager.java:455)
-	at org.eclipse.ui.internal.console.ConsoleView.doCreatePage(ConsoleView.java:317)
-	at org.eclipse.ui.part.PageBookView.createPage(PageBookView.java:422)
-	at org.eclipse.ui.part.PageBookView.partActivated(PageBookView.java:768)
-	at org.eclipse.ui.internal.console.ConsoleView$4.run(ConsoleView.java:398)
-	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
-	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
-	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4155)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3772)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:654)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:598)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)

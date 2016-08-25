@@ -16,6 +16,7 @@ public class SuperSystem {
 	public Shooter shoot = null;
 	public Compressor compressor = null;
 	public Climber climb = null;
+	public Stager stage = null;
 
 	private SuperSystem() {
 
@@ -30,6 +31,8 @@ public class SuperSystem {
 		shoot = new Shooter(Ports.Shooter.SHOOTER_MOTOR_A, Ports.Shooter.SHOOTER_MOTOR_B, Ports.Shooter.HOOD_SOLENOID);
 
 		climb = new Climber(Ports.Climber.CLIMBER_SOLENOID, Ports.Climber.CLIMBER_MOTOR);
+		
+		stage = new Stager (Ports.Stager.STAGER_MOTOR);
 		
 		
 		compressor = new Compressor(Ports.Pneumatics.PCM_CAN_ID);

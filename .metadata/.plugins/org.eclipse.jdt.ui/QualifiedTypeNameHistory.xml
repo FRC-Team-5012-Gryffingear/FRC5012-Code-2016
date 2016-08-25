@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.gryffingear.y2016.config.Ports"/>
 <fullyQualifiedTypeName name="com.gryffingear.y2016.config.Ports.Pneumatics"/>
 <fullyQualifiedTypeName name="com.gryffingear.y2016.config.Ports.Blocker"/>
 <fullyQualifiedTypeName name="com.gryffingear.y2016.config.Ports.Climber"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team5012.robot.Ports"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team5012.robot.Ports.Testbed"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team5012.robot.Ports.Shooter"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team5012.robot.Ports.Stager"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team5012.robot.Ports.Controls"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team5012.robot.SuperSystem"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team5012.robot.Ports.Intake"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.CANTalon"/>
+<fullyQualifiedTypeName name="com.gryffingear.y2016.config.Ports"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Solenoid"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Talon"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team2339.robot.Drivetrain"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team2339.robot.Intake"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team2339.robot.Ports"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team2339.robot.Shooter"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team2339.robot.Ports.Drivetrain"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team2339.robot.Ports.Intake"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team2339.robot.Ports.Shooter"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team2339.robot.Ports.Pneumatics"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team2339.robot.Ports.Controls"/>
 </qualifiedTypeNameHistroy>

@@ -31,8 +31,9 @@ public class Shooter {
 	}
 
 	public void runShooter(double shooterv) {
-		shooterMotorA.set(-shooterv);
-		shooterMotorB.set(shooterv);
+		shooterMotorA.set(shooterv);
+		shooterMotorB.set(
+				-shooterv);
 	}
 
 	public double getCurrent() {

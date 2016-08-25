@@ -19,7 +19,7 @@ public class Ports {
 
 	public static class Intake {
 
-		public static int INTAKE_MOTOR = 6;
+		public static int INTAKE_MOTOR = 7;
 		public static int INTAKE_SOLENOID = 5;
 		public static int STAGE_SENSOR = 0;
 
@@ -27,7 +27,7 @@ public class Ports {
 
 	public static class Shooter {
 
-		public static int SHOOTER_MOTOR_A = 7;
+		public static int SHOOTER_MOTOR_A = 2;
 		public static int SHOOTER_MOTOR_B = 5;
 		public static int HOOD_SOLENOID = 6;
 	}
@@ -36,6 +36,9 @@ public class Ports {
 		
 		public static int CLIMBER_SOLENOID = 4; 
 		public static int CLIMBER_MOTOR = 8;
+	}
+	public static class Stager {
+		public static int STAGER_MOTOR = 8; 
 	}
 
 	public static class Leds {

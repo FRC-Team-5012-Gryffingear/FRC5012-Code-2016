@@ -16,7 +16,7 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
+     
 public class Robot extends IterativeRobot {
 
 	Joystick driverL = new Joystick(Ports.Controls.DRIVER_PORT_A);
@@ -87,15 +87,16 @@ public class Robot extends IterativeRobot {
 
 		bot.drive(driverL.getRawAxis(1), driverR.getRawAxis(1));
 
-		bot.magicshot(operator.getRawButton(6), operator.getRawButton(2), operator.getRawButton(7),
+		bot.magicshot(operator.getRawButton(6), operator.getRawButton(1), operator.getRawButton(7),
 				operator.getRawButton(10));
 		
 		bot.climb.setClimber(operator.getRawButton(8) && operator.getRawButton(3) );
 		
 		bot.led.setB(operator.getRawButton(3));
-		
-		
-		bot.shoot.runShooter((operator.getRawButton(4) ? 1.0 : operator.getRawButton(1) ? -1.0 : 0.0));
+		bot.intake.runIntake(operator.getRawAxis(3));
+		bot.intake.setIntake(operator.getRawButton(6));
+		bot.stage.runStager(operator.getRawAxis(1));		
+		bot.shoot.runShooter((operator.getRawButton(4) ? 1.0 : operator.getRawButton(8) ? 0.70 : 0.0));
 		
 		bot.updateSmartDashboard();
 
