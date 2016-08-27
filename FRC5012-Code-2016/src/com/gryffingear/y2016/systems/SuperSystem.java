@@ -2,6 +2,7 @@ package com.gryffingear.y2016.systems;
 
 import com.gryffingear.y2016.config.Constants;
 import com.gryffingear.y2016.config.Ports;
+import com.gryffingear.y2016.utilities.NegativeInertiaAccumulator;
 import com.gryffingear.y2016.utilities.PulseTriggerBoolean;
 
 import edu.wpi.first.wpilibj.Compressor;
@@ -49,12 +50,16 @@ public class SuperSystem {
 		return instance;
 	}
 
+	
+	private NegativeInertiaAccumulator turnNia = new NegativeInertiaAccumulator(2.0);	
 	public void drive(double leftIn, double rightIn) {
 
 		double throttle = (leftIn + rightIn) / 2.0;
 		double turning = (leftIn - rightIn) / 2.0;
+		
+		turning += turnNia.update(turning);
 
-		turning = ((turning * Math.abs(turning)) + turning) / 2.0;
+		//turning = ((turning * Math.abs(turning)) + turning) / 2.0;
 
 		drive.tankDrive(throttle + turning, throttle - turning);
 	}
