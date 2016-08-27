@@ -64,6 +64,70 @@ public class SuperSystem {
 		drive.tankDrive(throttle + turning, throttle - turning);
 	}
 	
+	
+	private double prevS = 0.0;
+	private double sInertia = 0.0, sDecay = 0.05;
+	public void operate(double intakeInput, boolean intakePos, double stagerInput, double shooterInput) {
+//		bot.led.setB(operator.getRawButton(3));
+//		bot.intake.runIntake(operator.getRawAxis(1) > 0.20 ? -1.0 : operator.getRawAxis(1) < -0.20 ? 1.0 : 0.0);
+//		bot.intake.setIntake(operator.getRawButton(6) || operator.getRawAxis(1) > 0.9);
+//		bot.stage.runStager(operator.getRawAxis(3) > 0.70 ? -1.0 : operator.getRawAxis(3) < -0.70 ? 1.0 : 0.0);		
+//		bot.shoot.runShooter((operator.getRawButton(4) ? 1.0 : operator.getRawButton(8) ? 0.70 : 0.0));
+//		
+		double iOut = 0.0;		// intake motor out
+		boolean ipOut = false;	// intake solenoid out
+		double stOut = 0.0;		// stager motor out
+		double sOut = 0.0;		// shooter motor out
+		
+		if(intakeInput > 0.20) {
+			iOut = -1.0;
+		} else if(intakeInput < -0.20) {
+			iOut = 1.0;
+		} else {
+			iOut = 0.0;
+		}
+		
+		ipOut = intakePos || intakeInput > 0.9;
+		
+		if(stagerInput > 0.20) {
+			stOut = -1.0;
+		} else if(stagerInput < -0.20) {
+			stOut = 1.0;
+		} else {
+			stOut = 0.0;
+		}
+		
+		
+		
+		// Shooter negative inertia on rise only, faster spinup times.
+		
+		if(shooterInput > prevS) {	// if shooter input is rising...
+			sInertia = 1.0;
+		}
+		
+		if(sInertia > sDecay) {
+			sInertia -= sDecay;
+		} else {
+			sInertia = 0.0;
+		}
+		
+		// Apply negative inertia
+		sOut = shooterInput + sInertia;
+		
+		// Constrain sOut to +-1.0
+		sOut = Math.min(-1.0, Math.max(1.0, sOut));
+		
+		
+		// Do output stuff.
+		
+		intake.runIntake(iOut);
+		intake.setIntake(ipOut);
+		stage.runStager(stOut);
+		shoot.runShooter(sOut);
+		
+		prevS = shooterInput;
+	}
+	
 	boolean shooting = false;
 
 	boolean atSpeed = false;
@@ -74,6 +138,8 @@ public class SuperSystem {
 
 	PulseTriggerBoolean intakeToggle = new PulseTriggerBoolean();
 
+
+	// DO NOT USE THIS ANYMORE. -JPG
 	public void magicshot(boolean toggleIntakePos, boolean wantIntake, boolean wantLowGoal, boolean wantHighGoal) {
 
 		double intakeOut = 0.0;
@@ -119,6 +185,7 @@ public class SuperSystem {
 	//	blocker.runBlocker(blockerSpeed);
 	//}
 
+	// DO NOT USE THIS ANYMORE. -JPG
 	public void magicshotRaw(boolean intakeState, double shooterSpeed, double intakeSpeed, boolean hoodState) {
 		intake.setIntake(intakeState);
 		//shoot.runShooter(shooterSpeed);

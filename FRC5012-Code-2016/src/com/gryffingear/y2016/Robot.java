@@ -61,8 +61,6 @@ public class Robot extends IterativeRobot {
 
 	public void autonomousInit() {
 
-
-
 		Scheduler.getInstance().add(currAuton);
 		Scheduler.getInstance().enable();
 	}
@@ -89,14 +87,21 @@ public class Robot extends IterativeRobot {
 //
 //		bot.magicshot(operator.getRawButton(6), operator.getRawButton(1), operator.getRawButton(7),
 //				operator.getRawButton(10));
-		
-		bot.climb.setClimber(operator.getRawButton(8) && operator.getRawButton(3) );
-		
-		bot.led.setB(operator.getRawButton(3));
-		bot.intake.runIntake(operator.getRawAxis(1) > 0.20 ? -1.0 : operator.getRawAxis(1) < -0.20 ? 1.0 : 0.0);
-		bot.intake.setIntake(operator.getRawButton(6) || operator.getRawAxis(1) > 0.9);
-		bot.stage.runStager(operator.getRawAxis(3) > 0.70 ? -1.0 : operator.getRawAxis(3) < -0.70 ? 1.0 : 0.0);		
-		bot.shoot.runShooter((operator.getRawButton(4) ? 1.0 : operator.getRawButton(8) ? 0.70 : 0.0));
+//		
+//		bot.climb.setClimber(operator.getRawButton(8) && operator.getRawButton(3) );
+//		
+//		bot.led.setB(operator.getRawButton(3));
+//		bot.intake.runIntake(operator.getRawAxis(1) > 0.20 ? -1.0 : operator.getRawAxis(1) < -0.20 ? 1.0 : 0.0);
+//		bot.intake.setIntake(operator.getRawButton(6) || operator.getRawAxis(1) > 0.9);
+//		bot.stage.runStager(operator.getRawAxis(3) > 0.70 ? -1.0 : operator.getRawAxis(3) < -0.70 ? 1.0 : 0.0);		
+//		bot.shoot.runShooter((operator.getRawButton(4) ? 1.0 : operator.getRawButton(8) ? 0.70 : 0.0));
+//		
+		bot.operate(operator.getRawAxis(1), 
+					operator.getRawButton(6), 
+					operator.getRawAxis(3), 
+					operator.getRawButton(7) && operator.getRawButton(8) ? 1.0 : 
+					operator.getRawButton(8) ? 0.70 : 
+					operator.getRawButton(7) ? 0.30 : 0.0);
 		
 		bot.updateSmartDashboard();
 
