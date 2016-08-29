@@ -24,4 +24,5 @@
 <fullyQualifiedTypeName name="org.usfirst.frc.team2339.robot.Ports.Shooter"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team2339.robot.Ports.Pneumatics"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team2339.robot.Ports.Controls"/>
+<fullyQualifiedTypeName name="com.gryffingear.y2016.utilities.NegativeInertiaAccumulator"/>
 </qualifiedTypeNameHistroy>

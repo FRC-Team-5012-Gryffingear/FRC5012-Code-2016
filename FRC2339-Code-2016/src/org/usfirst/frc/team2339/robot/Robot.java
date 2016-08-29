@@ -76,17 +76,9 @@ public class Robot extends IterativeRobot {
     
     bot.intake.setIntake(operator.getRawButton(6));
     
-    if (operator.getRawButton(8)){
-    	bot.shooter.runShooter(1);
-    }else if (operator.getRawButton(2)){
-    	bot.intake.runIntake(1);
-    }else if (operator.getRawButton(4)){
-    	bot.intake.runIntake(-1);
-    }
-    else {
-    	bot.intake.runIntake(0);
-    	bot.shooter.runShooter(0);
-    }
+    bot.shooter.runShooter(operator.getRawButton(8) ? 1.0 : 0.0);
+    bot.intake.runIntake(operator.getRawButton(2) ? 1.0 : operator.getRawButton(4) ? -1.0 : 0.0);
+    
     }
     
     /**

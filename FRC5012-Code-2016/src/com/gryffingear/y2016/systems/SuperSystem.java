@@ -66,7 +66,7 @@ public class SuperSystem {
 	
 	
 	private double prevS = 0.0;
-	private double sInertia = 0.0, sDecay = 0.05;
+	private double sInertia = 0.0, sDecay = 0.5;
 	public void operate(double intakeInput, boolean intakePos, double stagerInput, double shooterInput) {
 //		bot.led.setB(operator.getRawButton(3));
 //		bot.intake.runIntake(operator.getRawAxis(1) > 0.20 ? -1.0 : operator.getRawAxis(1) < -0.20 ? 1.0 : 0.0);
@@ -76,7 +76,7 @@ public class SuperSystem {
 //		
 		double iOut = 0.0;		// intake motor out
 		boolean ipOut = false;	// intake solenoid out
-		double stOut = 0.0;		// stager motor out
+		double stOut = 0.0;		// st	ager motor out
 		double sOut = 0.0;		// shooter motor out
 		
 		if(intakeInput > 0.20) {
@@ -102,7 +102,7 @@ public class SuperSystem {
 		// Shooter negative inertia on rise only, faster spinup times.
 		
 		if(shooterInput > prevS) {	// if shooter input is rising...
-			sInertia = 1.0;
+			sInertia = 4.0;
 		}
 		
 		if(sInertia > sDecay) {
@@ -115,7 +115,7 @@ public class SuperSystem {
 		sOut = shooterInput + sInertia;
 		
 		// Constrain sOut to +-1.0
-		sOut = Math.min(-1.0, Math.max(1.0, sOut));
+		sOut = Math.max(-1.0, Math.min(1.0, sOut));
 		
 		
 		// Do output stuff.

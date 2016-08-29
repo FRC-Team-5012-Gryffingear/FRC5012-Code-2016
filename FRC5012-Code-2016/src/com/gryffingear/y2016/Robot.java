@@ -99,7 +99,7 @@ public class Robot extends IterativeRobot {
 		bot.operate(operator.getRawAxis(1), 
 					operator.getRawButton(6), 
 					operator.getRawAxis(3), 
-					operator.getRawButton(7) && operator.getRawButton(8) ? 1.0 : 
+					(operator.getRawButton(7) && operator.getRawButton(8)) ? 1.0 : 
 					operator.getRawButton(8) ? 0.70 : 
 					operator.getRawButton(7) ? 0.30 : 0.0);
 		
