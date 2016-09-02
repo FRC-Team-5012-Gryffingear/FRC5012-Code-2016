@@ -83,7 +83,7 @@ public class Robot extends IterativeRobot {
 	public void teleopPeriodic() {
 		bot.poke();
 
-		bot.drive(driverL.getRawAxis(1), driverR.getRawAxis(1));
+		bot.drive(driverL.getRawAxis(1), driverR.getRawAxis(1), driverR.getRawButton(1));
 //
 //		bot.magicshot(operator.getRawButton(6), operator.getRawButton(1), operator.getRawButton(7),
 //				operator.getRawButton(10));

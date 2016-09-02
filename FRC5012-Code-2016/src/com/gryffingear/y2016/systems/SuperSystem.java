@@ -7,6 +7,7 @@ import com.gryffingear.y2016.utilities.PulseTriggerBoolean;
 
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.AnalogInput;
 
 public class SuperSystem {
 
@@ -18,6 +19,7 @@ public class SuperSystem {
 	public Compressor compressor = null;
 	public Climber climb = null;
 	public Stager stage = null;
+	public AnalogInput pixycam = null;
 
 	private SuperSystem() {
 
@@ -34,6 +36,8 @@ public class SuperSystem {
 		climb = new Climber(Ports.Climber.CLIMBER_SOLENOID, Ports.Climber.CLIMBER_MOTOR);
 		
 		stage = new Stager (Ports.Stager.STAGER_MOTOR);
+		
+		pixycam = new AnalogInput(Ports.Pixycam.PIXYCAM_PORT);
 		
 		
 		compressor = new Compressor(Ports.Pneumatics.PCM_CAN_ID);
@@ -52,16 +56,24 @@ public class SuperSystem {
 
 	
 	private NegativeInertiaAccumulator turnNia = new NegativeInertiaAccumulator(2.0);	
-	public void drive(double leftIn, double rightIn) {
+	public void drive(double leftIn, double rightIn, boolean autoAim) {
 
 		double throttle = (leftIn + rightIn) / 2.0;
 		double turning = (leftIn - rightIn) / 2.0;
 		
-		turning += turnNia.update(turning);
+		if(!autoAim) {
+			turning += turnNia.update(turning);
+		} else {
+			throttle = 0.0;
+			double kP = 2.0;
+			turning = kP * ((3.3/2.0) - pixycam.getVoltage());
+		}
 
 		//turning = ((turning * Math.abs(turning)) + turning) / 2.0;
 
 		drive.tankDrive(throttle + turning, throttle - turning);
+		
+		System.out.println("Pixycam Voltage: " + pixycam.getVoltage());
 	}
 	
 	

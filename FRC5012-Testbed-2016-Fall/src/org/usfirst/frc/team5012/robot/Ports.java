@@ -26,5 +26,9 @@ public class Ports {
 	public static class Intake {
 		public static int INTAKE_MOTOR = 3;
 	}
+	
+	public static class Pixycam {
+		public static int PIXYCAM_PORT = 0;
+	}
 
 }

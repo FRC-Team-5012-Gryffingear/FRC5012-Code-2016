@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team5012.robot.SuperSystem;
-
+import edu.wpi.first.wpilibj.AnalogInput;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -25,6 +25,8 @@ public class Robot extends IterativeRobot {
     
     SuperSystem bot = SuperSystem.getInstance();
 	
+    AnalogInput pixycam = new AnalogInput(Ports.Pixycam.PIXYCAM_PORT);
+    
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -34,6 +36,7 @@ public class Robot extends IterativeRobot {
         chooser.addDefault("Default Auto", defaultAuto);
         chooser.addObject("My Auto", customAuto);
         SmartDashboard.putData("Auto choices", chooser);
+        
     }
     
 	/**
@@ -49,6 +52,8 @@ public class Robot extends IterativeRobot {
     	autoSelected = (String) chooser.getSelected();
 //		autoSelected = SmartDashboard.getString("Auto Selector", defaultAuto);
 		System.out.println("Auto selected: " + autoSelected);
+		
+		
     }
 
     /**
@@ -71,6 +76,9 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
        
+    	System.out.println("Pixycam voltage " + pixycam.getVoltage());
+    	
+    	
     	if (gamepad.getRawButton(8)){
     		bot.shoot.runShooter(.63);
     	} else if (gamepad.getRawButton(7)){

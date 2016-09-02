@@ -40,6 +40,10 @@ public class Ports {
 	public static class Stager {
 		public static int STAGER_MOTOR = 8; 
 	}
+	
+	public static class Pixycam {
+		public static int PIXYCAM_PORT = 1;
+	}
 
 	public static class Leds {
 
