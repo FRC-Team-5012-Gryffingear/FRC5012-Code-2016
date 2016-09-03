@@ -4,11 +4,9 @@
 <fullyQualifiedTypeName name="com.gryffingear.y2016.config.Ports.Blocker"/>
 <fullyQualifiedTypeName name="com.gryffingear.y2016.config.Ports.Climber"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="org.usfirst.frc.team5012.robot.Ports"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team5012.robot.Ports.Testbed"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team5012.robot.Ports.Shooter"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team5012.robot.Ports.Stager"/>
-<fullyQualifiedTypeName name="org.usfirst.frc.team5012.robot.Ports.Controls"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team5012.robot.SuperSystem"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team5012.robot.Ports.Intake"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.CANTalon"/>
@@ -25,4 +23,11 @@
 <fullyQualifiedTypeName name="org.usfirst.frc.team2339.robot.Ports.Pneumatics"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team2339.robot.Ports.Controls"/>
 <fullyQualifiedTypeName name="com.gryffingear.y2016.utilities.NegativeInertiaAccumulator"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team5012.robot.Ports.Controls"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team5012.robot.Ports"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team5012.robot.Ports.Pixycam"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.AnalogInput"/>
+<fullyQualifiedTypeName name="com.gryffingear.y2016.config.Ports.Pixycam"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Counter"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.smartdashboard.SmartDashboard"/>
 </qualifiedTypeNameHistroy>

@@ -2,9 +2,12 @@ package com.gryffingear.y2016.systems;
 
 import com.gryffingear.y2016.config.Constants;
 import com.gryffingear.y2016.utilities.Debouncer;
+import com.gryffingear.y2016.utilities.MovingAverage;
 
 import edu.wpi.first.wpilibj.CANTalon;
+import edu.wpi.first.wpilibj.Counter;
 import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Shooter {
 
@@ -12,12 +15,17 @@ public class Shooter {
 	private CANTalon shooterMotorB = null;
 
 	private Solenoid hood = null;
+	
+	private Counter encoder = null;
 
-	public Shooter(int sma, int smb, int hoodSol) {
+	public Shooter(int sma, int smb, int hoodSol, int encPort) {
 
 		shooterMotorA = configureTalon(new CANTalon(sma));
 		shooterMotorB = configureTalon(new CANTalon(smb));
 		hood = new Solenoid(hoodSol);
+		
+		encoder = new Counter(encPort);
+		
 	}
 
 	private CANTalon configureTalon(CANTalon in) {
@@ -52,8 +60,21 @@ public class Shooter {
 
 	}
 
+	int currEnc = 0, prevEnc = 0;
+	long prevTime = 0, currTime = 0;
+	MovingAverage speedFilter = new MovingAverage(8);
+	
+	public double speed = 0.0; 
 	public void update() {
 		m_atSpeed = (getCurrent() < Constants.Shooter.AT_SPEED_CURRENT_THRESHOLD);
+		
+		prevEnc = currEnc;
+		prevTime = currTime;
+		currTime = System.currentTimeMillis();
+		currEnc = encoder.get();
+		speed =  ((double)(currEnc - prevEnc) / (double)(currTime - prevTime));
+		SmartDashboard.putNumber("shooter_speed", speedFilter.calculate(speed));
+		
 	}
 
 	public void setHood(boolean state) {

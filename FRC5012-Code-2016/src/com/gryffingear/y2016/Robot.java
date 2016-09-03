@@ -40,9 +40,6 @@ public class Robot extends IterativeRobot {
 
 		SmartDashboard.putData("Autonomous mode chooser", autonChooser);
 
-		CameraServer.getInstance().setQuality(50);
-		CameraServer.getInstance().startAutomaticCapture("cam0");
-
 	}
 
 	public void disabledInit() {
@@ -99,12 +96,13 @@ public class Robot extends IterativeRobot {
 		bot.operate(operator.getRawAxis(1), 
 					operator.getRawButton(6), 
 					operator.getRawAxis(3), 
-					(operator.getRawButton(7) && operator.getRawButton(8)) ? 1.0 : 
-					operator.getRawButton(8) ? 0.70 : 
-					operator.getRawButton(7) ? 0.30 : 0.0);
+					(operator.getRawButton(7) && operator.getRawButton(8)) ? .15 : 
+					operator.getRawButton(8) ? .135 : 
+					operator.getRawButton(7) ? 0.05 : 0.0);
 		
 		bot.updateSmartDashboard();
 
 	}
+	
 
 }

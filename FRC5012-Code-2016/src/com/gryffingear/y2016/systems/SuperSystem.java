@@ -31,7 +31,7 @@ public class SuperSystem {
 		intake = new Intake(Ports.Intake.INTAKE_MOTOR, Ports.Intake.INTAKE_SOLENOID, Ports.Intake.STAGE_SENSOR);
 		
 		// Shoot? Yes, shoot.
-		shoot = new Shooter(Ports.Shooter.SHOOTER_MOTOR_A, Ports.Shooter.SHOOTER_MOTOR_B, Ports.Shooter.HOOD_SOLENOID);
+		shoot = new Shooter(Ports.Shooter.SHOOTER_MOTOR_A, Ports.Shooter.SHOOTER_MOTOR_B, Ports.Shooter.HOOD_SOLENOID, 1);
 
 		climb = new Climber(Ports.Climber.CLIMBER_SOLENOID, Ports.Climber.CLIMBER_MOTOR);
 		
@@ -73,7 +73,7 @@ public class SuperSystem {
 
 		drive.tankDrive(throttle + turning, throttle - turning);
 		
-		System.out.println("Pixycam Voltage: " + pixycam.getVoltage());
+		//System.out.println("Pixycam Voltage: " + pixycam.getVoltage());
 	}
 	
 	
@@ -124,11 +124,20 @@ public class SuperSystem {
 		}
 		
 		// Apply negative inertia
-		sOut = shooterInput + sInertia;
+//		sOut = shooterInput + sInertia;
+//		
+//		// Constrain sOut to +-1.0
+//		sOut = Math.max(-1.0, Math.min(1.0, sOut));
+//		
+
+		prevS = shooterInput;
 		
-		// Constrain sOut to +-1.0
-		sOut = Math.max(-1.0, Math.min(1.0, sOut));
+		double ksp =2.0;
 		
+		double ksf = shooterInput * 5.2;
+		double target = (shooterInput);
+		
+		sOut = ksf + ( target - shoot.speed) * ksp;
 		
 		// Do output stuff.
 		
@@ -137,7 +146,6 @@ public class SuperSystem {
 		stage.runStager(stOut);
 		shoot.runShooter(sOut);
 		
-		prevS = shooterInput;
 	}
 	
 	boolean shooting = false;
