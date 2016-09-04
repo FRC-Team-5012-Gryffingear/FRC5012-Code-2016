@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.CANTalon;
 		public Stager (int ma) {
 			
 			stagerMotorA = new CANTalon(ma);
-
+			// where is configureTalon ?????
 			
 		}
 		

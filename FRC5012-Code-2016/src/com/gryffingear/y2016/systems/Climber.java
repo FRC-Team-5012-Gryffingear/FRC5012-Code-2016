@@ -16,7 +16,8 @@ public class Climber {
 		in.changeControlMode(CANTalon.TalonControlMode.PercentVbus);
 		in.setVoltageRampRate(Constants.Intake.RAMP_RATE);
 		in.enableControl();
-		System.out.println("[CANTalon]" + in.getDescription() + " Initialized at device ID: " + in.getDeviceID());
+		System.out.println("[CANTalon]" + in.getDescription() + 
+				" Initialized at device ID: " + in.getDeviceID());
 		return in;
 	}
 

@@ -24,6 +24,7 @@ public class Shooter {
 		shooterMotorB = configureTalon(new CANTalon(smb));
 		hood = new Solenoid(hoodSol);
 		
+		
 		encoder = new Counter(encPort);
 		
 	}
@@ -34,7 +35,8 @@ public class Shooter {
 		in.changeControlMode(CANTalon.TalonControlMode.PercentVbus);
 		in.setVoltageRampRate(Constants.Shooter.RAMP_RATE);
 		in.enableControl();
-		System.out.println("[CANTalon]" + in.getDescription() + " Initialized at device ID: " + in.getDeviceID());
+		System.out.println("[CANTalon]" + in.getDescription() + 
+				" Initialized at device ID: " + in.getDeviceID());
 		return in;
 	}
 
@@ -45,7 +47,8 @@ public class Shooter {
 	}
 
 	public double getCurrent() {
-		double answer = shooterMotorA.getOutputCurrent() + shooterMotorB.getOutputCurrent();
+		double answer = shooterMotorA.getOutputCurrent() + 
+						shooterMotorB.getOutputCurrent();
 		answer /= 2.0;
 
 		return answer;
@@ -64,7 +67,8 @@ public class Shooter {
 	long prevTime = 0, currTime = 0;
 	MovingAverage speedFilter = new MovingAverage(8);
 	
-	public double speed = 0.0; 
+	double speed = 0.0; 
+	double filteredSpeed = 0.0;
 	public void update() {
 		m_atSpeed = (getCurrent() < Constants.Shooter.AT_SPEED_CURRENT_THRESHOLD);
 		
@@ -73,8 +77,11 @@ public class Shooter {
 		currTime = System.currentTimeMillis();
 		currEnc = encoder.get();
 		speed =  ((double)(currEnc - prevEnc) / (double)(currTime - prevTime));
-		SmartDashboard.putNumber("shooter_speed", speedFilter.calculate(speed));
-		
+		filteredSpeed = speedFilter.calculate(speed);
+	}
+	
+	public double getSpeed() {
+		return filteredSpeed;
 	}
 
 	public void setHood(boolean state) {

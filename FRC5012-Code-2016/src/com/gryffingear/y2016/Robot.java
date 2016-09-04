@@ -80,19 +80,10 @@ public class Robot extends IterativeRobot {
 	public void teleopPeriodic() {
 		bot.poke();
 
-		bot.drive(driverL.getRawAxis(1), driverR.getRawAxis(1), driverR.getRawButton(1));
-//
-//		bot.magicshot(operator.getRawButton(6), operator.getRawButton(1), operator.getRawButton(7),
-//				operator.getRawButton(10));
-//		
-//		bot.climb.setClimber(operator.getRawButton(8) && operator.getRawButton(3) );
-//		
-//		bot.led.setB(operator.getRawButton(3));
-//		bot.intake.runIntake(operator.getRawAxis(1) > 0.20 ? -1.0 : operator.getRawAxis(1) < -0.20 ? 1.0 : 0.0);
-//		bot.intake.setIntake(operator.getRawButton(6) || operator.getRawAxis(1) > 0.9);
-//		bot.stage.runStager(operator.getRawAxis(3) > 0.70 ? -1.0 : operator.getRawAxis(3) < -0.70 ? 1.0 : 0.0);		
-//		bot.shoot.runShooter((operator.getRawButton(4) ? 1.0 : operator.getRawButton(8) ? 0.70 : 0.0));
-//		
+		bot.drive(	driverL.getRawAxis(1), 
+					driverR.getRawAxis(1), 
+					driverR.getRawButton(1));
+
 		bot.operate(operator.getRawAxis(1), 
 					operator.getRawButton(6), 
 					operator.getRawAxis(3), 

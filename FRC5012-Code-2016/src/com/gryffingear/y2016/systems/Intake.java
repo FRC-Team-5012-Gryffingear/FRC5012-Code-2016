@@ -28,7 +28,8 @@ public class Intake {
 		in.changeControlMode(CANTalon.TalonControlMode.PercentVbus);
 		in.setVoltageRampRate(Constants.Intake.RAMP_RATE);
 		in.enableControl();
-		System.out.println("[CANTalon]" + in.getDescription() + " Initialized at device ID: " + in.getDeviceID());
+		System.out.println("[CANTalon]" + in.getDescription() + 
+				" Initialized at device ID: " + in.getDeviceID());
 		return in;
 	}
 
@@ -45,8 +46,6 @@ public class Intake {
 	public boolean getBump() {
 		return !StageSensor.get();
 	}
-
-	private Debouncer stagedFilter = new Debouncer(0.075);
 
 	private boolean m_ballStaged = false;
 

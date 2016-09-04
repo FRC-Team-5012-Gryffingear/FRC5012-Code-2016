@@ -30,6 +30,7 @@ public class Ports {
 		public static int SHOOTER_MOTOR_A = 2;
 		public static int SHOOTER_MOTOR_B = 5;
 		public static int HOOD_SOLENOID = 6;
+		public static int SHOOTER_ENCODER_PORT = 1;
 	}
 	
 	public static class Climber{

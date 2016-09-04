@@ -26,7 +26,8 @@ public class Drivetrain {
 		in.changeControlMode(CANTalon.TalonControlMode.PercentVbus);
 		in.setVoltageRampRate(Constants.Drivetrain.RAMP_RATE);
 		in.enableControl();
-		System.out.println("[CANTalon]" + in.getDescription() + " Initialized at device ID: " + in.getDeviceID());
+		System.out.println("[CANTalon]" + in.getDescription() + 
+				" Initialized at device ID: " + in.getDeviceID());
 		return in;
 	}
 
@@ -43,19 +44,22 @@ public class Drivetrain {
 	}
 
 	public double getTotalCurrent() {
-		double answer = this.getLeftCurrent() + this.getRightCurrent();
+		double answer = this.getLeftCurrent() + 
+						this.getRightCurrent();
 
 		return answer;
 	}
 
 	public double getLeftCurrent() {
-		double answer = lefta.getOutputCurrent() + leftb.getOutputCurrent();
+		double answer = lefta.getOutputCurrent() + 
+						leftb.getOutputCurrent();
 
 		return answer;
 	}
 
 	public double getRightCurrent() {
-		double answer = righta.getOutputCurrent() + rightb.getOutputCurrent();
+		double answer = righta.getOutputCurrent() + 
+						rightb.getOutputCurrent();
 
 		return answer;
 	}

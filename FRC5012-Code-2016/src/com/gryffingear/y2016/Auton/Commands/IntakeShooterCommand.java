@@ -17,7 +17,7 @@ public class IntakeShooterCommand extends Command {
 	}
 
 	protected void initialize() {
-		SuperSystem.getInstance().magicshotRaw(state, shooterSpeed, intakeSpeed, Math.abs(shooterSpeed) > 0.1);
+		
 	}
 
 	protected boolean isFinished() {
