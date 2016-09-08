@@ -16,16 +16,17 @@ public class Shooter {
 
 	private Solenoid hood = null;
 	
-	private Counter encoder = null;
-
 	public Shooter(int sma, int smb, int hoodSol, int encPort) {
 
 		shooterMotorA = configureTalon(new CANTalon(sma));
 		shooterMotorB = configureTalon(new CANTalon(smb));
-		
-		shooterMotorB.setFeedbackDevice(CANTalon.FeedbackDevice.EncRising);
-		shooterMotorB.configEncoderCodesPerRev(1);
+
 		shooterMotorB.changeControlMode(CANTalon.TalonControlMode.Speed);
+		shooterMotorB.setFeedbackDevice(CANTalon.FeedbackDevice.EncRising);
+
+		shooterMotorB.setProfile(0);	// Might have been the secret sauce to get it working.
+		shooterMotorB.configNominalOutputVoltage(0.0, 0.0);
+		shooterMotorB.configPeakOutputVoltage(12.0, 0.0);	// swap these if shooter is reversed 
 		shooterMotorB.setP(10);
 		shooterMotorB.setI(0);
 		shooterMotorB.setD(0);
@@ -33,8 +34,8 @@ public class Shooter {
 		shooterMotorB.enableControl();
 		
 		shooterMotorA.changeControlMode(CANTalon.TalonControlMode.Follower);
-		shooterMotorA.set(smb);
-		shooterMotorA.setInverted(true);
+		shooterMotorA.set(shooterMotorB.getDeviceID());
+		shooterMotorA.reverseOutput(true);
 		
 		hood = new Solenoid(hoodSol);
 		
@@ -55,6 +56,7 @@ public class Shooter {
 	}
 
 	public void runShooter(double shooterv) {
+		shooterMotorA.set(shooterMotorB.getDeviceID());
 		shooterMotorB.set(shooterv);
 	}
 
