@@ -2,14 +2,14 @@ package com.gryffingear.y2016.systems;
 
 import com.gryffingear.y2016.config.Constants;
 import com.gryffingear.y2016.utilities.Debouncer;
+import com.gryffingear.y2016.utilities.Loopable;
 import com.gryffingear.y2016.utilities.MovingAverage;
 
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Counter;
 import edu.wpi.first.wpilibj.Solenoid;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-public class Shooter {
+public class Shooter implements Loopable {
 
 	private CANTalon shooterMotorA = null;
 	private CANTalon shooterMotorB = null;
@@ -69,9 +69,9 @@ public class Shooter {
 	
 	double speed = 0.0; 
 	double filteredSpeed = 0.0;
-	public void update() {
-		m_atSpeed = (getCurrent() < Constants.Shooter.AT_SPEED_CURRENT_THRESHOLD);
-		
+	
+	@Override
+	public synchronized void update() {
 		prevEnc = currEnc;
 		prevTime = currTime;
 		currTime = System.currentTimeMillis();

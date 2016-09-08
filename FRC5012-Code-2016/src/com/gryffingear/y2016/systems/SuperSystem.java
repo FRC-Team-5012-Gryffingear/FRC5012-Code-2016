@@ -2,6 +2,7 @@ package com.gryffingear.y2016.systems;
 
 import com.gryffingear.y2016.config.Constants;
 import com.gryffingear.y2016.config.Ports;
+import com.gryffingear.y2016.utilities.Looper;
 import com.gryffingear.y2016.utilities.NegativeInertiaAccumulator;
 
 import edu.wpi.first.wpilibj.AnalogInput;
@@ -19,6 +20,7 @@ public class SuperSystem {
 	public Climber climb = null;
 	public Stager stage = null;
 	public AnalogInput pixycam = null;
+	private Looper shooterSpeedLooper = null;
 	// Todo: make pixy class.
 
 	private SuperSystem() {
@@ -48,6 +50,9 @@ public class SuperSystem {
 		stage = new Stager (Ports.Stager.STAGER_MOTOR);
 		
 		pixycam = new AnalogInput(Ports.Pixycam.PIXYCAM_PORT);
+		
+		shooterSpeedLooper =  new Looper("ShooterSpeedLooper", shoot, 0.01);
+		shooterSpeedLooper.start();
 		
 		
 		compressor = new Compressor(Ports.Pneumatics.PCM_CAN_ID);
@@ -138,7 +143,7 @@ public class SuperSystem {
 
 	public void poke() {
 		intake.update();
-		shoot.update();
+		//shoot.update();
 	}
 
 }
