@@ -21,6 +21,7 @@ public class SuperSystem {
 	public Stager stage = null;
 	public AnalogInput pixycam = null;
 	private Looper shooterSpeedLooper = null;
+	private Arm arm = null;
 	// Todo: make pixy class.
 
 	private SuperSystem() {
@@ -51,8 +52,10 @@ public class SuperSystem {
 		
 		pixycam = new AnalogInput(Ports.Pixycam.PIXYCAM_PORT);
 		
-		shooterSpeedLooper =  new Looper("ShooterSpeedLooper", shoot, 0.01);
-		shooterSpeedLooper.start();
+		arm = new Arm (Ports.Arm.ARM_SOLENOID);
+		
+		//shooterSpeedLooper =  new Looper("ShooterSpeedLooper", shoot, 0.01);
+		//shooterSpeedLooper.start();
 		
 		
 		compressor = new Compressor(Ports.Pneumatics.PCM_CAN_ID);
@@ -71,7 +74,7 @@ public class SuperSystem {
 
 	
 	private NegativeInertiaAccumulator turnNia = new NegativeInertiaAccumulator(2.0);	
-	public void drive(double leftIn, double rightIn, boolean autoAim) {
+	public void drive(double leftIn, double rightIn, boolean autoAim, boolean armPos) {
 
 		double throttle = (leftIn + rightIn) / 2.0;
 		double turning = (leftIn - rightIn) / 2.0;
@@ -85,6 +88,7 @@ public class SuperSystem {
 		}
 
 		drive.tankDrive(throttle + turning, throttle - turning);
+		arm.set(armPos);
 		
 	}
 	
@@ -115,14 +119,7 @@ public class SuperSystem {
 		} else {
 			stOut = 0.0;
 		}
-		
-		
-		double ksp = Constants.SuperSystem.AUTO_SPEED_KP;
-		
-		double ksf = shooterInput * Constants.SuperSystem.AUTO_SPEED_KF;
-		double target = (shooterInput);
-		
-		sOut = ksf + ( target - shoot.getSpeed()) * ksp;
+		sOut = 1000;
 		
 		// Do output stuff.
 		
@@ -135,6 +132,7 @@ public class SuperSystem {
 
 	public void updateSmartDashboard() {
 		SmartDashboard.putNumber("ShooterCurrent", shoot.getCurrent());
+		SmartDashboard.putNumber("ShooterVel", shoot.getSpeed());
 		//
 		// SmartDashboard.putBoolean("extBall", intake.getBallEntered());
 		// SmartDashboard.putBoolean("intBall", intake.getBallStaged());

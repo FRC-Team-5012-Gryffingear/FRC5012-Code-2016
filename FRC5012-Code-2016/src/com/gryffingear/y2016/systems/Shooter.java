@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Counter;
 import edu.wpi.first.wpilibj.Solenoid;
 
-public class Shooter implements Loopable {
+public class Shooter {
 
 	private CANTalon shooterMotorA = null;
 	private CANTalon shooterMotorB = null;
@@ -22,10 +22,24 @@ public class Shooter implements Loopable {
 
 		shooterMotorA = configureTalon(new CANTalon(sma));
 		shooterMotorB = configureTalon(new CANTalon(smb));
+		
+		shooterMotorB.setFeedbackDevice(CANTalon.FeedbackDevice.EncRising);
+		shooterMotorB.configEncoderCodesPerRev(1);
+		shooterMotorB.changeControlMode(CANTalon.TalonControlMode.Speed);
+		shooterMotorB.setP(10);
+		shooterMotorB.setI(0);
+		shooterMotorB.setD(0);
+		shooterMotorB.setF(40);
+		shooterMotorB.enableControl();
+		
+		shooterMotorA.changeControlMode(CANTalon.TalonControlMode.Follower);
+		shooterMotorA.set(smb);
+		shooterMotorA.setInverted(true);
+		
 		hood = new Solenoid(hoodSol);
 		
 		
-		encoder = new Counter(encPort);
+		//encoder = new Counter(encPort);
 		
 	}
 
@@ -41,9 +55,7 @@ public class Shooter implements Loopable {
 	}
 
 	public void runShooter(double shooterv) {
-		shooterMotorA.set(shooterv);
-		shooterMotorB.set(
-				-shooterv);
+		shooterMotorB.set(shooterv);
 	}
 
 	public double getCurrent() {
@@ -63,25 +75,27 @@ public class Shooter implements Loopable {
 
 	}
 
-	int currEnc = 0, prevEnc = 0;
-	long prevTime = 0, currTime = 0;
-	MovingAverage speedFilter = new MovingAverage(8);
-	
-	double speed = 0.0; 
-	double filteredSpeed = 0.0;
-	
-	@Override
-	public synchronized void update() {
-		prevEnc = currEnc;
-		prevTime = currTime;
-		currTime = System.currentTimeMillis();
-		currEnc = encoder.get();
-		speed =  ((double)(currEnc - prevEnc) / (double)(currTime - prevTime));
-		filteredSpeed = speedFilter.calculate(speed);
-	}
+//	int currEnc = 0, prevEnc = 0;
+//	long prevTime = 0, currTime = 0;
+//	MovingAverage speedFilter = new MovingAverage(8);
+//	
+//	double speed = 0.0; 
+//	double filteredSpeed = 0.0;
+//	
+//	@Override
+//	public synchronized void update() {
+//		prevEnc = currEnc;
+//		prevTime = currTime;
+//		currTime = System.currentTimeMillis();
+//		currEnc = encoder.get();
+//		speed =  ((double)(currEnc - prevEnc) / (double)(currTime - prevTime));
+//		filteredSpeed = speedFilter.calculate(speed);
+//	}
 	
 	public double getSpeed() {
-		return filteredSpeed;
+		//return filteredSpeed;
+		
+		return shooterMotorB.getEncVelocity();
 	}
 
 	public void setHood(boolean state) {

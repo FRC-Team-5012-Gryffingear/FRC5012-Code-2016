@@ -54,6 +54,10 @@ public class Ports {
 
 	}
 	
+	public static class Arm {
+		
+		public static int ARM_SOLENOID = 5;
+	}
 
 	public static class Pneumatics {
 
