@@ -119,7 +119,7 @@ public class SuperSystem {
 		} else {
 			stOut = 0.0;
 		}
-		sOut = 1000;
+		sOut = shooterInput;
 		
 		// Do output stuff.
 		

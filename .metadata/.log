@@ -3453,3 +3453,222 @@ java.net.SocketException: Connection reset
 
 !ENTRY WPILib_Java_Robot_Development 1 0 2016-09-07 19:15:55.199
 !MESSAGE Targets: deploy, Mode: run
+
+!ENTRY org.eclipse.recommenders.rcp 2 15 2016-09-08 01:18:59.743
+!MESSAGE Failed to parse news feed
+!STACK 0
+java.net.UnknownHostException: www.codetrails.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
+	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:102)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
+	at org.eclipse.recommenders.internal.rcp.news.CheckForProjectNewsJob.getRSSFeed(CheckForProjectNewsJob.java:138)
+	at org.eclipse.recommenders.internal.rcp.news.CheckForProjectNewsJob.doRun(CheckForProjectNewsJob.java:89)
+	at org.eclipse.recommenders.internal.rcp.news.CheckForProjectNewsJob.run(CheckForProjectNewsJob.java:62)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:12:09.847
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:12:09.892
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:14:11.201
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:14:11.245
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:18:52.668
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:18:52.712
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:20:13.710
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:20:13.746
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:21:09.752
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:21:09.793
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:21:44.629
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:21:44.701
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:22:38.894
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:22:38.929
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:23:23.489
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:23:23.538
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:24:16.114
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:24:16.158
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:25:39.568
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:25:39.609
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:27:50.266
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:27:50.303
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:28:34.422
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:28:34.449
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:29:44.578
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:29:44.599
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:30:44.055
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:30:44.073
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:32:19.366
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:32:19.378
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:33:10.502
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:33:10.520
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:34:23.125
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:34:23.139
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:35:47.142
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:35:47.158
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:36:48.377
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:36:48.399
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:40:46.870
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:40:46.891
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:50:29.304
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:50:29.317
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:52:02.775
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:52:02.789
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:52:46.439
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:52:46.455
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:54:06.156
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:54:06.169
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:55:44.388
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 16:55:44.402
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 17:03:52.036
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 17:03:52.052
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 17:31:46.727
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 17:31:46.750
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 17:33:54.723
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 17:33:54.741
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 17:35:05.270
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 17:35:05.293
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 17:48:04.527
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 17:48:04.545
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 17:59:19.837
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 17:59:19.863
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 18:12:42.395
+!MESSAGE Running ant file: C:\Users\gryffingear\Documents\GitHub\FRC5012-Code-2016\FRC5012-Code-2016\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-09-08 18:12:42.410
+!MESSAGE Targets: deploy, Mode: run
