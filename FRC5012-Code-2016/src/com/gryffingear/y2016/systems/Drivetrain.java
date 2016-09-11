@@ -2,8 +2,8 @@ package com.gryffingear.y2016.systems;
 
 import com.gryffingear.y2016.config.Constants;
 
+import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.CANTalon;
-import edu.wpi.first.wpilibj.TalonSRX;
 
 public class Drivetrain {
 
@@ -11,12 +11,16 @@ public class Drivetrain {
 	private CANTalon leftb = null;
 	private CANTalon righta = null;
 	private CANTalon rightb = null;
+	private AnalogGyro gyro = null;
 
-	public Drivetrain(int la, int lb, int ra, int rb) {
+	public Drivetrain(int la, int lb, int ra, int rb, int gp) {
 		lefta = configureTalon(new CANTalon(la));
 		leftb = configureTalon(new CANTalon(lb));
 		righta = configureTalon(new CANTalon(ra));
 		rightb = configureTalon(new CANTalon(rb));
+		
+		gyro = new AnalogGyro(gp);
+		gyro.calibrate();
 
 	}
 
@@ -62,5 +66,9 @@ public class Drivetrain {
 						rightb.getOutputCurrent();
 
 		return answer;
+	}
+	
+	public double getYaw() {
+		return gyro.getAngle();
 	}
 }

@@ -29,7 +29,7 @@ public class SuperSystem {
 		drive = new Drivetrain(	Ports.Drivetrain.DRIVE_LEFT_A_PORT, 
 								Ports.Drivetrain.DRIVE_LEFT_B_PORT,
 								Ports.Drivetrain.DRIVE_RIGHT_A_PORT, 
-								Ports.Drivetrain.DRIVE_RIGHT_B_PORT);
+								Ports.Drivetrain.DRIVE_RIGHT_B_PORT, 0);
 
 		led = new LedStrips(Ports.Leds.LED_STRIP_1_PORT, 
 							Ports.Leds.LED_STRIP_2_PORT, 
@@ -114,11 +114,21 @@ public class SuperSystem {
 		
 		if(stagerInput > 0.20) {
 			stOut = -1.0;
+			if((intake.getBallStaged())) {
+				if(Math.abs(shooterInput) <= 0.0) {
+					stOut = 0.0;	
+				}
+			}
 		} else if(stagerInput < -0.20) {
 			stOut = 1.0;
 		} else {
-			stOut = 0.0;
+
+				stOut = 0.0;
+				
+				
+		
 		}
+		
 		sOut = shooterInput;
 		
 		// Do output stuff.
@@ -133,7 +143,13 @@ public class SuperSystem {
 	public void updateSmartDashboard() {
 		SmartDashboard.putNumber("ShooterCurrent", shoot.getCurrent());
 		SmartDashboard.putNumber("ShooterVel", shoot.getSpeed());
-		//
+		SmartDashboard.putNumber("ShooterError", shoot.getError());
+		SmartDashboard.putNumber("Gyro", drive.getYaw());
+		SmartDashboard.putNumber("Pixycam", pixycam.getVoltage());
+		SmartDashboard.putBoolean("atSpeed", shoot.atSpeed());
+		SmartDashboard.putNumber("ShooterOut", shoot.get());
+		//System.out.println("shootervel: " + shoot.getSpeed());
+		
 		// SmartDashboard.putBoolean("extBall", intake.getBallEntered());
 		// SmartDashboard.putBoolean("intBall", intake.getBallStaged());
 		SmartDashboard.putNumber("DriveTotalCurrent", drive.getTotalCurrent());

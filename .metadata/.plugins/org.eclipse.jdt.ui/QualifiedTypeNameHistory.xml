@@ -9,9 +9,6 @@
 <fullyQualifiedTypeName name="org.usfirst.frc.team5012.robot.Ports.Stager"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team5012.robot.SuperSystem"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team5012.robot.Ports.Intake"/>
-<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.CANTalon"/>
-<fullyQualifiedTypeName name="com.gryffingear.y2016.config.Ports"/>
-<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Solenoid"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Talon"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team2339.robot.Drivetrain"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team2339.robot.Intake"/>
@@ -30,4 +27,11 @@
 <fullyQualifiedTypeName name="com.gryffingear.y2016.config.Ports.Pixycam"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Counter"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.smartdashboard.SmartDashboard"/>
+<fullyQualifiedTypeName name="com.gryffingear.y2016.config.Ports"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Solenoid"/>
+<fullyQualifiedTypeName name="com.gryffingear.y2016.config.Ports.Arm"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.CANTalon.FeedbackDevice"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.CANTalon.FeedbackDeviceStatus"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.CANTalon"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.CANTalon.TalonControlMode"/>
 </qualifiedTypeNameHistroy>

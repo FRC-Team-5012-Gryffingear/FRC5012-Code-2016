@@ -36,8 +36,8 @@ public class Constants {
 	}
 	
 	public static class SuperSystem {
-		public static final double AUTO_AIM_KP = 2.0;
-		public static final double AUTO_AIM_TARGET_OFFSET = 0.15;
+		public static final double AUTO_AIM_KP = 4.0;
+		public static final double AUTO_AIM_TARGET_OFFSET = -0.05;
 		public static final double AUTO_AIM_TARGET = (3.3/2.0) + AUTO_AIM_TARGET_OFFSET;
 		public static final double AUTO_SPEED_KP = 2.0;
 		public static final double AUTO_SPEED_KF = 5.2;

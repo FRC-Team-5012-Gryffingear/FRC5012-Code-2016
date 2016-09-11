@@ -28,10 +28,10 @@ public class Shooter {
 		shooterMotorB.setProfile(0);	// Might have been the secret sauce to get it working.
 		shooterMotorB.configNominalOutputVoltage(0.0, 0.0);
 		shooterMotorB.configPeakOutputVoltage(12.0, -12.0);	// swap these if shooter is reversed 
-		shooterMotorB.setP(15);
-		shooterMotorB.setI(0);
+		shooterMotorB.setP(50);
+		shooterMotorB.setI(00);
 		shooterMotorB.setD(0);
-		shooterMotorB.setF(40);
+		shooterMotorB.setF(10);
 		shooterMotorB.enableControl();
 		
 		shooterMotorA.changeControlMode(CANTalon.TalonControlMode.Follower);
@@ -50,6 +50,7 @@ public class Shooter {
 		in.clearStickyFaults();
 		in.changeControlMode(CANTalon.TalonControlMode.PercentVbus);
 		in.setVoltageRampRate(Constants.Shooter.RAMP_RATE);
+		in.enableBrakeMode(false);
 		in.enableControl();
 		System.out.println("[CANTalon]" + in.getDescription() + 
 				" Initialized at device ID: " + in.getDeviceID());
@@ -57,6 +58,7 @@ public class Shooter {
 	}
 
 	public void runShooter(double shooterv) {
+		
 		shooterMotorA.set(shooterMotorB.getDeviceID());
 		shooterMotorB.set(shooterv);
 	}
@@ -74,7 +76,8 @@ public class Shooter {
 	private boolean m_atSpeed = false;
 
 	public boolean atSpeed() {
-		return m_atSpeed;
+		
+		return Math.abs(this.getError()) < 15;
 
 	}
 
@@ -99,6 +102,14 @@ public class Shooter {
 		//return filteredSpeed;
 		
 		return shooterMotorB.getEncVelocity();
+	}
+	
+	public double getError() {
+		return shooterMotorB.getClosedLoopError();
+	}
+	
+	public double get() {
+		return shooterMotorB.getOutputVoltage();
 	}
 
 	public void setHood(boolean state) {
