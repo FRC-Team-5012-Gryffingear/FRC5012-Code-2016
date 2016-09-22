@@ -31,8 +31,7 @@ public class SuperSystem {
 								Ports.Drivetrain.DRIVE_RIGHT_A_PORT, 
 								Ports.Drivetrain.DRIVE_RIGHT_B_PORT, 0);
 
-		led = new LedStrips(Ports.Leds.LED_STRIP_1_PORT, 
-							Ports.Leds.LED_STRIP_2_PORT, 
+		led = new LedStrips(Ports.Leds.LED_STRIP_2_PORT, 
 							Ports.Leds.LED_STRIP_3_PORT);
 
 		intake = new Intake(Ports.Intake.INTAKE_MOTOR, 
@@ -43,7 +42,8 @@ public class SuperSystem {
 		shoot = new Shooter(Ports.Shooter.SHOOTER_MOTOR_A, 
 							Ports.Shooter.SHOOTER_MOTOR_B, 
 							Ports.Shooter.HOOD_SOLENOID, 
-							Ports.Shooter.SHOOTER_ENCODER_PORT);
+							Ports.Shooter.SHOOTER_ENCODER_PORT,
+							Ports.Shooter.FLASHLIGHT_PORT);
 
 		climb = new Climber(Ports.Climber.CLIMBER_SOLENOID, 
 							Ports.Climber.CLIMBER_MOTOR);
@@ -90,16 +90,18 @@ public class SuperSystem {
 		drive.tankDrive(throttle + turning, throttle - turning);
 		arm.set(armPos);
 		
+		
 	}
 	
 	public void operate(double intakeInput, 
 						boolean intakePos, 
 						double stagerInput, 
-						double shooterInput) {
+						double shooterInput,
+						boolean flashlightState) {
 
 		double iOut = 0.0;		// intake motor out
 		boolean ipOut = false;	// intake solenoid out
-		double stOut = 0.0;		// st	ager motor out
+		double stOut = 0.0;		// stager motor out
 		double sOut = 0.0;		// shooter motor out
 		
 		if(intakeInput > 0.20) {
@@ -128,6 +130,15 @@ public class SuperSystem {
 				
 		
 		}
+		
+		
+		if (sOut > 0) {
+			shoot.setLight(flashlightState);
+		}else {
+			shoot.setLight(false);
+		}
+		
+		shoot.setLight(flashlightState);
 		
 		sOut = shooterInput;
 		

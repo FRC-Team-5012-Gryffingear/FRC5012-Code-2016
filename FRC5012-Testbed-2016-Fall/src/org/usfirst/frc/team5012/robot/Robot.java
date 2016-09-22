@@ -90,7 +90,7 @@ public class Robot extends IterativeRobot {
     	if (gamepad.getRawButton(1)){
     		bot.stage(1);
     	} else if (gamepad.getRawButton(4)){
-    		bot.stage(-1);
+    		bot.stage(-.75);
     	} else {
     		bot.stage(0);
     	}

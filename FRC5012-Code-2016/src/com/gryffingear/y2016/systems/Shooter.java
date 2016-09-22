@@ -16,7 +16,9 @@ public class Shooter {
 
 	private Solenoid hood = null;
 	
-	public Shooter(int sma, int smb, int hoodSol, int encPort) {
+	private Solenoid flashLight = null;
+	
+	public Shooter(int sma, int smb, int hoodSol, int encPort, int flashSol) {
 
 		shooterMotorA = configureTalon(new CANTalon(sma));
 		shooterMotorB = configureTalon(new CANTalon(smb));
@@ -28,10 +30,10 @@ public class Shooter {
 		shooterMotorB.setProfile(0);	// Might have been the secret sauce to get it working.
 		shooterMotorB.configNominalOutputVoltage(0.0, 0.0);
 		shooterMotorB.configPeakOutputVoltage(12.0, -12.0);	// swap these if shooter is reversed 
-		shooterMotorB.setP(50);
+		shooterMotorB.setP(20);
 		shooterMotorB.setI(00);
 		shooterMotorB.setD(0);
-		shooterMotorB.setF(10);
+		shooterMotorB.setF(35);
 		shooterMotorB.enableControl();
 		
 		shooterMotorA.changeControlMode(CANTalon.TalonControlMode.Follower);
@@ -39,6 +41,8 @@ public class Shooter {
 		shooterMotorB.reverseOutput(true);
 		
 		hood = new Solenoid(hoodSol);
+		
+		flashLight = new Solenoid(flashSol);
 		
 		
 		//encoder = new Counter(encPort);
@@ -114,6 +118,10 @@ public class Shooter {
 
 	public void setHood(boolean state) {
 		hood.set(state);
+	}
+	
+	public void setLight(boolean state) {
+		flashLight.set(state);
 	}
 
 }

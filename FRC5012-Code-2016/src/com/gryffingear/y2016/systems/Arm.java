@@ -8,12 +8,12 @@ public class Arm {
 	private Solenoid armSolenoid = null;
 	
 	public Arm(int as){
-		//armSolenoid = new Solenoid(as);
+		armSolenoid = new Solenoid(as);
 	}
 	
 	public void set(boolean state){
 		
-		//armSolenoid.set(state);
+		armSolenoid.set(state);
 	}
 	
 	

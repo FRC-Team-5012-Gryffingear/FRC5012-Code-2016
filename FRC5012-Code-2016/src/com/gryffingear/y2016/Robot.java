@@ -82,15 +82,18 @@ public class Robot extends IterativeRobot {
 
 		bot.drive(	driverL.getRawAxis(1), 
 					driverR.getRawAxis(1), 
+					
+					
 					driverR.getRawButton(1),
 					driverL.getRawButton(1));
 
 		bot.operate(operator.getRawAxis(1), 
 					operator.getRawButton(6), 
 					operator.getRawAxis(3), 
-					(operator.getRawButton(7) && operator.getRawButton(8)) ? 12000 : 
-					operator.getRawButton(8) ? 11500 : 
-					operator.getRawButton(7) ? 3000 : 0.0);
+					(operator.getRawButton(7) && operator.getRawButton(8)) ? 15000 : 
+					operator.getRawButton(8) ? 12500 : 
+					operator.getRawButton(7) ? 3000 : 0.0,
+					operator.getRawButton(4));
 		
 		bot.updateSmartDashboard();
 
