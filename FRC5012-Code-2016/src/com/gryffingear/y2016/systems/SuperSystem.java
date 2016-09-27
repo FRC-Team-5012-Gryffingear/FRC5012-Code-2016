@@ -132,13 +132,12 @@ public class SuperSystem {
 		}
 		
 		
-		if (sOut > 0) {
-			shoot.setLight(flashlightState);
+		if (Math.abs(shoot.getCurrent()) > 3) {
+			shoot.setLight(true);
 		}else {
 			shoot.setLight(false);
 		}
 		
-		shoot.setLight(flashlightState);
 		
 		sOut = shooterInput;
 		

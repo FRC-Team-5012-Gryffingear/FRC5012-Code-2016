@@ -1,6 +1,7 @@
 package com.gryffingear.y2016;
 
 import com.gryffingear.y2016.Autonomous.DriveIntake;
+import com.gryffingear.y2016.Autonomous.OntoBatterFromSpyAuton;
 import com.gryffingear.y2016.Autonomous.DriveStraight;
 import com.gryffingear.y2016.Autonomous.LowBarBack;
 import com.gryffingear.y2016.Autonomous.LowBarLowGoal;
@@ -52,7 +53,7 @@ public class Robot extends IterativeRobot {
 
 	public void disabledPeriodic() {
 
-		currAuton = (CommandGroup) autonChooser.getSelected();
+		currAuton = new OntoBatterFromSpyAuton();
 		SmartDashboard.putString("Currently Selected Auton", currAuton.toString());
 	}
 
