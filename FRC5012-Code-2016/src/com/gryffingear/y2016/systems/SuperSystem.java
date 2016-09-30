@@ -84,15 +84,38 @@ public class SuperSystem {
 	public void drive(double leftIn, 
 					  double rightIn, 
 					  boolean autoAim, 
-					  boolean armPos, 
-					  double winchInput, 
-					  double winchClimber, 
+					  boolean armPos,  
+					  boolean winchClimberPositiveInput,
+					  boolean winchClimberNegativeInput,
 					  boolean winchPositiveInput,
-					  boolean winchNegativeInput,
-					  boolean winchBrakeState) {
+					  boolean winchBrakeState ) {
 
 		double throttle = (leftIn + rightIn) / 2.0;
 		double turning = (leftIn - rightIn) / 2.0;
+		
+		double wOut = 0.0; //winch Out
+		double cOut = 0.0; //climber Out
+		
+		if (winchClimberPositiveInput) {
+			cOut = 1.0;
+		}else if (winchClimberNegativeInput) {
+			 cOut = -1.0;
+		} else {
+			cOut = 0.0;
+		}
+		
+		if (winchPositiveInput) {
+			wOut = 1.0;
+		} else {
+			wOut = 0.0;
+		}
+		
+		if (wOut > 0.0) {
+			winchBrakeState = false;
+		} else {
+			
+		}
+		
 		
 		
 		
@@ -106,8 +129,9 @@ public class SuperSystem {
 
 		drive.tankDrive(throttle + turning, throttle - turning);
 		arm.set(armPos);
-		
-		
+		winch.runClimber(cOut);
+		winch.runWinch(wOut);
+		winch.setBrake(winchBrakeState);
 	}
 	
 	public void operate(double intakeInput, 

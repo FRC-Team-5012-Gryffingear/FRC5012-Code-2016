@@ -83,11 +83,13 @@ public class Robot extends IterativeRobot {
 
 		bot.drive(	driverL.getRawAxis(1), 
 					driverR.getRawAxis(1), 
-					
-					
 					driverR.getRawButton(1),
-					driverL.getRawButton(1));
-
+					driverL.getRawButton(1),
+					driverL.getRawButton(3),
+					driverL.getRawButton(2),
+					driverL.getRawButton(4),
+					driverL.getRawButton(5));
+		
 		bot.operate(operator.getRawAxis(1), //intake input
 					operator.getRawButton(6), //intake position
 					operator.getRawAxis(3), //stager input
