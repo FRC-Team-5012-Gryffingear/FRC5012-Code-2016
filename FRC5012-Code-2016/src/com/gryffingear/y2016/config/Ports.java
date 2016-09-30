@@ -59,6 +59,13 @@ public class Ports {
 		public static int ARM_SOLENOID = 7;
 	}
 
+	public static class Winch {
+		public static int WINCH_SOLNOID = 7;
+		public static int WINCH_MOTOR_A = 11;
+		public static int WINCH_MOTOR_B = 12;
+		public static int CLIMBER_MOTOR = 7;
+	}
+	
 	public static class Pneumatics {
 
 		public static int PCM_CAN_ID = 0;

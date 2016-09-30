@@ -88,13 +88,14 @@ public class Robot extends IterativeRobot {
 					driverR.getRawButton(1),
 					driverL.getRawButton(1));
 
-		bot.operate(operator.getRawAxis(1), 
-					operator.getRawButton(6), 
-					operator.getRawAxis(3), 
-					(operator.getRawButton(7) && operator.getRawButton(8)) ? 15000 : 
-					operator.getRawButton(8) ? 12500 : 
-					operator.getRawButton(7) ? 3000 : 0.0,
-					operator.getRawButton(4));
+		bot.operate(operator.getRawAxis(1), //intake input
+					operator.getRawButton(6), //intake position
+					operator.getRawAxis(3), //stager input
+					(operator.getRawButton(7) && operator.getRawButton(8)) ? 15000 : //shooter full speed
+					operator.getRawButton(8) ? 12500 : //shooter medium speed
+					operator.getRawButton(7) ? 3000 : 0.0, //shooter low speed
+					operator.getRawButton(4)); //flashlight state
+					
 		
 		bot.updateSmartDashboard();
 

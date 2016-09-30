@@ -22,6 +22,8 @@ public class SuperSystem {
 	public AnalogInput pixycam = null;
 	private Looper shooterSpeedLooper = null;
 	private Arm arm = null;
+	private Winch winch = null;
+
 	// Todo: make pixy class.
 
 	private SuperSystem() {
@@ -54,6 +56,11 @@ public class SuperSystem {
 		
 		arm = new Arm (Ports.Arm.ARM_SOLENOID);
 		
+		winch = new Winch (Ports.Winch.WINCH_MOTOR_A,
+						   Ports.Winch.WINCH_MOTOR_B,
+						   Ports.Winch.WINCH_SOLNOID,
+						   Ports.Winch.CLIMBER_MOTOR);
+		
 		//shooterSpeedLooper =  new Looper("ShooterSpeedLooper", shoot, 0.01);
 		//shooterSpeedLooper.start();
 		
@@ -74,10 +81,20 @@ public class SuperSystem {
 
 	
 	private NegativeInertiaAccumulator turnNia = new NegativeInertiaAccumulator(2.0);	
-	public void drive(double leftIn, double rightIn, boolean autoAim, boolean armPos) {
+	public void drive(double leftIn, 
+					  double rightIn, 
+					  boolean autoAim, 
+					  boolean armPos, 
+					  double winchInput, 
+					  double winchClimber, 
+					  boolean winchPositiveInput,
+					  boolean winchNegativeInput,
+					  boolean winchBrakeState) {
 
 		double throttle = (leftIn + rightIn) / 2.0;
 		double turning = (leftIn - rightIn) / 2.0;
+		
+		
 		
 		if(!autoAim) {
 			turning += turnNia.update(turning);
@@ -103,6 +120,8 @@ public class SuperSystem {
 		boolean ipOut = false;	// intake solenoid out
 		double stOut = 0.0;		// stager motor out
 		double sOut = 0.0;		// shooter motor out
+		boolean wpOut = false;
+	
 		
 		if(intakeInput > 0.20) {
 			iOut = -1.0;
@@ -139,6 +158,8 @@ public class SuperSystem {
 		}
 		
 		
+	
+		
 		sOut = shooterInput;
 		
 		// Do output stuff.
@@ -147,6 +168,7 @@ public class SuperSystem {
 		intake.setIntake(ipOut);
 		stage.runStager(stOut);
 		shoot.runShooter(sOut);
+		
 		
 	}
 
