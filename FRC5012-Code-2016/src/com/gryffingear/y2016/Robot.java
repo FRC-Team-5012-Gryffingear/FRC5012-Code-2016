@@ -81,14 +81,14 @@ public class Robot extends IterativeRobot {
 	public void teleopPeriodic() {
 		bot.poke();
 
-		bot.drive(	driverL.getRawAxis(1), 
-					driverR.getRawAxis(1), 
-					driverR.getRawButton(1),
-					driverL.getRawButton(1),
-					driverL.getRawButton(3),
-					driverL.getRawButton(2),
-					driverL.getRawButton(4),
-					driverL.getRawButton(5));
+		bot.drive(	driverL.getRawAxis(1),    //drivetrain left
+					driverR.getRawAxis(1),    //drivetrain right
+					driverR.getRawButton(1),  //autoaim
+					driverL.getRawButton(1),  //cheval de frise arms
+					driverL.getRawButton(3),  //climber out
+					driverL.getRawButton(2),  //climber in
+					driverL.getRawButton(4),  //winch in
+					driverL.getRawButton(5)); //winch brake 
 		
 		bot.operate(operator.getRawAxis(1), //intake input
 					operator.getRawButton(6), //intake position

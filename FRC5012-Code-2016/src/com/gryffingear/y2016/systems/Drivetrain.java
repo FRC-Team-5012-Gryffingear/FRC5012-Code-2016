@@ -20,8 +20,7 @@ public class Drivetrain {
 		rightb = configureTalon(new CANTalon(rb));
 		
 		gyro = new AnalogGyro(gp);
-		gyro.calibrate();
-
+		gyro.initGyro();
 	}
 
 	private CANTalon configureTalon(CANTalon in) {
@@ -70,5 +69,9 @@ public class Drivetrain {
 	
 	public double getYaw() {
 		return gyro.getAngle();
+	}
+	
+	public void resetGyro() {
+		gyro.reset();
 	}
 }
