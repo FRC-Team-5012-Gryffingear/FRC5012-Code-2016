@@ -2,6 +2,7 @@ package com.gryffingear.y2016.systems;
 
 import com.gryffingear.y2016.config.Constants;
 import com.gryffingear.y2016.config.Ports;
+import com.gryffingear.y2016.config.Ports.Winch;
 import com.gryffingear.y2016.utilities.Looper;
 import com.gryffingear.y2016.utilities.NegativeInertiaAccumulator;
 
@@ -12,19 +13,16 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class SuperSystem {
 
 	private static SuperSystem instance = null;
-	public LedStrips led = null;
 	public Drivetrain drive = null;
 	public Intake intake = null;
 	public Shooter shoot = null;
 	public Compressor compressor = null;
-	public Climber climb = null;
 	public Stager stage = null;
 	public AnalogInput pixycam = null;
 	private Looper shooterSpeedLooper = null;
 	private Arm arm = null;
 	private Winch winch = null;
 
-	// Todo: make pixy class.
 
 	private SuperSystem() {
 
@@ -32,9 +30,6 @@ public class SuperSystem {
 								Ports.Drivetrain.DRIVE_LEFT_B_PORT,
 								Ports.Drivetrain.DRIVE_RIGHT_A_PORT, 
 								Ports.Drivetrain.DRIVE_RIGHT_B_PORT, 0);
-
-		led = new LedStrips(Ports.Leds.LED_STRIP_2_PORT, 
-							Ports.Leds.LED_STRIP_3_PORT);
 
 		intake = new Intake(Ports.Intake.INTAKE_MOTOR, 
 							Ports.Intake.INTAKE_SOLENOID, 
@@ -46,9 +41,6 @@ public class SuperSystem {
 							Ports.Shooter.HOOD_SOLENOID, 
 							Ports.Shooter.SHOOTER_ENCODER_PORT,
 							Ports.Shooter.FLASHLIGHT_PORT);
-
-		climb = new Climber(Ports.Climber.CLIMBER_SOLENOID, 
-							Ports.Climber.CLIMBER_MOTOR);
 		
 		stage = new Stager (Ports.Stager.STAGER_MOTOR);
 		
@@ -60,10 +52,6 @@ public class SuperSystem {
 						   Ports.Winch.WINCH_MOTOR_B,
 						   Ports.Winch.WINCH_SOLNOID,
 						   Ports.Winch.CLIMBER_MOTOR);
-		
-		//shooterSpeedLooper =  new Looper("ShooterSpeedLooper", shoot, 0.01);
-		//shooterSpeedLooper.start();
-		
 		
 		compressor = new Compressor(Ports.Pneumatics.PCM_CAN_ID);
 		compressor.setClosedLoopControl(true);
@@ -116,9 +104,6 @@ public class SuperSystem {
 			
 		}
 		
-		
-		
-		
 		if(!autoAim) {
 			turning += turnNia.update(turning);
 		} else {
@@ -137,8 +122,7 @@ public class SuperSystem {
 	public void operate(double intakeInput, 
 						boolean intakePos, 
 						double stagerInput, 
-						double shooterInput,
-						boolean flashlightState) {
+						double shooterInput) {
 
 		double iOut = 0.0;		// intake motor out
 		boolean ipOut = false;	// intake solenoid out
@@ -158,20 +142,22 @@ public class SuperSystem {
 		ipOut = intakePos || intakeInput > 0.9;
 		
 		if(stagerInput > 0.20) {
+			
 			stOut = -1.0;
 			if((intake.getBallStaged())) {
 				if(Math.abs(shooterInput) <= 0.0) {
 					stOut = 0.0;	
 				}
 			}
+			
 		} else if(stagerInput < -0.20) {
+			
 			stOut = 1.0;
+			
 		} else {
 
 				stOut = 0.0;
 				
-				
-		
 		}
 		
 		
@@ -180,9 +166,6 @@ public class SuperSystem {
 		}else {
 			shoot.setLight(false);
 		}
-		
-		
-	
 		
 		sOut = shooterInput;
 		
@@ -193,9 +176,11 @@ public class SuperSystem {
 		stage.runStager(stOut);
 		shoot.runShooter(sOut);
 		
-		
 	}
 
+	/**
+	 * Refreshes networktables/smartdashboard with new telemetry data.
+	 */
 	public void updateSmartDashboard() {
 		SmartDashboard.putNumber("ShooterCurrent", shoot.getCurrent());
 		SmartDashboard.putNumber("ShooterVel", shoot.getSpeed());
@@ -204,16 +189,14 @@ public class SuperSystem {
 		SmartDashboard.putNumber("Pixycam", pixycam.getVoltage());
 		SmartDashboard.putBoolean("atSpeed", shoot.atSpeed());
 		SmartDashboard.putNumber("ShooterOut", shoot.get());
-		//System.out.println("shootervel: " + shoot.getSpeed());
-		
-		// SmartDashboard.putBoolean("extBall", intake.getBallEntered());
-		// SmartDashboard.putBoolean("intBall", intake.getBallStaged());
 		SmartDashboard.putNumber("DriveTotalCurrent", drive.getTotalCurrent());
 	}
 
+	/**
+	 * "pokes" subsystems that need to be updated periodically.
+	 */
 	public void poke() {
 		intake.update();
-		//shoot.update();
 	}
 
 }

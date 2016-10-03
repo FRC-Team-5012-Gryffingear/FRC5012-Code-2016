@@ -21,6 +21,7 @@ public class Drivetrain {
 		
 		gyro = new AnalogGyro(gp);
 		gyro.initGyro();
+		gyro.calibrate();
 	}
 
 	private CANTalon configureTalon(CANTalon in) {

@@ -96,7 +96,7 @@ public class Robot extends IterativeRobot {
 					(operator.getRawButton(7) && operator.getRawButton(8)) ? 15000 : //shooter full speed
 					operator.getRawButton(8) ? 12500 : //shooter medium speed
 					operator.getRawButton(7) ? 3000 : 0.0, //shooter low speed
-					operator.getRawButton(4)); //flashlight state
+					); 
 					
 		
 		bot.updateSmartDashboard();
