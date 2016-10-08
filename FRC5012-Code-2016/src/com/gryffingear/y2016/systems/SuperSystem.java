@@ -2,7 +2,7 @@ package com.gryffingear.y2016.systems;
 
 import com.gryffingear.y2016.config.Constants;
 import com.gryffingear.y2016.config.Ports;
-import com.gryffingear.y2016.config.Ports.Winch;
+import com.gryffingear.y2016.utilities.LedOutput;
 import com.gryffingear.y2016.utilities.Looper;
 import com.gryffingear.y2016.utilities.NegativeInertiaAccumulator;
 
@@ -23,6 +23,9 @@ public class SuperSystem {
 	private Arm arm = null;
 	private Winch winch = null;
 
+	LedOutput hoodLed;
+	LedOutput stagerLed;
+	LedOutput flashlight;
 
 	private SuperSystem() {
 
@@ -37,10 +40,8 @@ public class SuperSystem {
 		
 		// Shoot? Yes, shoot.
 		shoot = new Shooter(Ports.Shooter.SHOOTER_MOTOR_A, 
-							Ports.Shooter.SHOOTER_MOTOR_B, 
-							Ports.Shooter.HOOD_SOLENOID, 
-							Ports.Shooter.SHOOTER_ENCODER_PORT,
-							Ports.Shooter.FLASHLIGHT_PORT);
+							Ports.Shooter.SHOOTER_MOTOR_B,
+							Ports.Shooter.SHOOTER_ENCODER_PORT);
 		
 		stage = new Stager (Ports.Stager.STAGER_MOTOR);
 		
@@ -50,8 +51,13 @@ public class SuperSystem {
 		
 		winch = new Winch (Ports.Winch.WINCH_MOTOR_A,
 						   Ports.Winch.WINCH_MOTOR_B,
-						   Ports.Winch.WINCH_SOLNOID,
-						   Ports.Winch.CLIMBER_MOTOR);
+						   Ports.Winch.WINCH_SOLENOID,
+						   Ports.Winch.CLIMBER_MOTOR,
+						   Ports.Winch.CLIMBER_SENSOR);
+		
+		hoodLed = new LedOutput(Ports.Shooter.SHOOTER_INDICATOR_LIGHT, Ports.Pneumatics.PCM_CAN_ID);
+		stagerLed = new LedOutput(Ports.Stager.STAGER_INDICATOR_LIGHT, Ports.Pneumatics.PCM_CAN_ID);
+		flashlight = new LedOutput(Ports.Shooter.FLASHLIGHT_PORT, Ports.Pneumatics.PCM_CAN_ID);
 		
 		compressor = new Compressor(Ports.Pneumatics.PCM_CAN_ID);
 		compressor.setClosedLoopControl(true);
@@ -75,33 +81,33 @@ public class SuperSystem {
 					  boolean armPos,  
 					  boolean winchClimberPositiveInput,
 					  boolean winchClimberNegativeInput,
-					  boolean winchPositiveInput,
-					  boolean winchBrakeState ) {
+					  boolean winchInput ) {
 
 		double throttle = (leftIn + rightIn) / 2.0;
 		double turning = (leftIn - rightIn) / 2.0;
 		
+		boolean winchBrakeState = false;
 		double wOut = 0.0; //winch Out
 		double cOut = 0.0; //climber Out
 		
 		if (winchClimberPositiveInput) {
 			cOut = 1.0;
+			
+			if((winch.getScaled() || cOut < 0.0)){
+				cOut = 0.0;
+				winchBrakeState = true;
+			}
+		
 		}else if (winchClimberNegativeInput) {
 			 cOut = -1.0;
 		} else {
 			cOut = 0.0;
 		}
 		
-		if (winchPositiveInput) {
+		if (winchInput) {
 			wOut = 1.0;
 		} else {
 			wOut = 0.0;
-		}
-		
-		if (wOut > 0.0) {
-			winchBrakeState = false;
-		} else {
-			
 		}
 		
 		if(!autoAim) {
@@ -161,11 +167,24 @@ public class SuperSystem {
 		}
 		
 		
-		if (Math.abs(shoot.getCurrent()) > 3) {
-			shoot.setLight(true);
-		}else {
-			shoot.setLight(false);
+		flashlight.set(Math.abs(shoot.getCurrent()) > 3);
+		if(Math.abs(shooterInput) > 10) {
+			hoodLed.blink(250);
+		} else {
+			hoodLed.set(false);
 		}
+		
+		if(intake.getBallStaged()) {
+			stagerLed.set(true);
+		} else {
+			if(Math.abs(stOut) > 0.01 || Math.abs(iOut) > 0.01) {
+				stagerLed.blink(500);
+			} else {
+				stagerLed.set(false);
+			}
+		}
+		
+		
 		
 		sOut = shooterInput;
 		

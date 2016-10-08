@@ -28,8 +28,7 @@ public class Intake {
 		in.changeControlMode(CANTalon.TalonControlMode.PercentVbus);
 		in.setVoltageRampRate(Constants.Intake.RAMP_RATE);
 		in.enableControl();
-		System.out.println("[CANTalon]" + in.getDescription() + 
-				" Initialized at device ID: " + in.getDeviceID());
+		System.out.println("[CANTalon]" + in.getDescription() + " Initialized at device ID: " + in.getDeviceID());
 		return in;
 	}
 
@@ -54,7 +53,7 @@ public class Intake {
 	}
 
 	public void update() {
-		//System.out.println(getBump());
+		// System.out.println(getBump());
 		m_ballStaged = (getBump());
 
 	}

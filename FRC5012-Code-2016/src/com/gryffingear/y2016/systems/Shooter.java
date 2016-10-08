@@ -14,16 +14,13 @@ public class Shooter {
 	private CANTalon shooterMotorA = null;
 	private CANTalon shooterMotorB = null;
 
-	private Solenoid hood = null;
 	
-	private Solenoid flashLight = null;
-	
-	public Shooter(int sma, int smb, int hoodSol, int encPort, int flashSol) {
+	public Shooter(int sma, int smb, int encPort) {
 
 		shooterMotorA = configureTalon(new CANTalon(sma));
 		shooterMotorB = configureTalon(new CANTalon(smb));
 
-		/**shooterMotorB.changeControlMode(CANTalon.TalonControlMode.Speed);
+		shooterMotorB.changeControlMode(CANTalon.TalonControlMode.Speed);
 		shooterMotorB.setFeedbackDevice(CANTalon.FeedbackDevice.EncRising);
 		shooterMotorB.configEncoderCodesPerRev(1);
 
@@ -35,14 +32,11 @@ public class Shooter {
 		shooterMotorB.setD(0);
 		shooterMotorB.setF(70);
 		shooterMotorB.enableControl();
-		*/
+		
 		shooterMotorA.changeControlMode(CANTalon.TalonControlMode.Follower);
 		shooterMotorA.set(shooterMotorB.getDeviceID());
 		shooterMotorB.reverseOutput(true);
 		
-		hood = new Solenoid(hoodSol);
-		
-		flashLight = new Solenoid(flashSol);
 		
 		
 		//encoder = new Counter(encPort);
@@ -116,12 +110,5 @@ public class Shooter {
 		return shooterMotorB.getOutputVoltage();
 	}
 
-	public void setHood(boolean state) {
-		hood.set(state);
-	}
-	
-	public void setLight(boolean state) {
-		flashLight.set(state);
-	}
 
 }

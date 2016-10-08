@@ -28,11 +28,15 @@
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Counter"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.smartdashboard.SmartDashboard"/>
 <fullyQualifiedTypeName name="com.gryffingear.y2016.config.Ports"/>
-<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Solenoid"/>
 <fullyQualifiedTypeName name="com.gryffingear.y2016.config.Ports.Arm"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.CANTalon.FeedbackDevice"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.CANTalon.FeedbackDeviceStatus"/>
-<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.CANTalon"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.CANTalon.TalonControlMode"/>
 <fullyQualifiedTypeName name="com.gryffingear.y2016.Autonomous.OntoBatterFromSpyAuton"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.CANTalon"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Solenoid"/>
+<fullyQualifiedTypeName name="com.gryffingear.y2016.Robot"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.command.Command"/>
+<fullyQualifiedTypeName name="com.gryffingear.y2016.config.Ports.Winch"/>
+<fullyQualifiedTypeName name="com.gryffingear.y2016.systems.SuperSystem"/>
 </qualifiedTypeNameHistroy>

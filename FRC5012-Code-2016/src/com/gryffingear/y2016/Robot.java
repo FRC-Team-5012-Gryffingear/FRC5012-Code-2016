@@ -1,11 +1,8 @@
 package com.gryffingear.y2016;
 
-import com.gryffingear.y2016.Autonomous.DriveIntake;
 import com.gryffingear.y2016.Autonomous.OntoBatterFromSpyAuton;
+import com.gryffingear.y2016.Autonomous.testAuton;
 import com.gryffingear.y2016.Autonomous.DriveStraight;
-import com.gryffingear.y2016.Autonomous.LowBarBack;
-import com.gryffingear.y2016.Autonomous.LowBarLowGoal;
-import com.gryffingear.y2016.Autonomous.ShovelOfFries;
 import com.gryffingear.y2016.Autonomous.testAuton;
 import com.gryffingear.y2016.config.Ports;
 import com.gryffingear.y2016.systems.SuperSystem;
@@ -33,11 +30,7 @@ public class Robot extends IterativeRobot {
 		autonChooser = new SendableChooser();
 		// autonChooser.addDefault("Default Auton", new DefaultAuton());
 		autonChooser.addDefault("Drive Straight", new DriveStraight());
-		autonChooser.addObject("Do Nothing", new testAuton());
-		autonChooser.addObject("Drive + Intake", new DriveIntake());
-		autonChooser.addObject("Shovel of Fries", new ShovelOfFries());
-		autonChooser.addObject("Through the low bar and back", new LowBarBack());
-		autonChooser.addObject("Through the low bar into low goal", new LowBarLowGoal());
+		
 
 		SmartDashboard.putData("Autonomous mode chooser", autonChooser);
 
@@ -53,7 +46,7 @@ public class Robot extends IterativeRobot {
 
 	public void disabledPeriodic() {
 
-		currAuton = new OntoBatterFromSpyAuton();
+		currAuton = new testAuton();
 		SmartDashboard.putString("Currently Selected Auton", currAuton.toString());
 	}
 
@@ -87,16 +80,14 @@ public class Robot extends IterativeRobot {
 					driverL.getRawButton(1),  //cheval de frise arms
 					driverL.getRawButton(3),  //climber out
 					driverL.getRawButton(2),  //climber in
-					driverL.getRawButton(4),  //winch in
-					driverL.getRawButton(5)); //winch brake 
+					driverL.getRawButton(4));  //winch in 
 		
 		bot.operate(operator.getRawAxis(1), //intake input
 					operator.getRawButton(6), //intake position
 					operator.getRawAxis(3), //stager input
 					(operator.getRawButton(7) && operator.getRawButton(8)) ? 15000 : //shooter full speed
-					operator.getRawButton(8) ? 12500 : //shooter medium speed
-					operator.getRawButton(7) ? 3000 : 0.0, //shooter low speed
-					); 
+					operator.getRawButton(8) ? 7500 : //shooter medium speed
+					operator.getRawButton(7) ? 3000 : 0.0); 
 					
 		
 		bot.updateSmartDashboard();
