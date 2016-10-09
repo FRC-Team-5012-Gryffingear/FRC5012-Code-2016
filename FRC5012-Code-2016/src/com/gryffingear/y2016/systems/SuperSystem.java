@@ -93,10 +93,6 @@ public class SuperSystem {
 		if (winchClimberPositiveInput) {
 			cOut = 1.0;
 			
-			if((winch.getScaled() || cOut < 0.0)){
-				cOut = 0.0;
-				winchBrakeState = true;
-			}
 		
 		}else if (winchClimberNegativeInput) {
 			 cOut = -1.0;
@@ -106,8 +102,15 @@ public class SuperSystem {
 		
 		if (winchInput) {
 			wOut = 1.0;
+
 		} else {
 			wOut = 0.0;
+		}
+		
+
+		if((winch.getScaled())){
+			wOut = 0.0;
+			winchBrakeState = true;
 		}
 		
 		if(!autoAim) {
@@ -121,7 +124,7 @@ public class SuperSystem {
 		drive.tankDrive(throttle + turning, throttle - turning);
 		arm.set(armPos);
 		winch.runClimber(cOut);
-		winch.runWinch(wOut);
+		winch.runWinch(-wOut);
 		winch.setBrake(winchBrakeState);
 	}
 	
@@ -167,7 +170,7 @@ public class SuperSystem {
 		}
 		
 		
-		flashlight.set(Math.abs(shoot.getCurrent()) > 3);
+		flashlight.set(Math.abs(Math.abs(shoot.getCurrent())) > 3);
 		if(Math.abs(shooterInput) > 10) {
 			hoodLed.blink(250);
 		} else {

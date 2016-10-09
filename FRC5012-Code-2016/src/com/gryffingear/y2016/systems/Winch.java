@@ -42,7 +42,6 @@ public class Winch {
 	public void runWinch(double winchv) {
 
 		winchMotorA.set(-winchv);
-
 		winchMotorB.set(winchv);
 
 	}
@@ -65,7 +64,7 @@ public class Winch {
 	private boolean getScaled = false;
 
 	public boolean getScaled() {
-		return getScaled;
+		return getBump();
 	}
 
 	public void update() {

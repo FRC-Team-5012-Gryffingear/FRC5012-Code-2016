@@ -19,7 +19,7 @@ public class Shooter {
 
 		shooterMotorA = configureTalon(new CANTalon(sma));
 		shooterMotorB = configureTalon(new CANTalon(smb));
-
+/*
 		shooterMotorB.changeControlMode(CANTalon.TalonControlMode.Speed);
 		shooterMotorB.setFeedbackDevice(CANTalon.FeedbackDevice.EncRising);
 		shooterMotorB.configEncoderCodesPerRev(1);
@@ -32,7 +32,7 @@ public class Shooter {
 		shooterMotorB.setD(0);
 		shooterMotorB.setF(70);
 		shooterMotorB.enableControl();
-		
+		*/
 		shooterMotorA.changeControlMode(CANTalon.TalonControlMode.Follower);
 		shooterMotorA.set(shooterMotorB.getDeviceID());
 		shooterMotorB.reverseOutput(true);
@@ -58,7 +58,7 @@ public class Shooter {
 	public void runShooter(double shooterv) {
 		
 		shooterMotorA.set(shooterMotorB.getDeviceID());
-		shooterMotorB.set(-shooterv);
+		shooterMotorB.set(shooterv);
 	}
 
 	public double getCurrent() {

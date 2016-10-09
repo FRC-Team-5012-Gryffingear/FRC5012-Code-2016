@@ -51,9 +51,9 @@ public class Ports {
 
 	public static class Winch {
 		public static int WINCH_SOLENOID = 4;
-		public static int WINCH_MOTOR_A = 11;
-		public static int WINCH_MOTOR_B = 12;
-		public static int CLIMBER_MOTOR = 8;
+		public static int WINCH_MOTOR_A = 9;
+		public static int WINCH_MOTOR_B = 10;
+		public static int CLIMBER_MOTOR = 6;
 		public static int CLIMBER_SENSOR = 1;
 	}
 
