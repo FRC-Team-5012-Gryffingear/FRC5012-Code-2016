@@ -17,7 +17,7 @@ public class ShooterCommand extends Command {
 	}
 
 	protected void initialize() {
-		SuperSystem.getInstance().shoot.runShooter(0);
+		SuperSystem.getInstance().shoot.setPercentVBus(0);
 	}
 
 	protected boolean isFinished() {
@@ -27,18 +27,18 @@ public class ShooterCommand extends Command {
 
 	protected void execute() {
 
-		SuperSystem.getInstance().shoot.runShooter(speed);
+		SuperSystem.getInstance().shoot.setPercentVBus(speed);
 	}
 
 	protected void end() {
 
-		SuperSystem.getInstance().shoot.runShooter(0.0);
+		SuperSystem.getInstance().shoot.setPercentVBus(0.0);
 
 	}
 
 	protected void interrupted() {
 
-		SuperSystem.getInstance().shoot.runShooter(0.0);
+		SuperSystem.getInstance().shoot.setPercentVBus(0.0);
 
 	}
 }

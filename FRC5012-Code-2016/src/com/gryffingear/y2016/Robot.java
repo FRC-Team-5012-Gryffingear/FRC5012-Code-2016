@@ -60,6 +60,7 @@ public class Robot extends IterativeRobot {
 		Scheduler.getInstance().run();
 	}
 
+	long teleopStartTime = 0;
 	public void teleopInit() {
 
 		if (currAuton != null) {
@@ -69,6 +70,7 @@ public class Robot extends IterativeRobot {
 		}
 
 		Scheduler.getInstance().disable();
+		teleopStartTime = System.currentTimeMillis();
 	}
 
 	public void teleopPeriodic() {
@@ -91,6 +93,9 @@ public class Robot extends IterativeRobot {
 					
 		
 		bot.updateSmartDashboard();
+		
+		
+		bot.setTeleopTime(System.currentTimeMillis() - teleopStartTime);	// Tell the bot how long we've been in teleop.
 
 	}
 	

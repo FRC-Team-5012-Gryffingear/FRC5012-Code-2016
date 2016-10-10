@@ -55,15 +55,22 @@ public class Shooter {
 		return in;
 	}
 
-	public void runShooter(double shooterv) {
-		
+	public void setPercentVBus(double shooterv) {
+
+		shooterMotorB.changeControlMode(CANTalon.TalonControlMode.PercentVbus);
+		shooterMotorA.set(shooterMotorB.getDeviceID());
+		shooterMotorB.set(shooterv);
+	}
+	
+	public void setVoltage(double shooterv) {
+		shooterMotorB.changeControlMode(CANTalon.TalonControlMode.Voltage);
 		shooterMotorA.set(shooterMotorB.getDeviceID());
 		shooterMotorB.set(shooterv);
 	}
 
 	public double getCurrent() {
-		double answer = shooterMotorA.getOutputCurrent() + 
-						shooterMotorB.getOutputCurrent();
+		double answer = Math.abs(shooterMotorA.getOutputCurrent()) + 
+						Math.abs(shooterMotorB.getOutputCurrent());
 		answer /= 2.0;
 
 		return answer;
@@ -78,23 +85,6 @@ public class Shooter {
 		return Math.abs(this.getError()) < 15;
 
 	}
-
-//	int currEnc = 0, prevEnc = 0;
-//	long prevTime = 0, currTime = 0;
-//	MovingAverage speedFilter = new MovingAverage(8);
-//	
-//	double speed = 0.0; 
-//	double filteredSpeed = 0.0;
-//	
-//	@Override
-//	public synchronized void update() {
-//		prevEnc = currEnc;
-//		prevTime = currTime;
-//		currTime = System.currentTimeMillis();
-//		currEnc = encoder.get();
-//		speed =  ((double)(currEnc - prevEnc) / (double)(currTime - prevTime));
-//		filteredSpeed = speedFilter.calculate(speed);
-//	}
 	
 	public double getSpeed() {
 		//return filteredSpeed;
@@ -109,6 +99,7 @@ public class Shooter {
 	public double get() {
 		return shooterMotorB.getOutputVoltage();
 	}
+	
 
 
 }

@@ -26,6 +26,8 @@ public class SuperSystem {
 	LedOutput hoodLed;
 	LedOutput stagerLed;
 	LedOutput flashlight;
+	
+	private long matchTime = 0;
 
 	private SuperSystem() {
 
@@ -86,7 +88,7 @@ public class SuperSystem {
 		double throttle = (leftIn + rightIn) / 2.0;
 		double turning = (leftIn - rightIn) / 2.0;
 		
-		boolean winchBrakeState = false;
+		boolean winchBrakeState = matchTime > 134750;	// Auto Brake at 250ms from end of match.
 		double wOut = 0.0; //winch Out
 		double cOut = 0.0; //climber Out
 		
@@ -102,7 +104,6 @@ public class SuperSystem {
 		
 		if (winchInput) {
 			wOut = 1.0;
-
 		} else {
 			wOut = 0.0;
 		}
@@ -165,16 +166,29 @@ public class SuperSystem {
 			
 		} else {
 
-				stOut = 0.0;
+			stOut = 0.0;
 				
 		}
 		
+		double shooterCurrent = shoot.getCurrent();
 		
-		flashlight.set(Math.abs(Math.abs(shoot.getCurrent())) > 3);
-		if(Math.abs(shooterInput) > 10) {
+		flashlight.set(shooterCurrent > 3);
+		
+		
+		if(shooterCurrent > 20) {	// Just started spinning up...
+			hoodLed.blink(500);
+		} else if(shooterCurrent > 15) { // Approaching target speed...
 			hoodLed.blink(250);
-		} else {
-			hoodLed.set(false);
+		} else if(shooterCurrent > 3) {	// On target, ready to shoot.
+			hoodLed.set(true);
+		} else {						// Not trying to shoot, turn off.
+			if(matchTime > 105000) {	// Blink LEDs based on match time
+				hoodLed.blink(500);
+			} else if(matchTime > 115000) {
+				hoodLed.blink(250);
+			} else {
+				hoodLed.set(false);
+			}
 		}
 		
 		if(intake.getBallStaged()) {
@@ -196,8 +210,8 @@ public class SuperSystem {
 		intake.runIntake(iOut);
 		intake.setIntake(ipOut);
 		stage.runStager(stOut);
-		shoot.runShooter(sOut);
-		
+		shoot.setPercentVBus(sOut);
+		// shoot.setVoltage(sOut * 12.0);
 	}
 
 	/**
@@ -212,6 +226,14 @@ public class SuperSystem {
 		SmartDashboard.putBoolean("atSpeed", shoot.atSpeed());
 		SmartDashboard.putNumber("ShooterOut", shoot.get());
 		SmartDashboard.putNumber("DriveTotalCurrent", drive.getTotalCurrent());
+	}
+	
+	/**
+	 * Tells the supersystem how long we've been in teleop
+	 * @param millis
+	 */
+	public void setTeleopTime(long millis) {
+		this.matchTime = millis;
 	}
 
 	/**
