@@ -19,7 +19,6 @@ public class SuperSystem {
 	public Compressor compressor = null;
 	public Stager stage = null;
 	public AnalogInput pixycam = null;
-	private Looper shooterSpeedLooper = null;
 	private Arm arm = null;
 	private Winch winch = null;
 
@@ -182,10 +181,10 @@ public class SuperSystem {
 		} else if(shooterCurrent > 3) {	// On target, ready to shoot.
 			hoodLed.set(true);
 		} else {						// Not trying to shoot, turn off.
-			if(matchTime > 105000) {	// Blink LEDs based on match time
-				hoodLed.blink(500);
-			} else if(matchTime > 115000) {
+			if(matchTime > 115000) {	// Blink LEDs based on match time
 				hoodLed.blink(250);
+			} else if(matchTime > 105000) {
+				hoodLed.blink(500);
 			} else {
 				hoodLed.set(false);
 			}
@@ -220,12 +219,14 @@ public class SuperSystem {
 	public void updateSmartDashboard() {
 		SmartDashboard.putNumber("ShooterCurrent", shoot.getCurrent());
 		SmartDashboard.putNumber("ShooterVel", shoot.getSpeed());
+		SmartDashboard.putNumber("ShooterVoltage", shoot.get());
 		SmartDashboard.putNumber("ShooterError", shoot.getError());
-		SmartDashboard.putNumber("Gyro", drive.getYaw());
+		SmartDashboard.putNumber("Gyro", drive.getYaw());	
 		SmartDashboard.putNumber("Pixycam", pixycam.getVoltage());
 		SmartDashboard.putBoolean("atSpeed", shoot.atSpeed());
 		SmartDashboard.putNumber("ShooterOut", shoot.get());
 		SmartDashboard.putNumber("DriveTotalCurrent", drive.getTotalCurrent());
+		
 	}
 	
 	/**
