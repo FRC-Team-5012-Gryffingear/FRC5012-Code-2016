@@ -49,6 +49,10 @@ public class Robot extends IterativeRobot {
 		currAuton = new testAuton();
 		SmartDashboard.putString("Currently Selected Auton", currAuton.toString());
 	}
+	
+	public void testPeriodic() {
+		bot.ledOn();
+	}
 
 	public void autonomousInit() {
 

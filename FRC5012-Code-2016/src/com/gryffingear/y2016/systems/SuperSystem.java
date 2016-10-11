@@ -75,7 +75,7 @@ public class SuperSystem {
 	}
 
 	
-	private NegativeInertiaAccumulator turnNia = new NegativeInertiaAccumulator(2.0);	
+	private NegativeInertiaAccumulator turnNia = new NegativeInertiaAccumulator(2.5);	
 	public void drive(double leftIn, 
 					  double rightIn, 
 					  boolean autoAim, 
@@ -227,6 +227,11 @@ public class SuperSystem {
 		SmartDashboard.putNumber("ShooterOut", shoot.get());
 		SmartDashboard.putNumber("DriveTotalCurrent", drive.getTotalCurrent());
 		
+	}
+	
+	public void ledOn() {
+		hoodLed.set(true);
+		stagerLed.set(true);
 	}
 	
 	/**

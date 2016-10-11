@@ -29,7 +29,7 @@ public class DriveToAngleCommand extends Command {
 
 	public void execute() {
 
-		double p = 0.025;
+		double p = 0.065;
 		double error = SuperSystem.getInstance().drive.getYaw() - this.angle;
 		SuperSystem.getInstance().drive.tankDrive(p * error * speed, -p * error * speed);
 
