@@ -92,7 +92,7 @@ public class Robot extends IterativeRobot {
 					operator.getRawButton(6), //intake position
 					operator.getRawAxis(3), //stager input
 					(operator.getRawButton(7) && operator.getRawButton(8)) ? 1.0 : //shooter full speed
-					operator.getRawButton(8) ? 0.7500 : //shooter medium speed
+					operator.getRawButton(8) ? 0.9000 : //shooter medium speed
 					operator.getRawButton(7) ? 0.3000 : 0.0); 
 					
 		
